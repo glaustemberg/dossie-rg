@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>Dossiê Renata Gomide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dossiê de inteligência. Coluna de leitura central, índice lateral no desktop, fichas de fato x inferência marcadas por selo. */
+:root{
+  --bg:#ffffff; --surface:#f2f4f7; --line:#dfe3ea; --ink:#15181e; --muted:#5b6372;
+  --accent:#1f45c9; --accent-soft:#e6ecfc; --fact:#0b6646; --fact-soft:#e3f4ec; --inf:#8a4608; --inf-soft:#fbeedd; --warn:#b3261e; --warn-soft:#fbe7e5;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1115; --surface:#181b21; --line:#2a2f38; --ink:#e9ecf1; --muted:#9aa3b2;
+  --accent:#7d9bff; --accent-soft:#1c2542; --fact:#4cc995; --fact-soft:#13291f; --inf:#f0a95a; --inf-soft:#2e2112; --warn:#ff8a80; --warn-soft:#331614; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --surface:#181b21; --line:#2a2f38; --ink:#e9ecf1; --muted:#9aa3b2;
+  --accent:#7d9bff; --accent-soft:#1c2542; --fact:#4cc995; --fact-soft:#13291f; --inf:#f0a95a; --inf-soft:#2e2112; --warn:#ff8a80; --warn-soft:#331614; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:40px 80px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;font-family:var(--mono);font-size:12.5px}
+nav.toc p{margin:0 0 10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:t}
+nav.toc a{color:var(--muted);text-decoration:none;display:block;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--accent);border-left-color:var(--accent);outline:none}
+main{min-width:0}
+header.top{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:8px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:0 0 20px}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-family:var(--mono);font-size:12.5px;color:var(--muted);align-items:center}
+.tag{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap;vertical-align:2px}
+.tag.f{background:var(--fact-soft);color:var(--fact)}
+.tag.i{background:var(--inf-soft);color:var(--inf)}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+section{padding-top:48px;scroll-margin-top:16px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,32px);letter-spacing:-.01em;line-height:1.15;margin:0 0 6px;text-wrap:balance}
+h2 small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+h3{font-family:var(--display);font-weight:700;font-size:20px;margin:30px 0 8px;line-height:1.25}
+p{margin:0 0 14px;max-width:70ch}
+.lede{font-size:19px;color:var(--muted);max-width:66ch}
+ul.clean{margin:0 0 14px;padding-left:20px;max-width:72ch;display:grid;gap:6px}
+a{color:var(--accent);text-underline-offset:2px}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.src a{color:var(--muted)}
+
+/* síntese */
+.verdict{background:var(--ink);color:var(--bg);border-radius:6px;padding:28px 30px;margin-top:32px}
+.verdict h2{color:var(--bg)}
+.verdict h2 small{color:var(--bg)}
+.verdict ol{margin:14px 0 0;padding-left:22px;display:grid;gap:10px;max-width:78ch}
+.verdict li::marker{font-family:var(--mono);font-size:14px}
+
+/* ficha */
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:18px 0 8px}
+.ficha div{background:var(--bg);padding:14px 16px;min-width:0}
+.ficha dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ficha dd{margin:0;font-family:var(--display);font-weight:500;font-size:16px;line-height:1.35}
+
+/* linha do tempo */
+.timeline{list-style:none;margin:18px 0 0;padding:0;border-left:2px solid var(--line);display:grid;gap:18px}
+.timeline li{position:relative;padding-left:22px;max-width:72ch}
+.timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline .yr{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500;display:block}
+.timeline b{font-family:var(--display);font-weight:700}
+
+/* tabelas */
+.tbl{overflow-x:auto;margin:16px 0 8px;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;background:var(--surface);padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.y{font-family:var(--mono);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.r{font-weight:600}
+
+/* grades de cartões */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px}
+.card{border:1px solid var(--line);border-radius:6px;padding:18px 20px;min-width:0}
+.card h4{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 6px;line-height:1.3}
+.card p{font-size:15.5px;margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+.card.do{border-top:3px solid var(--fact)}
+.card.dont{border-top:3px solid var(--warn)}
+
+/* números */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.num{background:var(--surface);border-radius:6px;padding:16px}
+.num b{display:block;font-family:var(--display);font-weight:700;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums}
+.num span{font-size:14px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+
+/* organograma */
+.org{display:grid;gap:10px;margin:18px 0;font-family:var(--display)}
+.org .lvl{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.org .n{border:1px solid var(--line);border-radius:6px;padding:10px 14px;background:var(--bg);min-width:0;flex:1 1 200px}
+.org .n b{display:block;font-size:15.5px}
+.org .n span{font-family:var(--body);font-size:14px;color:var(--muted)}
+.org .n.key{border:2px solid var(--accent);background:var(--accent-soft)}
+.org .n.dot{border:2px dashed var(--fact)}
+.org .arrow{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:14px}
+
+/* vocabulário */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.chips span{font-family:var(--mono);font-size:13px;background:var(--surface);border:1px solid var(--line);padding:4px 10px;border-radius:99px}
+
+.quote{font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,30px);line-height:1.2;border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:22px 0;max-width:30ch;text-wrap:balance}
+.quote cite{display:block;font-family:var(--mono);font-size:12px;font-style:normal;color:var(--muted);margin-top:10px;font-weight:400}
+
+.callout{background:var(--accent-soft);border-radius:6px;padding:18px 20px;margin:18px 0;max-width:78ch}
+.callout p:last-child{margin-bottom:0}
+.callout.w{background:var(--warn-soft)}
+
+ol.steps{margin:14px 0;padding-left:0;list-style:none;counter-reset:s;display:grid;gap:12px;max-width:76ch}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:500;font-size:13px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;margin-top:2px}
+
+/* imagens */
+header.top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:32px;align-items:end}
+.hero-img{margin:0;border-radius:6px;overflow:hidden;background:var(--surface);aspect-ratio:4/5;max-width:100%}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:62% 20%;display:block}
+figcaption,.cap{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.4;margin-top:6px}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:18px 0 6px}
+.strip a{text-decoration:none;color:var(--ink);display:block;min-width:0}
+.strip img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;display:block;background:var(--surface)}
+.strip b{display:block;font-family:var(--display);font-size:14.5px;margin-top:8px;line-height:1.3}
+.strip a:hover b,.strip a:focus-visible b{color:var(--accent)}
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;margin:20px 0 8px}
+.case{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:var(--bg)}
+.case img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 30%;display:block;background:var(--surface)}
+.case .b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.case .meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.case h4{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.25;margin:0}
+.case p{font-size:14.5px;line-height:1.5;margin:0}
+.case .res{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);font-size:14px}
+.case .res b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px;font-weight:500}
+.org .n{display:flex;gap:12px;align-items:center}
+.org .n img,.org .n .ini{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none;background:var(--surface)}
+.org .n .ini{display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--muted)}
+.org .n div{min-width:0}
+.sj{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px 10px;margin:18px 0 22px}
+.sj figure{margin:0;min-width:0}
+.sj img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;display:block;background:var(--surface)}
+.sj .big{grid-column:span 4;grid-row:span 2;display:flex;flex-direction:column}
+.sj .big img{flex:1 1 auto;aspect-ratio:auto;min-height:0}
+.sj .sm{grid-column:span 2}
+.sj .md{grid-column:span 3}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+.duo figure{margin:0;min-width:0}
+.duo img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:4px;display:block;background:var(--surface)}
+@media (max-width:700px){
+  header.top{grid-template-columns:minmax(0,1fr)}
+  .hero-img{aspect-ratio:4/3;order:-1}
+  .sj{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sj .big,.sj .md,.sj .sm{grid-column:span 2;grid-row:auto}
+  .sj .big img{aspect-ratio:3/2}
+}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line)}
+footer ol{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:20px;display:grid;gap:4px;word-break:break-word}
+footer a{color:var(--muted)}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:0;padding-block:24px 64px}
+  nav.toc{position:static;margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:18px}
+  nav.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .verdict{padding:22px 20px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <p>Índice</p>
+  <ol>
+    <li><a href="#sintese">Síntese</a></li>
+    <li><a href="#quem">Quem é</a></li>
+    <li><a href="#cases">O que construiu</a></li>
+    <li><a href="#parceiros">Com quem deu resultado</a></li>
+    <li><a href="#pensa">Como pensa</a></li>
+    <li><a href="#qualidades">Qualidades e pontos cegos</a></li>
+    <li><a href="#entorno">Quem está ao redor</a></li>
+    <li><a href="#saojoao">São João e a dot.</a></li>
+    <li><a href="#apresentar">Como apresentar</a></li>
+    <li><a href="#lacunas">Lacunas</a></li>
+    <li><a href="#fontes">Fontes</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <div>
+  <p class="eyebrow">dot.promo · inteligência de cliente · Grupo Boticário · 29/09/2026</p>
+  <h1>Renata Gomide</h1>
+  <p class="role">VP de Marketing do Grupo Boticário. No grupo desde 2015. Responde por mais de 14 marcas e um time de cerca de 900 pessoas.</p>
+  <div class="legend">
+    <span><span class="tag f">Fato</span> com fonte pública</span>
+    <span><span class="tag i">Inferência</span> leitura nossa, confirmar antes de usar</span>
+    <span><span class="tag w">Atenção</span> risco ou contradição</span>
+  </div>
+  </div>
+  <figure class="hero-img"><img src="img/renata-01-retrato-forbes.jpg" alt="Retrato de Renata Gomide"></figure>
+</header>
+
+<section id="sintese">
+<div class="verdict">
+  <h2><small>Síntese para quem vai entrar na sala</small>O que precisa estar na cabeça antes da reunião</h2>
+  <ol>
+    <li>Ela é a executiva de marketing mais premiada do varejo de beleza no Brasil agora: Caboré 2024, Forbes e jurada do Effie. Ela não se impressiona com execução bem feita. Parte do princípio de que o básico está garantido e já disse que o técnico é o mínimo necessário.</li>
+    <li>Ela pensa em <b>jornada</b>, não em ação. Toda ideia precisa responder a três perguntas: onde entra no caminho do consumidor, o que provoca de conversa digital e qual métrica prova que funcionou.</li>
+    <li>Ela vem do varejo (Grupo Pão de Açúcar) e trata o Boticário como marca física: mais de 4 mil lojas. Loja, franqueado e revendedora são público para ela, não só canal.</li>
+    <li>Regionalidade é crença declarada dela, não modismo. Ela cita o São João e Parintins como fundamentais e rejeita a comunicação única e nacional. É o território onde a dot. tem autoridade real.</li>
+    <li>Ela opera com teste, corte e escala: pilotos pequenos, ajuste em tempo real e mesa de performance. Proposta modular, com gatilhos de decisão, vence proposta grande do tipo tudo ou nada.</li>
+    <li>O feedback do São João 2026 cobrou "análise dos dados" e "casa x cadastros". Isso é exatamente a régua dela. A dot. entra na sala com número ou não entra.</li>
+  </ol>
+</div>
+</section>
+
+<section id="quem">
+<h2><small>01 · Perfil</small>Quem é</h2>
+<dl class="ficha">
+  <div><dt>Nome completo</dt><dd>Renata Araujo Gomide de Carvalho</dd></div>
+  <div><dt>Cargo hoje</dt><dd>VP de Marketing (formalmente VP de Consumer), CMO do grupo</dd></div>
+  <div><dt>Chefe</dt><dd>Fernando Modé, CEO desde mar/2021 <span class="tag i">Inferência</span></dd></div>
+  <div><dt>Escopo</dt><dd>Branding, comunicação, produto, loyalty e pricing de todas as marcas de consumo</dd></div>
+  <div><dt>Formação</dt><dd>Administração (FAAP), Marketing (ESPM), MBA em Gestão Estratégica (FGV)</dd></div>
+  <div><dt>Origem</dt><dd>Varejo alimentar: marketing no Grupo Pão de Açúcar antes de 2015</dd></div>
+</dl>
+<p class="src">Fontes: LinkedIn público, Effie/Meio &amp; Mensagem, Exame, Abramark (fev/2026), Fast Company (abr/2025). O título aparece como "VP de Consumer", "VP de Marketing" e "CMO" conforme o veículo. Confirmar a grafia no LinkedIn antes de imprimir qualquer material.</p>
+
+<h3>Trajetória</h3>
+<ol class="timeline">
+  <li><span class="yr">até 2014/15</span><b>Grupo Pão de Açúcar</b>, gerente de marketing. Fez patrocínio esportivo (corrida) cedo na carreira. As fontes divergem sobre o tempo de casa: o LinkedIn diz 2009 a 2014, o Meio &amp; Mensagem fala em 13 anos e o Caboré em 5. <span class="tag w">Divergência</span></li>
+  <li><span class="yr">2015</span><b>Entra no Boticário para construir a Eudora</b>, então uma marca pouco conhecida. Criou o bordão "Chega lá e Eudora", usou influenciadores e inventou o Dia do Batom. A marca cresceu entre 60% e 80% nos primeiros anos e virou a marca mais multicanal do grupo.</li>
+  <li><span class="yr">2020</span><b>Assume Marketing e Vendas da Quem Disse, Berenice?</b>, a marca de maquiagem das lojas de shopping.</li>
+  <li><span class="yr">mar/2021</span><b>Diretora Executiva de Branding e Comunicação de todas as marcas</b>, na reestruturação que trouxe Fernando Modé para o comando e ampliou o grupo de 4 para 7 vice-presidências.</li>
+  <li><span class="yr">nov/2022</span><b>VP de Consumer.</b> No mesmo ano é eleita Profissional de Marketing do Ano pelo Propmark.</li>
+  <li><span class="yr">2023 a 2025</span><b>Consagração:</b> Women to Watch (2023), Forbes 10 melhores CMOs (2023), Caboré Profissional de Marketing (2024), Forbes Mulheres Mais Poderosas (2025), jurada do Effie Brasil (2025) e Hall da Fama da Abramark.</li>
+  <li><span class="yr">2025 a 2026</span><b>Fase de escala com eficiência.</b> O grupo foi Anunciante do Ano no Effie 2025, levou Ouro em Cannes 2025 e três Leões em 2026. Em paralelo, o CEO fala em "apertar parafusos" num mercado parado.</li>
+</ol>
+
+<h3>Onde ela fala em público</h3>
+<p>As oito falas usadas neste dossiê. As de 2026 são as mais recentes sobre como ela pensa jornada, regionalidade e mídia. Assistir às duas primeiras antes da reunião.</p>
+<div class="strip">
+  <a href="https://www.youtube.com/watch?v=B7sN5eXb-PM"><img src="img/renata-07-yt-jcdtalks.jpg" alt="Renata Gomide no JCDtalks"><b>JCDtalks · JCDecaux</b><span class="cap">jul/2026 · jornada, out-of-home, Natal 2025, São João</span></a>
+  <a href="https://www.youtube.com/watch?v=8xh-oQnwVRA"><img src="img/renata-06-yt-mckinsey-talks.jpg" alt="Renata Gomide no McKinsey Talks"><b>McKinsey Talks · Brasil Journal</b><span class="cap">jul/2026 · marketing como motor de crescimento, regionalidade</span></a>
+  <a href="https://www.youtube.com/watch?v=ahwDGhjqb_g"><img src="img/renata-09-yt-10mais10.jpg" alt="Renata Gomide no programa 10+10"><b>10+10 · btrvarese</b><span class="cap">mar/2026 · mesa de performance, CRM, IA</span></a>
+  <a href="https://www.youtube.com/watch?v=nutuVgJzHJQ"><img src="img/renata-10-yt-perfil-estadao.jpg" alt="Renata Gomide no Perfil Profissional do Estadão"><b>Perfil Profissional · Estadão Blue Studio</b><span class="cap">nov/2025 · carreira, tecnologia como meio</span></a>
+  <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0"><img src="img/renata-12-yt-entrevista.jpg" alt="Renata Gomide em entrevista ao Estadão"><b>Entrevista · Estadão</b><span class="cap">out/2025 · ganha-ganha com parceiros, Ovo de Melancia</span></a>
+  <a href="https://www.youtube.com/watch?v=qor6F6d1Htg"><img src="img/renata-11-yt-desmarketize-se.jpg" alt="Renata Gomide no podcast Desmarketize-se"><b>Desmarketize-se #09</b><span class="cap">dez/2023 · o que não funciona, escassez e criatividade</span></a>
+  <a href="https://www.youtube.com/watch?v=GVrfj5PNXJk"><img src="img/renata-08-yt-midia-e-marketing.jpg" alt="Renata Gomide no programa Mídia e Marketing"><b>Mídia &amp; Marketing · UOL</b><span class="cap">ago/2023 · beleza, padrões e diversidade</span></a>
+</div>
+</section>
+
+<section id="cases">
+<h2><small>02 · Histórico</small>O que ela construiu</h2>
+<p class="lede">Os cases que a definem são de dois tipos: construção emocional de marca (datas comemorativas com a AlmapBBDO) e causa com impacto cultural (GUT, Centro de Pesquisa da Mulher). Por baixo dos dois roda uma máquina de comunidade, teste e performance que ela mesma montou dentro de casa.</p>
+<div class="cases">
+<article class="case"><img src="img/case-2025-eudora-chega-la-e-eudora.jpg" alt="Desafio Chega lá e Eudora" loading="lazy"><div class="b"><span class="meta">2015 em diante · Eudora</span><h4>Construção da Eudora do zero</h4><p>Bordão "Chega lá e Eudora", influenciadores e a criação do Dia do Batom. A imagem é do desafio com Juliana Paes.</p><p class="res"><b>Resultado</b>Crescimento de 60% a 80% nos primeiros anos. Hoje é a marca mais multicanal do grupo.</p></div></article>
+<article class="case"><img src="img/case-2022-cordeis-01.jpg" alt="Campanha com Vitória Rodrigues" loading="lazy" style="object-position:50% 15%"><div class="b"><span class="meta">2022 · O Boticário · AlmapBBDO</span><h4>Cordéis, com Vitória Rodrigues</h4><p>Histórias de mulheres do Nordeste contadas em cordel, para Liz Sublime.</p><p class="res"><b>Resultado</b>Sem métrica pública. É o precedente de linguagem nordestina na marca.</p></div></article>
+<article class="case"><img src="img/case-2022-black-dragons-time.jpg" alt="Time feminino Black Dragons" loading="lazy"><div class="b"><span class="meta">2022 · O Boticário · games</span><h4>Black Dragons e Avakin</h4><p>Patrocínio do time feminino de e-sports e presença dentro do jogo Avakin Life.</p><p class="res"><b>Resultado</b>Ela diz que o Boticário virou a marca mais reconhecida no jogo.</p></div></article>
+<article class="case"><img src="img/case-2022-botiverso.jpg" alt="Identidade do Botiverso" loading="lazy" style="object-fit:contain"><div class="b"><span class="meta">2022 e 2023 · O Boticário · interno</span><h4>Botiverso</h4><p>Aceleradora de creators no TikTok: 10 em 2022, 300 vagas em 2023, prêmio de R$ 50 mil e protagonismo em campanha.</p><p class="res"><b>Resultado</b>Sem métrica pública. Base da comunidade que depois cocriou produtos.</p></div></article>
+<article class="case"><img src="img/case-2024-egeo-melancia.jpg" alt="Egeo Melancia" loading="lazy"><div class="b"><span class="meta">2024 · Egeo · interno</span><h4>Egeo Melancia</h4><p>A comunidade do TikTok pediu e votou no cheiro. A ideia apareceu em 2023 e o lançamento foi em maio de 2024.</p><p class="res"><b>Resultado</b>Mais vendido do e-commerce em 10 horas, 1,5 mi de views orgânicas e 70% das menções à marca em 3 meses.</p></div></article>
+<article class="case"><img src="img/case-2024-tormenta-02.jpg" alt="Frame do filme Tormenta" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · AlmapBBDO</span><h4>Tormenta, Dia das Mães</h4><p>A relação de uma mãe com o filho adolescente. Ela diz que foi preciso coragem para aprovar.</p><p class="res"><b>Resultado</b>Recorde de vendas da data. Prêmios em Cannes, Effie e Clio.</p></div></article>
+<article class="case"><img src="img/case-2024-dia-dos-pais-01.jpg" alt="Frame do filme 5 dias" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · AlmapBBDO</span><h4>5 dias?, Dia dos Pais</h4><p>Campanha pela ampliação da licença-paternidade.</p><p class="res"><b>Resultado</b>Bronze em Glass, Cannes 2024.</p></div></article>
+<article class="case"><img src="img/case-2024-ovo-melancia-unboxing-01.jpg" alt="Convenção de franqueados no unboxing recorde" loading="lazy"><div class="b"><span class="meta">ago/2024 · O Boticário · interno</span><h4>Ovo de Melancia e o unboxing recorde</h4><p>Viu a conversa no TikTok e lançou em 1 mês. Testou no e-commerce e fez o maior unboxing simultâneo na convenção de franqueados, na Bienal, em 21/08/2024.</p><p class="res"><b>Resultado</b>Esgotou em 4 dias no e-commerce. Recorde Guinness.</p></div></article>
+<article class="case"><img src="img/case-2024-casa-214-madonna.jpg" alt="Narcisa Tamborindeguy e o prédio do camarote" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · SoWhat</span><h4>Camarote do show da Madonna</h4><p>Camarote na casa de Narcisa Tamborindeguy, em Copacabana. Antes teve Taylor Swift e Lollapalooza.</p><p class="res"><b>Resultado</b>Sem métrica pública. É o precedente de experiência física de alto impacto.</p></div></article>
+<article class="case"><img src="img/case-2025-vult-respeita-meu-capelo-01.jpg" alt="Respeita Meu Capelo" loading="lazy"><div class="b"><span class="meta">2025 · Vult · GUT</span><h4>Respeita Meu Capelo</h4><p>Movimento de representatividade na formatura, a partir do capelo, com design da marca baiana Dendezeiro.</p><p class="res"><b>Resultado</b>Bronze em Glass, Cannes 2025. Virou lei municipal em Salvador.</p></div></article>
+<article class="case"><img src="img/case-2025-pesquise-meu-corpo-01.jpg" alt="Pesquise Meu Corpo" loading="lazy"><div class="b"><span class="meta">2025 · Grupo · GUT</span><h4>Pesquise o Meu Corpo</h4><p>Criação do Centro de Pesquisa da Mulher, com filme estrelado por Deborah Secco.</p><p class="res"><b>Resultado</b>Ouro em ODS, Cannes 2025.</p></div></article>
+<article class="case"><img src="img/case-2025-pacto-skincare-01.jpg" alt="Pacto Skincare Responsável" loading="lazy"><div class="b"><span class="meta">out/2025 · Grupo · GUT</span><h4>Pacto Skincare Responsável</h4><p>Quatro marcas contra o skincare precoce, com Angélica e exibição no Fantástico.</p><p class="res"><b>Resultado</b>Selo "recomendado para peles adultas" nos produtos.</p></div></article>
+<article class="case"><img src="img/case-2025-natal-esteiras-01.jpg" alt="Kits de Natal na esteira de bagagem de Guarulhos" loading="lazy"><div class="b"><span class="meta">Natal 2025 · O Boticário · Pros</span><h4>Presentes nas esteiras de aeroporto</h4><p>"Presenteie com Amor": kits na esteira de bagagem de Guarulhos, cheiro de Malbec e out-of-home massivo com digital e TV.</p><p class="res"><b>Resultado</b>Segundo ela, o maior crescimento de negócio e de recall da data.</p></div></article>
+<article class="case"><img src="img/case-2026-despedida-01.jpg" alt="Frame do filme Despedidas" loading="lazy"><div class="b"><span class="meta">2026 · O Boticário · AlmapBBDO</span><h4>Despedidas, Dia das Mães</h4><p>O ninho vazio, a partir de dado social: 64% da conversa sobre o tema é de tristeza.</p><p class="res"><b>Resultado</b>Lançada em abril/2026.</p></div></article>
+<article class="case"><img src="img/case-2026-her-code-01.jpg" alt="Code Her com Marina Sena" loading="lazy"><div class="b"><span class="meta">2026 · O Boticário · AlmapBBDO</span><h4>Code Her, com Marina Sena</h4><p>Bot contra a manipulação de imagens de mulheres por IA. Pela fala dela, o lançamento teve uma hora de bloqueio de mídia antes de escalar com influenciadores.</p><p class="res"><b>Resultado</b>Cannes 2026: 1 Prata (Social &amp; Creator) e 2 Bronzes.</p></div></article>
+</div>
+<p>Além dos cases abaixo, o grupo foi Anunciante do Ano no Effie Brasil 2025, com 10 cases premiados feitos com Almap, W+K e GUT. O Boticário é a marca mais premiada da história do Effie Brasil.</p>
+<p class="src">Fontes: Meio &amp; Mensagem, Exame, Experience Club, Marcas pelo Mundo, Propmark, Roastbrief, Estadão e palestra JCDecaux (jul/2026). A lista completa está no rodapé. Onde aparece "sem métrica pública", o dado existe dentro do grupo mas não foi divulgado.</p>
+</section>
+
+<section id="parceiros">
+<h2><small>03 · Parceiros</small>Com quem deu mais resultado</h2>
+<p>O ranking abaixo conta prêmios e presença em cases. Não existe ranking público de venda por agência. <span class="tag i">Inferência</span></p>
+<div class="grid2">
+  <div class="card"><h4>1. AlmapBBDO · o parceiro de coração</h4><p>Atende o Boticário desde 2004 e criou Tormenta, 5 dias?, Despedidas, Code Her e Cordéis. Teve 55 menções de finalista no Effie 2025 e ganhou Siàge e datas da Eudora. Para ela, a Almap é a guardiã da emoção nas grandes datas.</p></div>
+  <div class="card"><h4>2. GUT · o braço de causa</h4><p>Fez Respeita Meu Capelo, Pesquise o Meu Corpo e o Pacto Skincare. É com ela que o grupo ganha Leão de Glass e ODS, ou seja, reputação e relevância cultural.</p></div>
+  <div class="card"><h4>3. A casa · a máquina interna</h4><p>Comunidade, creators, CRM, IA e teste rápido ficam com o time próprio: o grupo tem mais de 2 mil pessoas em tecnologia. Ela diz que não usa agência para o que exige escala e corte rápido. Os melhores números de retorno direto (Egeo Melancia, Ovo) nasceram aqui.</p></div>
+  <div class="card"><h4>4. Experiência · SoWhat, Pros, Universal Music</h4><p>SoWhat fez os camarotes de show. A Pros assinou a ativação nas esteiras de aeroporto do Natal 2025, que ela contou no palco da JCDecaux como o caso de maior crescimento. A Universal Music está no terceiro ano de parceria de shows no São João.</p></div>
+</div>
+<div class="callout"><p><b>Leitura crítica.</b> Os parceiros que ela exibe publicamente são os que geram <b>conversa, prêmio e prova</b>. Live marketing não aparece em nenhuma fala pública dela como protagonista. A dot. hoje está no lugar de fornecedor de execução regional. Para subir de patamar, precisa ser vista como quem gera conversa e dado, não só casa montada.</p></div>
+</section>
+
+<section id="pensa">
+<h2><small>04 · Mentalidade</small>Como ela pensa</h2>
+<p class="lede">Sintetizado a partir de oito falas dela em vídeo (2022 a jul/2026) e de cinco entrevistas escritas. Quase tudo abaixo é <span class="tag f">Fato</span>, dito por ela.</p>
+
+<div class="grid2">
+  <div class="card"><h4>Jornada em looping, não funil</h4><p>Ela desenha tudo a partir da jornada do consumidor e diz que não existe funil, existe um ciclo. Cada meio precisa de papel e de métrica definidos antes da criação. A fórmula dela: dominar audiência, jornada e meio.</p></div>
+  <div class="card"><h4>Criativo acima do meio</h4><p>A mídia constrói marca, mas o criativo é o que faz a diferença. A atenção é escassa e a marca precisa surpreender. A ideia forte nasce da estratégia, tangibiliza o posicionamento e depois vira conteúdo social.</p></div>
+  <div class="card"><h4>Escuta obsessiva</h4><p>Ela diz ler o que as pessoas escrevem sobre as marcas. Social listening, pedidos em loja e comunidade viram produto. As estratégias vêm de fora para dentro. A Exame a chamou de caçadora de tendências.</p></div>
+  <div class="card"><h4>Medição que ela usa</h4><p>Recall de marca, consideração, crescimento de negócio e base ativa. Em causas, mede profundidade de conversa e transformação cultural. Valoriza mídia que entrega atribuição.</p></div>
+  <div class="card"><h4>Teste, corte e escala</h4><p>Roda mais de 15 campanhas de CRM ao mesmo tempo numa mesa de performance, acelera o que funciona e corta o resto. Produto que levava 2 anos sai em 1 mês. Testa num canal pequeno e só depois leva para as lojas.</p></div>
+  <div class="card"><h4>Estruturante x hype</h4><p>Ela separa o que é estruturante (Centro de Pesquisa da Mulher, ciclos da vida) do que é hype (Ovo de Melancia). O hype ela testa e só mantém se continuar funcionando.</p></div>
+  <div class="card"><h4>Marca física</h4><p>Ela fala do Boticário como uma marca muito física. Loja é essencial em data comemorativa, kit e mensagem emocional. Usa a convenção de franqueados como palco, como no unboxing nacional com telão.</p></div>
+  <div class="card"><h4>Regional é obrigação</h4><p>Primeiro vem a grande mensagem nacional e depois a conexão regional, sem tropicalizar. Existe estrutura de marketing regional. Ela cita São João e Parintins, e defende estar presente do jeito certo, não uma vez só.</p></div>
+  <div class="card"><h4>IA como meio</h4><p>Usa consumidor sintético (personas-agentes) para pesquisar e diz ter economizado milhões em conteúdo. O diferencial, para ela, é um time que decide bem onde investir e sempre pergunta qual é o risco.</p></div>
+  <div class="card"><h4>Liderança com guarda-corpos</h4><p>Dá autonomia dentro de limites claros do que é inegociável para a marca. Líder tem que abrir a mão. Valoriza colaboração entre áreas acima da excelência isolada de cada uma. Para campanhas sensíveis, diz que é preciso coragem.</p></div>
+</div>
+
+<div class="duo">
+  <figure><img src="img/marca-fisica-boticario-lab.jpg" alt="Fachada da loja O Boticário Lab" loading="lazy"><figcaption>Loja-conceito O Boticário Lab, em Pinheiros (SP). Para ela, o Boticário é uma marca muito física.</figcaption></figure>
+  <figure><img src="img/case-2025-natal-esteiras-02.jpg" alt="Kit de Natal na esteira de bagagem" loading="lazy" style="object-position:50% 60%"><figcaption>Natal 2025: o presente chega na esteira de bagagem. É o tipo de surpresa física que ela cita como exemplo.</figcaption></figure>
+  <figure><img src="img/case-2024-ovo-melancia-unboxing-02.jpg" alt="Kit do unboxing recorde" loading="lazy"><figcaption>Kit do unboxing recorde na convenção de franqueados. Franqueado também é público.</figcaption></figure>
+</div>
+
+<blockquote class="quote">"O Brasil tem quatro países dentro de um país só."<cite>Renata Gomide · McKinsey / Brasil Journal · 15/07/2026</cite></blockquote>
+
+<h3>Vocabulário dela</h3>
+<p>Usar essas palavras naturalmente, sem forçar, sinaliza que a dot. fala a língua da casa.</p>
+<div class="chips">
+  <span>jornada</span><span>looping</span><span>complementaridade</span><span>de fora para dentro</span><span>escuta ativa</span><span>cocriação</span><span>comunidade</span><span>relevância cultural</span><span>ecossistema de beleza</span><span>recall</span><span>base ativa</span><span>tracionar</span><span>escalar</span><span>testar</span><span>estruturante x hype</span><span>guarda-corpos</span><span>atenção escassa</span><span>surpreender</span><span>coragem</span><span>consistência</span><span>ganha-ganha</span>
+</div>
+
+<h3>O que ela rejeita</h3>
+<ul class="clean">
+  <li>Copiar concorrente ou seguir o mercado sem entender o próprio consumidor.</li>
+  <li>Colocar dinheiro onde o consumidor não está olhando. Ela pede rigor extremo para entender o que gera valor.</li>
+  <li>Marca que fala do que quer em vez do que as pessoas querem conversar.</li>
+  <li>Comunicação única e nacional, sem regionalizar.</li>
+  <li>Tecnologia adotada por moda.</li>
+  <li>Reforçar padrão estético. Ela diz que a indústria da beleza fez isso por décadas e que a marca tem a obrigação de desfazer.</li>
+  <li>Áreas excelentes que trabalham em silos.</li>
+  <li>Repetir a mesma ação todo ano sem se renovar. <span class="tag w">Atenção dot.</span> O São João está no 10º ano.</li>
+</ul>
+</section>
+
+<section id="qualidades">
+<h2><small>05 · Análise crítica</small>Qualidades e pontos cegos</h2>
+<div class="grid2">
+  <div class="card do"><h4>Qualidades</h4>
+    <p><b>Visão de varejo e de marca ao mesmo tempo.</b> Poucos CMOs juntam chão de loja (GPA, 4 mil lojas) com construção emocional premiada. Ela entende de conversão e de emoção.</p>
+    <p><b>Construtora.</b> Fez a Eudora do zero. Sabe criar do nada, não só administrar marca pronta.</p>
+    <p><b>Velocidade com método.</b> Levou o grupo do planejamento trienal para o tempo real, sem perder a construção de longo prazo.</p>
+    <p><b>Coragem calibrada.</b> Aprova temas sensíveis (licença-paternidade, ninho vazio, cabelo) e ganha com eles.</p>
+    <p><b>Líder de gente.</b> Dá autonomia com limites e valoriza diversidade de time. Os diretores dela cresceram dentro de casa.</p>
+  </div>
+  <div class="card dont"><h4>Pontos cegos e tensões</h4>
+    <p><b>Live marketing não está no discurso dela.</b> Ela fala de TV, out-of-home, digital, creators e loja. Evento aparece como amplificador, nunca como centro. <span class="tag i">Inferência</span></p>
+    <p><b>Pressão por eficiência.</b> O CEO fala em "apertar parafusos". O GMV cresceu 6,7% em 2025, bem abaixo dos 19% de 2024. Todo real investido vai ser questionado.</p>
+    <p><b>Disputa apertada pela liderança.</b> Pelo Bradesco BBI com NielsenIQ, o Boticário tem 15,5% de participação contra 15,7% de Natura e Avon, a menor diferença da série. Ela precisa de prova de crescimento, não de beleza.</p>
+    <p><b>Internalização.</b> O que dá escala e dado, ela trouxe para dentro de casa. Agência que só executa corre o risco de virar fornecedor substituível.</p>
+    <p><b>Distância do regional.</b> O São João é conduzido por Franquias e pelo marketing regional. Ela pode não conhecer o trabalho da dot. em detalhe. <span class="tag i">Inferência</span></p>
+  </div>
+</div>
+</section>
+
+<section id="entorno">
+<h2><small>06 · Mapa de poder</small>Quem está ao redor dela</h2>
+<p>Não há registro público de quem são as "pessoas importantes" que entraram agora no relacionamento com a dot. O mapa abaixo mostra quem existe hoje no entorno de marketing. Os vínculos de reporte são <span class="tag i">Inferência</span>.</p>
+<div class="org" role="list">
+  <div class="lvl"><div class="n" role="listitem"><img src="img/pessoa-fernando-mode.jpg" alt="Fernando Modé" loading="lazy"><div><b>Fernando Modé</b><span>CEO desde 2021</span></div></div></div>
+  <div class="arrow">responde a</div>
+  <div class="lvl"><div class="n key" role="listitem"><img src="img/renata-02-retrato-mma.jpg" alt="Renata Gomide" loading="lazy"><div><b>Renata Gomide</b><span>VP de Marketing / Consumer</span></div></div></div>
+  <div class="arrow">abaixo dela (provável)</div>
+  <div class="lvl">
+    <div class="n" role="listitem"><img src="img/pessoa-marcela-de-masi.jpg" alt="Marcela De Masi" loading="lazy"><div><b>Marcela De Masi</b><span>Diretora-executiva de Branding e Comunicação do grupo. Jurada de Creative Commerce em Cannes 2026</span></div></div>
+  </div>
+  <div class="arrow">diretores por marca</div>
+  <div class="lvl">
+    <div class="n" role="listitem"><img src="img/pessoa-carolina-carrasco.jpg" alt="Carolina Carrasco" loading="lazy"><div><b>Carolina Carrasco</b><span>Branding e Comunicação de O Boticário e Quem Disse, Berenice? (desde nov/2024)</span></div></div>
+    <div class="n" role="listitem"><img src="img/pessoa-giovana-orlandeli.jpg" alt="Giovana Orlandeli" loading="lazy"><div><b>Giovana Orlandeli</b><span>Marketing de Eudora, TRUSS, Vult e O.U.i (desde dez/2025, time de 70 pessoas)</span></div></div>
+  </div>
+  <div class="arrow">quem opera o São João hoje</div>
+  <div class="lvl">
+    <div class="n dot" role="listitem"><span class="ini" aria-hidden="true">JR</span><div><b>Juliana Razini</b><span>Diretora de Franquias de O Boticário, porta-voz do São João</span></div></div>
+    <div class="n dot" role="listitem"><img src="img/pessoa-jacqueline-tobaru.jpg" alt="Jacqueline Tobaru" loading="lazy"><div><b>Jacqueline Tobaru</b><span>Diretora de marketing de Franquias (regional), porta-voz em Campina Grande 2025</span></div></div>
+  </div>
+</div>
+<div class="callout w"><p><b>O que isso significa.</b> Se a Renata passou a olhar o São João diretamente, a conversa subiu dois degraus: sai de Franquias e regional e chega à VP que responde pela marca inteira. O critério de avaliação muda de "a casa ficou pronta e bonita" para "o que isso fez pela marca e pelo negócio". Se as pessoas novas forem Marcela De Masi ou Carolina Carrasco, vale o mesmo: são executivas de branding formadas no método dela.</p></div>
+</section>
+
+<section id="saojoao">
+<h2><small>07 · O território da dot.</small>O Boticário no São João</h2>
+<div class="nums">
+  <div class="num"><b>10 anos</b><span>de São João em 2026, com o conceito "O São João é a nossa casa"</span></div>
+  <div class="num"><b>+30%</b><span>de investimento em 2026 sobre 2025</span></div>
+  <div class="num"><b>13</b><span>municípios em 2026, com meta de ~9,3 mi de pessoas</span></div>
+  <div class="num"><b>2,5 bi</b><span>de impactos acumulados na década (dado do grupo)</span></div>
+  <div class="num"><b>26 mi</b><span>de clientes ativos no programa de fidelidade do grupo</span></div>
+</div>
+<div class="sj">
+  <figure class="big"><img src="img/sj-2026-casa-boti-caruaru-01.jpg" alt="Fachada noturna da Casa Boti na Estação Ferroviária de Caruaru" loading="lazy"><figcaption>Casa Boti na antiga Estação Ferroviária de Caruaru, 2026</figcaption></figure>
+  <figure class="sm"><img src="img/sj-2026-casa-boti-caruaru-02.jpg" alt="Ambiente A beleza da mulher nordestina" loading="lazy"><figcaption>Ambiente "A beleza da mulher nordestina"</figcaption></figure>
+  <figure class="sm"><img src="img/sj-2026-casa-boti-caruaru-03.jpg" alt="Camarim com cobogós" loading="lazy"><figcaption>Camarim com cobogós, Caruaru 2026</figcaption></figure>
+  <figure class="md"><img src="img/sj-2026-o-sao-joao-e-a-nossa-casa-01.jpg" alt="Render da fachada da Casa São João 2026" loading="lazy"><figcaption>Render da fachada 2026: "a marca preferida do São João"</figcaption></figure>
+  <figure class="md"><img src="img/sj-2026-casa-boti-campina-grande.jpg" alt="Render da Casa do Boti em Campina Grande 2026" loading="lazy"><figcaption>Render da Casa do Boti, Campina Grande 2026</figcaption></figure>
+  <figure class="md"><img src="img/sj-2025-casa-boti-campina-grande-01.jpg" alt="Casa do Boti em Campina Grande 2025" loading="lazy"><figcaption>Casa do Boti, Campina Grande 2025</figcaption></figure>
+  <figure class="md"><img src="img/sj-2025-casa-boti-campina-grande-02.jpg" alt="Render da Casa do Boti no Spazzio" loading="lazy"><figcaption>Render da Casa do Boti no Spazzio, Campina Grande 2025</figcaption></figure>
+</div>
+<ul class="clean">
+  <li>A Casa Boti de Caruaru ocupa a antiga Estação Ferroviária, com projeto de Zé Vagner, identidade de Jota Zeroff e shows da Universal Music (Elba Ramalho, Solange Almeida, Lucy Alves). <span class="tag f">Fato</span></li>
+  <li>A Kantar aponta o Boticário como marca de beleza preferida do São João no Nordeste. O grupo divulga, mas o estudo não é público. <span class="tag f">Fato</span></li>
+  <li>A Promoview cita a dot. como agência do São João e como Melhor Agência de Live Marketing do Nordeste no Prêmio Live 2024. <span class="tag f">Fato</span></li>
+  <li>A Renata cita o São João como exemplo de regionalização bem feita: metrô adesivado e extrapolação para o digital (palestra JCDecaux, jul/2026). <span class="tag f">Fato</span></li>
+  <li>Concorrem pela atenção no mesmo festival: Nestlé, LUX, Electrolux, Bradesco e Riachuelo. <span class="tag f">Fato</span></li>
+</ul>
+<div class="callout"><p><b>A ponte com o feedback de julho.</b> O documento que o regional entregou sobre o São João 2026 pede "análise dos dados" como primeiro combinado e repete "casa x cadastros" em 5 das 6 praças, sem trazer um único número. A régua da Renata é recall, base ativa e crescimento de negócio. Os dois apontam para o mesmo lugar: <b>a casa precisa virar cadastro, o cadastro precisa virar base ativa no programa de fidelidade e isso precisa virar venda na loja da praça.</b> Quem chegar com essa conta montada define o terreno da conversa.</p></div>
+</section>
+
+<section id="apresentar">
+<h2><small>08 · Playbook</small>Como apresentar para ela</h2>
+
+<h3>Estrutura de apresentação na língua dela</h3>
+<ol class="steps">
+  <li><div><b>Comece pelo consumidor, não pela dot.</b> O que o público do São João fala, faz e quer, com escuta real: social listening das praças, falas de visitantes, pedidos em loja. As estratégias vêm de fora para dentro.</div></li>
+  <li><div><b>Posicione o evento na jornada.</b> Mostre onde a casa entra no ciclo (descoberta, experimentação, cadastro, recompra) e qual é o papel de cada ponto de contato físico e digital.</div></li>
+  <li><div><b>Uma ideia com tensão cultural, não um cenário.</b> Algo que tangibilize "O São João é a nossa casa" e gere conversa própria. Ela premia coragem com propósito. Pense em Cordéis, que é linguagem do Nordeste com verdade.</div></li>
+  <li><div><b>Plano de amplificação.</b> Como o físico vira conteúdo, creator e social. Nasce no físico e escala no digital.</div></li>
+  <li><div><b>Franqueado e loja como público.</b> Como a ação leva fluxo e venda para as lojas da praça, e como o franqueado participa.</div></li>
+  <li><div><b>Métricas definidas antes, com linha de base.</b> Cadastros por praça, conversão em base ativa do fidelidade, cupom resgatado na loja, recall regional e mídia ganha. Com meta e custo por resultado.</div></li>
+  <li><div><b>Modular, com gatilhos.</b> Piloto numa praça, leitura em tempo real e escala onde funcionar. Mostre o que se corta se o indicador não vier.</div></li>
+  <li><div><b>Fechamento em ganha-ganha.</b> Transparência de custo, o aprendizado de 2026 assumido com clareza e o que muda no processo.</div></li>
+</ol>
+
+<div class="grid2">
+  <div class="card do"><h4>Fazer</h4>
+    <p>Abrir com um dado do consumidor que ela ainda não conhece.</p>
+    <p>Mostrar os números do São João 2026 por praça, inclusive os ruins.</p>
+    <p>Falar de Nordeste com propriedade de quem mora lá: praça por praça, diferença entre Caruaru e Campina, e não "o Nordeste".</p>
+    <p>Trazer acessibilidade como padrão de projeto. É causa dela, virou lei com Vult e foi apontada como falha no feedback.</p>
+    <p>Ser curto. Ela opera com atenção escassa e pede surpresa.</p>
+  </div>
+  <div class="card dont"><h4>Evitar</h4>
+    <p>Abrir com credencial da agência, portfólio ou prêmio.</p>
+    <p>Vender "ativação", "estande" ou "experiência imersiva" sem dizer o que isso gera.</p>
+    <p>Repetir o formato de casa pelo 11º ano sem renovação. Ela critica exatamente isso.</p>
+    <p>Usar IA ou tecnologia como enfeite.</p>
+    <p>Defender o acabamento quando a pergunta é eficiência.</p>
+  </div>
+</div>
+
+<h3>Perguntas que ela provavelmente vai fazer <span class="tag i">Inferência</span></h3>
+<ul class="clean">
+  <li>Quanto custou cada cadastro qualificado, e quantos viraram cliente ativo?</li>
+  <li>O que as pessoas falaram de nós nas praças? O que a escuta mostrou?</li>
+  <li>O que dá para testar menor antes de escalar?</li>
+  <li>Qual é o risco disso?</li>
+  <li>Onde isso vira conteúdo depois do evento?</li>
+  <li>Como o franqueado da praça ganha com isso?</li>
+  <li>O que tem de novo em relação aos últimos anos?</li>
+</ul>
+</section>
+
+<section id="lacunas">
+<h2><small>09 · A confirmar</small>Lacunas</h2>
+<ul class="clean">
+  <li><b>Quem são as outras pessoas que entraram.</b> O Berg precisa passar os nomes para aprofundarmos cada uma.</li>
+  <li>Título exato dela hoje (VP de Consumer ou VP de Marketing) e se Marcela De Masi responde a ela.</li>
+  <li>Se a Renata vai decidir o São João 2027 ou se continua com Franquias e o regional.</li>
+  <li>O estudo Kantar do São João e os números internos de cadastros e vendas por praça.</li>
+  <li>Quem produziu a Casa Boti de Caruaru e qual o papel da DGBB no material de 2026.</li>
+  <li>Agências de live marketing do grupo em outros eventos.</li>
+  <li>As colunas dela no Folha C-Level não foram localizadas.</li>
+</ul>
+<p class="src">Este dossiê usa só informação profissional pública. Nada sobre vida pessoal foi levantado.</p>
+</section>
+
+<footer id="fontes">
+<p class="eyebrow">Fontes principais</p>
+<ol>
+  <li><a href="https://br.linkedin.com/in/renata-gomide-de-carvalho">LinkedIn · Renata Gomide de Carvalho</a></li>
+  <li><a href="https://exame.com/revista-exame/cacadora-de-tendencias/">Exame · Caçadora de tendências (dez/2022)</a></li>
+  <li><a href="https://exame.com/revista-exame/o-poder-da-escuta/">Exame · O poder da escuta (nov/2023)</a></li>
+  <li><a href="https://fastcompanybrasil.com/5-perguntas/5-perguntas-para-renata-gomide-cmo-do-grupo-boticario/">Fast Company Brasil · 5 perguntas (abr/2025)</a></li>
+  <li><a href="https://forbes.com.br/escolhas-do-editor/2025/07/como-vp-de-marketing-do-grupo-boticario-redefiniu-a-alta-performance/">Forbes Brasil · alta performance (jul/2025)</a></li>
+  <li><a href="https://www.meioemensagem.com.br/womentowatch/renata-gomide-destaca-o-papel-da-industria-da-beleza-na-transformacao-de-padroes">Meio &amp; Mensagem · Women to Watch</a></li>
+  <li><a href="https://www.meioemensagem.com.br/gente/acontece-no-meio/grupo-boticario-muda-comando-e-arquitetura-do-negocio">Meio &amp; Mensagem · reestruturação 2021</a></li>
+  <li><a href="https://propmark.com.br/grupo-boticario-anuncia-nova-vice-presidente-de-consumer/">Propmark · nova VP de Consumer</a></li>
+  <li><a href="https://abramark.com.br/abramark/conteudos-depoimentos/renata-gomide-ser-orientado-para-o-consumidor-significa-que-as-estrategias-vem-de-fora-para-dentro/">Abramark · de fora para dentro</a></li>
+  <li><a href="https://experienceclub.com.br/alta-performance-com-abraco-a-estrategia-de-marketing-do-grupo-boticario/">Experience Club · estratégia de marketing</a></li>
+  <li><a href="https://www.meioemensagem.com.br/comunicacao/almapbbdo-lidera-ranking-de-melhores-agencias-em-novos-negocios">Meio &amp; Mensagem · AlmapBBDO e contas do grupo</a></li>
+  <li><a href="https://www.meioemensagem.com.br/comunicacao/o-boticario-explora-ninho-vazio-no-dia-das-maes">Meio &amp; Mensagem · Despedida (2026)</a></li>
+  <li><a href="https://www.meioemensagem.com.br/comunicacao/grupo-boticario-cria-movimento-pelo-skincare-responsavel">Meio &amp; Mensagem · Pacto Skincare</a></li>
+  <li><a href="https://exame.com/marketing/cannes-lions-2025-vult-do-grupo-boticario-vence-premio-com-campanha-de-representatividade/">Exame · Vult em Cannes 2025</a></li>
+  <li><a href="https://roastbrief.us/cannes-lions-2026-o-boticario-wins-three-lions-and-strengthens-its-creative-presence-on-the-global-industry-stage/">Roastbrief · Cannes 2026</a></li>
+  <li><a href="https://www.meioemensagem.com.br/gente/grupo-boticario-anuncia-diretora-de-branding-e-comunicacao">Meio &amp; Mensagem · Carolina Carrasco</a></li>
+  <li><a href="https://forbes.com.br/carreira/2025/12/como-ela-foi-do-transporte-escolar-a-lider-de-marketing-no-grupo-boticario/">Forbes · Giovana Orlandeli (dez/2025)</a></li>
+  <li><a href="https://nossomeio.com.br/marcela-de-masi-assume-como-diretora-executiva-de-branding-e-comunicacao-do-grupo-boticario/">Nosso Meio · Marcela De Masi</a></li>
+  <li><a href="https://www.seudinheiro.com/2026/empresas/r-38-bilhoes-em-vendas-e-4-mil-lojas-a-estrategia-do-grupo-boticario-para-se-manter-relevante-aos-49-anos-e-ultrapassar-a-natura-kaes/">Seu Dinheiro · R$ 38 bi e 4 mil lojas (2026)</a></li>
+  <li><a href="https://exame.com/negocios/o-conflito-entre-canais-nao-tem-solucao-diz-ceo-do-grupo-boticario-apos-r-38-bilhoes-em-vendas/">Exame · entrevista Fernando Modé (2026)</a></li>
+  <li><a href="https://timesbrasil.com.br/empresas-e-negocios/wellness/boticario-ultrapassa-natura-perfumaria-maquiagem-skincare-gmv-38-bilhoes-2025/">Times Brasil · participação de mercado 2025</a></li>
+  <li><a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview · 10 anos de São João</a></li>
+  <li><a href="https://livemarketing.com.br/o-boticario-celebra-10-anos-no-sao-joao-de-caruaru-2026-com-casa-boti">Live Marketing News · Casa Boti Caruaru 2026</a></li>
+  <li><a href="https://portalg.com.br/o-boticario-sao-joao-2026-9-milhoes/">Portal G · São João 2026, 9 milhões</a></li>
+  <li><a href="https://www.portaldacapital.com/2025/06/03/o-boticario-presenteia-campina-grande-com-casa-do-boti-no-maior-sao-joao-do-mundo/">Portal da Capital · Campina Grande 2025</a></li>
+  <li><a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-e-vitoria-rodrigues-transformam-historias-de-mulheres-do-nordeste-em-cordeis/">Marcas pelo Mundo · Cordéis</a></li>
+  <li>YouTube (falas dela): <a href="https://www.youtube.com/watch?v=B7sN5eXb-PM">JCDecaux (jul/2026)</a>, <a href="https://www.youtube.com/watch?v=8xh-oQnwVRA">McKinsey / Brasil Journal (jul/2026)</a>, <a href="https://www.youtube.com/watch?v=ahwDGhjqb_g">10+10 (mar/2026)</a>, <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0">Estadão (out/2025)</a>, <a href="https://www.youtube.com/watch?v=nutuVgJzHJQ">Estadão Blue Studio (nov/2025)</a>, <a href="https://www.youtube.com/watch?v=qor6F6d1Htg">Desmarketize (dez/2023)</a>, <a href="https://www.youtube.com/watch?v=GVrfj5PNXJk">UOL (ago/2023)</a>, <a href="https://www.youtube.com/watch?v=ZUDoWtXbGik">Mundotri (mai/2022)</a></li>
+</ol>
+<p class="eyebrow" style="margin-top:28px">Créditos das imagens</p>
+<ol>
+  <li>Black Dragons / Avakin (games): <a href="https://forbes.com.br/forbes-tech/2022/01/o-boticario-estreia-nos-e-sports-em-parceria-com-a-black-dragons/">Forbes Brasil / Black Dragons (divulgação)</a></li>
+  <li>Botiverso (creators): <a href="https://adnews.com.br/post/o-boticario-lanca-botiverso-nova-plataforma-de-aceleracao-de-creators-focada-no-tiktok">AdNews / O Boticário (divulgação)</a></li>
+  <li>Cordéis com Vitória Rodrigues (Liz Sublime): <a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-e-vitoria-rodrigues-transformam-historias-de-mulheres-do-nordeste-em-cordeis/">Marcas pelo Mundo / O Boticário (divulgação)</a></li>
+  <li>Casa 214 / camarote Madonna na casa de Narcisa: <a href="https://diariodorio.com/ai-que-loucura-apartamento-de-narcisa-sera-camarote-de-marca-famosa-para-show-de-madonna/">Diário do Rio (reprodução)</a></li>
+  <li>Dia dos Pais &#x27;5 dias?&#x27;: <a href="https://www.youtube.com/watch?v=QdEOwf7L1ck">O Boticário / AlmapBBDO (YouTube oficial)</a></li>
+  <li>Egeo Melancia (cocriação TikTok): <a href="https://forbes.com.br/forbes-tech/2024/05/o-boticario-transforma-trend-do-tiktok-em-fragrancia-de-edicao-limitada/">Forbes Brasil / O Boticário (divulgação)</a></li>
+  <li>Ovo de Melancia / unboxing Guinness: <a href="https://adnews.com.br/post/o-boticario-faz-maior-unboxing-simultaneo-e-entra-para-o-guinness">AdNews / O Boticário (divulgação)</a></li>
+  <li>Ovo de Melancia / unboxing Guinness: <a href="https://www.meioemensagem.com.br/comunicacao/o-boticario-entra-para-o-guinness-para-apresentar-produtos-de-melancia">Meio &amp; Mensagem / O Boticário (divulgação)</a></li>
+  <li>Dia das Mães &#x27;Tormenta&#x27;: <a href="https://b9.com.br/167562/o-boticario-tormenta-maternidade-adolescencia-dia-maes">B9 / AlmapBBDO / O Boticário (divulgação)</a></li>
+  <li>Eudora &#x27;Chega lá e Eudora&#x27;: <a href="https://www.youtube.com/watch?v=zxT8cGTkVeI">Eudora (YouTube oficial)</a></li>
+  <li>Natal 2025 (esteiras de aeroporto): <a href="https://www.b9.com.br/176277/boticario-esteiras-bagagem-aeroporto-presente/">B9 / O Boticário (divulgação)</a></li>
+  <li>Natal 2025 (esteiras de aeroporto): <a href="https://www.b9.com.br/176277/boticario-esteiras-bagagem-aeroporto-presente/">B9 / O Boticário (divulgação)</a></li>
+  <li>Pacto Skincare Responsável: <a href="https://www.meioemensagem.com.br/comunicacao/grupo-boticario-cria-movimento-pelo-skincare-responsavel">Meio &amp; Mensagem / Grupo Boticário / GUT (divulgação)</a></li>
+  <li>Pesquise o Meu Corpo / Centro de Pesquisa da Mulher: <a href="https://www.youtube.com/watch?v=znfOiMVBlpo">Grupo Boticário / GUT (YouTube oficial)</a></li>
+  <li>Vult &#x27;Respeita Meu Capelo&#x27;: <a href="https://www.youtube.com/watch?v=COgElaImUfw">Vult / GUT (YouTube oficial)</a></li>
+  <li>Dia das Mães &#x27;Despedidas&#x27;: <a href="https://www.meioemensagem.com.br/comunicacao/o-boticario-explora-ninho-vazio-no-dia-das-maes">Meio &amp; Mensagem / AlmapBBDO / O Boticário (divulgação)</a></li>
+  <li>Her Code / Code Her: <a href="https://www.adobomagazine.com/campaign-spotlight/o-boticario-launches-code-her-to-combat-ai-driven-image-manipulation-against-women/">Adobo Magazine / AlmapBBDO / O Boticário (divulgação)</a></li>
+  <li>Loja O Boticário (marca física): <a href="https://www.pontodereferencia.com.br/boticario-lab/">Ponto de Referência (divulgação)</a></li>
+  <li>Carolina Carrasco (Dir. Branding e Comunicação, O Boticário e QDB): <a href="https://www.meioemensagem.com.br/gente/grupo-boticario-anuncia-diretora-de-branding-e-comunicacao">Meio &amp; Mensagem / divulgação Grupo Boticário (nov/2024)</a></li>
+  <li>Fernando Modé (CEO Grupo Boticário): <a href="https://forbes.com.br/forbes-tech/2021/08/quem-inova-fernando-mode-ceo-do-grupo-boticario-fala-sobre-transformacao-digital-e-organizacional/">Forbes Tech / divulgação (ago/2021)</a></li>
+  <li>Giovana Orlandeli (Dir. Branding e Comunicação): <a href="https://forbes.com.br/carreira/2025/12/como-ela-foi-do-transporte-escolar-a-lider-de-marketing-no-grupo-boticario/">Forbes Brasil (dez/2025)</a></li>
+  <li>Jacqueline Tobaru (Dir. Marketing Franquias): <a href="https://www.mmaglobal.com/speakers/jacqueline-tobaru">MMA Global</a></li>
+  <li>Marcela De Masi (Dir. Exec. Branding e Comunicação): <a href="https://fastcompanybrasil.com/5-perguntas/5-perguntas-para-marcela-de-masi-do-grupo-boticario/">Fast Company Brasil (2024)</a></li>
+  <li>Renata Gomide: <a href="https://forbes.com.br/escolhas-do-editor/2025/07/como-vp-de-marketing-do-grupo-boticario-redefiniu-a-alta-performance/">Forbes Brasil (jul/2025)</a></li>
+  <li>Renata Gomide: <a href="https://mmaglobal.com/speakers/renata-gomide-de-carvalho">MMA Global</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=8xh-oQnwVRA">YouTube / McKinsey Talks</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=B7sN5eXb-PM">YouTube / JCDecaux</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=GVrfj5PNXJk">YouTube</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=ahwDGhjqb_g">YouTube / btrvarese</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=nutuVgJzHJQ">YouTube / Estadão Blue Studio</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=qor6F6d1Htg">YouTube / Desmarketize-se</a></li>
+  <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0">YouTube</a></li>
+  <li>São João: Casa do Boti Campina Grande 2025: <a href="https://portalg.com.br/oboticario-lanca-casa-do-boti-no-sao-joao-de-caruaru/">Portal G / O Boticário (divulgação)</a></li>
+  <li>São João: Casa do Boti Campina Grande 2025: <a href="https://www.portaldacapital.com/2025/06/03/o-boticario-presenteia-campina-grande-com-casa-do-boti-no-maior-sao-joao-do-mundo/">Portal da Capital / O Boticário (divulgação)</a></li>
+  <li>Key visual &#x27;O São João é a nossa casa&#x27;: <a href="https://www.pontopb.com.br/noticia/paraiba-260016241/o-boticario-celebra-10-anos-no-sao-joao-e-leva-experiencias-para-campina-grande-em-2026.html">Ponto PB / O Boticário (divulgação)</a></li>
+  <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
+  <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
+  <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
+  <li>Key visual &#x27;O São João é a nossa casa&#x27;: <a href="https://politicaporelas.tv.br/2026/06/09/o-boticario-celebra-10-anos-de-sao-joao-com-campanha-sobre-pertencimento-cultura-e-conexao-emocional/">Política por Elas / O Boticário (divulgação)</a></li>
+</ol>
+<p class="src">Imagens de divulgação e de imprensa reunidas para uso interno da dot. Não usar em peça pública sem licença.</p>
+</footer>
+</main>
+</div>
+
+</body>
+</html>
