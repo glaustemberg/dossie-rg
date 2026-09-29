@@ -213,31 +213,34 @@ ol.check li{counter-increment:c;display:grid;grid-template-columns:30px minmax(0
 ol.check li::before{content:"";width:18px;height:18px;border:2px solid var(--accent);border-radius:4px;margin-top:4px}
 .tbl table{min-width:720px}
 </style>
+
+<style>
+.forcas{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;max-width:78ch}
+.verdict .meta{margin:16px 0 0;padding-top:14px;border-top:1px solid color-mix(in srgb,var(--bg) 25%,transparent);max-width:78ch}
+.etapas{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:18px}
+.et{border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;min-width:0}
+.et .n{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:14px}
+.et h3{margin:4px 0 6px;font-size:18px}
+.et .q{font-size:15px;color:var(--accent);margin:0 0 8px;font-weight:600}
+.et ul{margin:0 0 10px;padding-left:18px;display:grid;gap:4px;font-size:15px;line-height:1.45}
+.et .ent{font-size:14px;margin:0;padding-top:8px;border-top:1px solid var(--line);line-height:1.9}
+.et .ent .who{margin-right:4px}
+.chips-dados{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips-dados span{font-family:var(--display);font-weight:500;font-size:15px;background:var(--accent-soft);color:var(--ink);padding:8px 14px;border-radius:99px}
+ol.roteiro{columns:2 260px;column-gap:32px;padding-left:22px;margin:14px 0 20px;max-width:760px}
+ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
+</style>
 </head>
 <body>
-
 <div class="wrap">
 <nav class="toc" aria-label="Índice">
   <p>Índice</p>
   <ol>
-    <li><a href="#tese">A tese</a></li>
-    <li><a href="#mapa">O mapa das etapas</a></li>
-    <li><a href="#e0">0 · Enquadrar</a></li>
-    <li><a href="#e1">1 · Autoauditoria</a></li>
-    <li><a href="#e2">2 · Escuta</a></li>
-    <li><a href="#e3">3 · Insight</a></li>
-    <li><a href="#e4">4 · Estratégia</a></li>
-    <li><a href="#e5">5 · Ideia</a></li>
-    <li><a href="#e6">6 · Experiência</a></li>
-    <li><a href="#e7">7 · Amplificação</a></li>
-    <li><a href="#e8">8 · Mensuração</a></li>
-    <li><a href="#e9">9 · Economia</a></li>
-    <li><a href="#e10">10 · Operação</a></li>
-    <li><a href="#e11">11 · Narrativa</a></li>
-    <li><a href="#e12">12 · Depois</a></li>
-    <li><a href="#dados">Dados que diferenciam</a></li>
-    <li><a href="#ideias">Como gerar as ideias</a></li>
-    <li><a href="#banca">A banca Boticário</a></li>
+    <li><a href="#tese">Onde queremos chegar</a></li>
+    <li><a href="#etapas">As 8 etapas</a></li>
+    <li><a href="#dados">Dados que nos destacam</a></li>
+    <li><a href="#roteiro">Roteiro da apresentação</a></li>
+    <li><a href="#banca">Banca Boticário</a></li>
     <li><a href="#checklist">Checklist final</a></li>
     <li><a href="index.html">Voltar ao dossiê</a></li>
   </ol>
@@ -246,9 +249,9 @@ ol.check li::before{content:"";width:18px;height:18px;border:2px solid var(--acc
 <main>
 <header class="top solo">
   <div>
-  <p class="eyebrow">dot.promo · Grupo Boticário · Carnaval 2027 e próximos projetos · 29/09/2026</p>
+  <p class="eyebrow">dot.promo · Grupo Boticário · Carnaval 2027 · 29/09/2026</p>
   <h1>Método de Apresentação Boticário</h1>
-  <p class="role">Como construir o planejamento, gerar as ideias e defender a proposta para Renata Gomide, Juliana Razini e Roberta Pepe. Cada etapa diz o que precisa existir, por que importa, que dado usar e quem da banca vai cobrar.</p>
+  <p class="role">O caminho para construir e defender propostas que Renata, Juliana e Roberta aprovam.</p>
   <div class="legend">
     <span><span class="who r">Renata</span> marca e negócio</span>
     <span><span class="who j">Juliana</span> rede e território</span>
@@ -259,368 +262,200 @@ ol.check li::before{content:"";width:18px;height:18px;border:2px solid var(--acc
 
 <section id="tese">
 <div class="verdict">
-  <h2><small>A tese</small>A dot. precisa mudar de lugar na cabeça do cliente</h2>
-  <p>Hoje a dot. é lembrada como a agência que monta a casa bonita no Nordeste. O feedback de julho mostra o limite desse lugar: elogio para criação e luz, cobrança por acabamento, prazo e, principalmente, por cadastro. As três decisoras medem outra coisa. A Renata mede marca e negócio, a Juliana mede rede e relação com a cidade, a Roberta mede se a ativação faz sentido para quem está na festa.</p>
-  <p>O novo lugar é este: <b>a agência que conhece o território melhor do que ninguém e prova, com número, o que cada real fez pela marca e pela loja da praça.</b> Tudo neste método serve para chegar lá. Ideia sem prova volta a ser casa bonita. Prova sem ideia vira relatório. A apresentação que vence traz as duas.</p>
-</div>
-</section>
-
-<section id="mapa">
-<h2><small>Visão geral</small>O mapa das etapas</h2>
-<p class="lede">São 13 etapas em quatro blocos. A ordem importa: cada etapa usa o que a anterior produziu. Pular a escuta produz ideia genérica. Pular a mensuração produz proposta que a Renata não aprova. Pular a operação repete o São João 2026.</p>
-<div class="flow">
-  <div class="bloco"><span class="bt">Fundamento</span><a href="#e0">0 Enquadrar</a><a href="#e1">1 Autoauditoria</a><a href="#e2">2 Escuta</a></div>
-  <div class="bloco"><span class="bt">Pensamento</span><a href="#e3">3 Insight</a><a href="#e4">4 Estratégia</a><a href="#e5">5 Ideia</a></div>
-  <div class="bloco"><span class="bt">Construção</span><a href="#e6">6 Experiência</a><a href="#e7">7 Amplificação</a><a href="#e8">8 Mensuração</a><a href="#e9">9 Economia</a><a href="#e10">10 Operação</a></div>
-  <div class="bloco"><span class="bt">Defesa</span><a href="#e11">11 Narrativa</a><a href="#e12">12 Depois</a></div>
-</div>
-<p class="src">Cada etapa termina com um entregável. Nenhuma etapa começa sem o entregável da anterior aprovado internamente. A banca Boticário (squad simulado das três) avalia os entregáveis 5, 8 e 11 antes do cliente ver qualquer coisa.</p>
-</section>
-
-<section id="e0" class="etapa">
-<h2><small>Etapa 0 · Fundamento</small>Enquadrar o problema de negócio</h2>
-<p class="porque"><b>Por que importa.</b> A pergunta do cliente nunca é "façam um carnaval bonito". É o que o carnaval precisa fazer pela marca e pela rede em 2027. Quem responde a pergunta certa já sai na frente de quem responde o briefing ao pé da letra.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>A pergunta de negócio escrita em uma frase. Exemplo: como o Carnaval 2027 aumenta cadastros qualificados e venda de perfumaria nas lojas das praças, com custo por resultado menor que em 2026.</li>
-    <li>O contexto do grupo: o GMV cresceu 6,7% em 2025 contra 19% em 2024, o CEO fala em "apertar parafusos", e a disputa com Natura e Avon está em 15,5% contra 15,7%.</li>
-    <li>Os três combinados do feedback de julho, na ordem do cliente: análise dos dados, planos de ação mais ágeis, aprimoramento do detalhe.</li>
-    <li>Quem decide e quem assina: Renata, Juliana, Roberta e a confirmação sobre Jacqueline Tobaru.</li>
-    <li>Restrições: verba provável, praças, datas, marcas do grupo que já ocupam território (maquiagem e cabelo são de outras marcas).</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Dados públicos do grupo citados com fonte. Mostra que a dot. lê o negócio, não só o briefing.</li>
-    <li>O calendário da marca: para a Juliana, o São João pesa como Dia das Mães e Natal. Qual é o peso do Carnaval?</li>
+  <h2><small>Onde queremos chegar</small>A dot. já tem o que o Boticário valoriza. Agora é ir mais longe</h2>
+  <ul class="forcas">
+    <li><b>Território:</b> estamos no São João que fez do Boticário a marca de beleza preferida da festa.</li>
+    <li><b>Reconhecimento:</b> Melhor Agência de Live Marketing do Nordeste, Prêmio Live 2024.</li>
+    <li><b>Entrega:</b> criação, iluminação e shows elogiados pelo cliente. Caruaru 2026 teve 18 mil experimentações.</li>
   </ul>
-  <h4>Entregável</h4><p>Uma página: pergunta de negócio, objetivos, restrições e decisoras.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Começar pela ideia criativa. Sem pergunta de negócio, não há critério para escolher entre ideias, e a discussão vira gosto.</p>
-</section>
-
-<section id="e1" class="etapa">
-<h2><small>Etapa 1 · Fundamento</small>Autoauditoria com números</h2>
-<p class="porque"><b>Por que importa.</b> O cliente já disse o que achou do São João 2026. A dot. ganha autoridade quando chega antes com a própria análise, com números, e com o plano de correção. Quem chega com o número primeiro define o terreno da conversa.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Retrospectiva do São João 2026 e do Carnaval 2026 por praça: público, visitas, cadastros, experimentação, brindes, incidentes.</li>
-    <li>A comparação de cadastros: mais de 20 mil em Caruaru 2025 (citado pela Juliana na InfoMoney) contra 4.821 leads em Caruaru 2026 (pós-venda da dot.). Primeiro confirmar se medem a mesma coisa. Se medirem, explicar a causa e mostrar a correção.</li>
-    <li>Resposta a cada item do "PARAR" e do "COMEÇAR" do feedback, com a mudança de processo correspondente.</li>
-    <li>O que funcionou e deve continuar: criação, iluminação, shows na varanda, perfume de bolso como o brinde de maior sucesso.</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Taxa de conversão de abordagem em cadastro (em Caruaru: 26.830 abordagens da volante, 4.821 leads).</li>
-    <li>Cadastros por hora e por metro quadrado.</li>
-    <li>Série histórica por praça, mesmo incompleta.</li>
-  </ul>
-  <h4>Entregável</h4><p>Retrospectiva de 3 a 4 slides, com números e com o erro assumido sem rodeio.</p>
-  <h4>Quem cobra</h4><p><span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Esconder o que deu errado ou defender o acabamento quando a pergunta é eficiência. As três já sabem o que deu errado. A dúvida delas é se a dot. sabe.</p>
-</section>
-
-<section id="e2" class="etapa">
-<h2><small>Etapa 2 · Fundamento</small>Escuta do consumidor e do território</h2>
-<p class="porque"><b>Por que importa.</b> A Renata diz que as estratégias vêm de fora para dentro e lê o que as pessoas escrevem sobre a marca. A Juliana usou 9 mil conversas para desenhar o projeto gaúcho. Ideia que nasce de escuta real vence ideia que nasce de brainstorm.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Escuta social do carnaval de cada praça (Recife, Olinda, Salvador e as demais): como as pessoas falam de perfume, calor, suor, se arrumar, se ver, ser vista.</li>
-    <li>Conversa com franqueados das praças: o que vende no carnaval, o que falta, o que o público pede na loja.</li>
-    <li>Leitura das ações de concorrentes e de outras categorias: a pesquisa Carnaval de Camarote já tem 37 ações de 24 marcas.</li>
-    <li>O que o próprio Boticário já fez no Carnaval: Galo da Madrugada desde 2023, camarote, trio, camarim com números de 2024 e 2025.</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Volume de conversa, termos mais usados e a tensão principal, com prints reais.</li>
-    <li>Citação literal de franqueado. Poucas agências trazem a voz da rede.</li>
-    <li>Mapa de território: quais marcas ocupam quais momentos da festa e o que está livre.</li>
-  </ul>
-  <h4>Entregável</h4><p>Relatório de escuta de 1 página por praça e 1 página de síntese.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Tratar o Nordeste como um bloco. Recife não é Salvador, e a Juliana já disse que a marca não quer ser uma loja de Curitiba no Nordeste.</p>
-</section>
-
-<section id="e3" class="etapa">
-<h2><small>Etapa 3 · Pensamento</small>Insight e tensão cultural</h2>
-<p class="porque"><b>Por que importa.</b> O insight é a ponte entre o que se ouviu e a ideia. Sem ele, a ideia é decoração. As campanhas que a Renata aprova (Tormenta, Despedidas, 5 dias?) nascem de uma tensão real, às vezes medida: 64% da conversa sobre ninho vazio era de tristeza.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Uma frase no formato: as pessoas sentem X, mas vivem Y, e a marca pode fazer Z.</li>
-    <li>O dado da escuta que sustenta a frase.</li>
-    <li>O teste de verdade: um franqueado ou um folião reconhece a frase como verdadeira?</li>
-  </ul>
-  <h4>Exemplo de hipótese (a validar)</h4>
-  <p>No carnaval, a pessoa se arruma para ser vista, mas o calor, o suor e as horas de rua desmancham tudo. O espelho é o último momento em que ela se vê como queria. O Boticário pode estar nesse momento e fazer ele durar, com cheiro que acompanha a noite inteira.</p></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Percentual de conversas com a tensão identificada.</li>
-    <li>Comportamento observado em campo no carnaval anterior (fotos, falas).</li>
-  </ul>
-  <h4>Entregável</h4><p>Um insight principal e no máximo dois alternativos, cada um com o dado que o sustenta.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Confundir tema com insight. "Espelho" é um tema. O insight é a tensão humana que faz o espelho importar.</p>
-</section>
-
-<section id="e4" class="etapa">
-<h2><small>Etapa 4 · Pensamento</small>Estratégia: o papel do Carnaval na jornada</h2>
-<p class="porque"><b>Por que importa.</b> A Renata pensa em jornada em looping, não em funil, e quer saber o papel de cada ponto de contato e a métrica de cada um antes da criação. É a etapa que transforma evento em plano de marketing.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>A jornada desenhada: descoberta na festa, experimentação, cadastro, conteúdo compartilhado, visita ou compra na loja da praça, recompra pelo fidelidade.</li>
-    <li>O papel de cada ponto: camarote, rua, trio, loja franqueada, creators, CRM.</li>
-    <li>Objetivos com número e linha de base: cadastros, custo por cadastro, conversão em compra, recall regional, mídia ganha.</li>
-    <li>O papel do franqueado: como a ação leva gente para a loja dele.</li>
-    <li>O que é estruturante (fica anos) e o que é hype (testa e corta), na linguagem da Renata.</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Base do fidelidade: 26 milhões de clientes ativos no grupo. Qual é a meta de entrada de base nova pelo Carnaval?</li>
-    <li>Rede do Nordeste: 860 pontos de venda e mais de 100 franqueados.</li>
-  </ul>
-  <h4>Entregável</h4><p>Um diagrama de jornada e uma tabela de objetivos com meta e linha de base.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Meta sem linha de base. "Aumentar cadastros" não é meta. "Passar de 4.821 para 12 mil em Caruaru, a R$ X por cadastro" é.</p>
-</section>
-
-<section id="e5" class="etapa">
-<h2><small>Etapa 5 · Pensamento</small>A ideia central</h2>
-<p class="porque"><b>Por que importa.</b> Uma ideia forte organiza tudo o resto e cabe numa frase. Para a Renata, a mídia constrói marca, mas o criativo é o que faz a diferença. Para a Juliana e a Roberta, a ideia precisa pertencer ao lugar e fazer sentido na festa.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>A ideia em uma frase, derivada do insight.</li>
-    <li>A ligação com o posicionamento: Boticário como perfumaria e como presente.</li>
-    <li>O que ela provoca de conversa. Quem vai falar disso, e por quê?</li>
-    <li>A versão de cada praça: a mesma ideia com sotaque local.</li>
-    <li>Por que ela é nova em relação aos anos anteriores. A Renata critica repetição.</li>
-  </ul>
-  <h4>Os cinco filtros antes de levar</h4>
-  <ol class="mini">
-    <li>Nasce de uma tensão real e medida?</li>
-    <li>Cabe numa frase e num gesto?</li>
-    <li>Gera conversa sem mídia paga?</li>
-    <li>Leva gente e venda para a loja da praça?</li>
-    <li>Pode durar mais de um ano?</li>
-  </ol></div>
-  <div><h4>Sobre o tema do espelho</h4><p>O tema tem força: é objeto de perfumaria e de maquiagem, é íntimo, é o momento antes de sair, e vira brinde útil na festa (espelho de bolso junto com o perfume de bolso, que foi o brinde de maior sucesso do São João 2026). O risco é ficar só estético. Ele precisa de uma tensão e de um mecanismo de cadastro e de venda, senão vira cenário.</p>
-  <h4>Entregável</h4><p>Três rotas avaliadas pela banca, uma recomendada e uma alternativa.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Levar oito ideias para o cliente escolher. Isso transfere o trabalho para ele. Leve uma recomendação e uma alternativa, com o porquê.</p>
-</section>
-
-<section id="e6" class="etapa">
-<h2><small>Etapa 6 · Construção</small>Desdobramento em experiência</h2>
-<p class="porque"><b>Por que importa.</b> É onde a Roberta avalia se funciona na festa e onde a Juliana avalia se a rede ganha. É também onde o São João 2026 falhou: acessibilidade, escoamento de água, conforto térmico, retaguarda.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Arquitetura modular: um núcleo estruturante e satélites testáveis, cada um com preço e objetivo.</li>
-    <li>A jornada do folião dentro da ação, minuto a minuto, com o momento exato do cadastro.</li>
-    <li>O cadastro embutido na mecânica, sem fila e sem fricção.</li>
-    <li>Brinde útil na festa (espelho, perfume de bolso, item de calor), pensado para ser usado e fotografado.</li>
-    <li>O papel da loja franqueada: cupom, retirada de brinde, extensão da experiência.</li>
-    <li>Acessibilidade, escoamento, cobertura, conforto térmico e retaguarda desde o primeiro render.</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Capacidade por hora de cada módulo e cadastros esperados.</li>
-    <li>Fluxo esperado com base nos números reais de 2025 e 2026.</li>
-  </ul>
-  <h4>Entregável</h4><p>Planta, jornada do folião, renders e tabela de capacidade.</p>
-  <h4>Quem cobra</h4><p><span class="who p">Roberta</span> <span class="who j">Juliana</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Render bonito sem capacidade calculada. A pergunta que vem é "quantas pessoas isso atende por hora e quantas cadastra".</p>
-</section>
-
-<section id="e7" class="etapa">
-<h2><small>Etapa 7 · Construção</small>Amplificação: nasce no físico, escala no digital</h2>
-<p class="porque"><b>Por que importa.</b> A Renata cita o São João como exemplo de ação física que se estende para o digital. A Roberta lembra que festival regional se espalha para o Brasil pela transmissão. Evento que não vira conteúdo morre no dia.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Creators locais com papel definido antes, durante e depois.</li>
-    <li>O momento compartilhável de cada módulo: a foto que as pessoas querem tirar.</li>
-    <li>Plano de conteúdo pós-evento: o que vira filme, post, case.</li>
-    <li>Integração com a comunicação da marca e com a loja (vitrine, CRM).</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Alcance e engajamento previstos por creator, com histórico.</li>
-    <li>Menções orgânicas esperadas e como serão medidas.</li>
-  </ul>
-  <h4>Entregável</h4><p>Plano de amplificação em uma página.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who p">Roberta</span></p></div>
+  <p class="meta"><b>Objetivo:</b> ser a parceira que transforma território em crescimento medido para a marca e para a loja da praça, e levar isso ao Carnaval, a outras regiões e aos grandes momentos do calendário.</p>
 </div>
 </section>
 
-<section id="e8" class="etapa">
-<h2><small>Etapa 8 · Construção</small>Mensuração definida antes</h2>
-<p class="porque"><b>Por que importa.</b> É a etapa que mais diferencia a dot. O feedback de julho não trouxe um único número. As três medem, e nenhuma agência de live marketing do Nordeste costuma chegar com plano de mensuração pronto. Quem define como medir define como será julgado.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>KPIs por estágio da jornada, com meta e linha de base.</li>
-    <li>Como cada número será coletado: tablet, QR, código no cupom, contador de fluxo.</li>
-    <li>Painel em tempo real durante a festa, para ajustar enquanto ainda dá tempo. É o "teste, corte e escala" da Renata aplicado ao evento.</li>
-    <li>Gatilhos: o que se faz se o cadastro por hora ficar abaixo da meta no primeiro dia.</li>
-    <li>Proposta de acordo de dados com o Boticário para cruzar cadastro com compra no fidelidade.</li>
-    <li>Relatório final em até 15 dias.</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Custo por cadastro qualificado.</li>
-    <li>Conversão de cadastro em compra em 30 e 90 dias.</li>
-    <li>Recall regional antes e depois.</li>
-    <li>Fluxo na loja da praça durante o evento, comparado a semanas normais.</li>
-  </ul>
-  <h4>Entregável</h4><p>Plano de mensuração e maquete do painel.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
-</div>
-<p class="erro"><b>Erro comum.</b> Medir só público e impacto. Público estimado não prova nada para quem mede base ativa e custo por resultado.</p>
-</section>
+<section id="etapas">
+<h2><small>Passo a passo</small>As 8 etapas</h2>
+<p class="lede">Uma etapa por vez. Cada uma só começa com o entregável da anterior pronto.</p>
 
-<section id="e9" class="etapa">
-<h2><small>Etapa 9 · Construção</small>Economia da proposta</h2>
-<p class="porque"><b>Por que importa.</b> Com o grupo apertando custos, cada real será questionado. A proposta de Carnaval 2026 já era modular por cotas. O próximo passo é mostrar custo por resultado e o que se ganha em cada cenário.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Três cenários de investimento, cada um com o resultado esperado.</li>
-    <li>Custo por módulo e custo por cadastro previsto em cada cenário.</li>
-    <li>Reaproveitamento: o que vem de ações anteriores e o que dura para os próximos anos.</li>
-    <li>Transparência de custo, na linha do ganha-ganha que a Renata defende.</li>
-  </ul></div>
-  <div><h4>Dados que diferenciam</h4><ul>
-    <li>Comparação do custo por cadastro com 2026.</li>
-    <li>Economia gerada por reaproveitamento.</li>
-  </ul>
-  <h4>Entregável</h4><p>Tabela de cenários, de uma página.</p>
-  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
-</div>
-</section>
+<div class="etapas">
 
-<section id="e10" class="etapa">
-<h2><small>Etapa 10 · Construção</small>Operação e governança</h2>
-<p class="porque"><b>Por que importa.</b> É a resposta direta ao "COMEÇAR" do feedback: a dot. como primeiro filtro técnico, com cronograma, governança e senioridade proporcional à praça. Uma ideia ótima com a operação de 2026 repete as críticas de 2026.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Cronograma reverso com o guide entregue com antecedência real, não uma semana antes.</li>
-    <li>Caderno técnico com acessibilidade, escoamento, caimento de cobertura, iluminação, conforto térmico e retaguarda.</li>
-    <li>Responsável sênior por praça, com nome.</li>
-    <li>Rotina de acompanhamento com o cliente e prazo de resposta de dúvidas.</li>
-    <li>Checklist de entregáveis de patrocínio por praça (a crítica de Mossoró).</li>
-  </ul></div>
-  <div><h4>Entregável</h4><p>Cronograma, organograma da operação e amostra do caderno técnico.</p>
-  <h4>Quem cobra</h4><p><span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
-</div>
-</section>
+<article class="et">
+  <span class="n">1</span>
+  <div>
+    <h3>Definir o objetivo de negócio</h3>
+    <p class="q">Pergunta a responder: o que o Carnaval 2027 precisa fazer pela marca e pelas lojas?</p>
+    <ul>
+      <li>Escrever o objetivo em uma frase, com número.</li>
+      <li>Confirmar com a Simone quem decide (inclusive Jacqueline Tobaru).</li>
+      <li>Usar os três combinados de julho como guia: dados, agilidade, detalhe.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> 1 página com objetivo, praças, verba e decisoras. <span class="who r">Renata</span> <span class="who j">Juliana</span></p>
+  </div>
+</article>
 
-<section id="e11" class="etapa">
-<h2><small>Etapa 11 · Defesa</small>A narrativa da apresentação</h2>
-<p class="porque"><b>Por que importa.</b> A ordem muda o resultado. A Renata vive com atenção escassa. Abrir com a agência perde a sala. Abrir com um dado do consumidor que ela não conhece ganha.</p>
-<h4>Roteiro recomendado (cerca de 20 slides, 30 minutos)</h4>
-<ol class="steps">
-  <li><div><b>Um dado que elas não conhecem</b> sobre o folião ou sobre o território. 1 slide.</div></li>
-  <li><div><b>O que aprendemos em 2026</b>, com números e com o erro assumido. 2 slides.</div></li>
-  <li><div><b>A pergunta de negócio</b> do Carnaval 2027. 1 slide.</div></li>
-  <li><div><b>A escuta</b>: o que as pessoas e os franqueados disseram. 2 slides.</div></li>
-  <li><div><b>O insight</b>, em uma frase. 1 slide.</div></li>
-  <li><div><b>A jornada</b> e o papel do Carnaval nela. 1 slide.</div></li>
-  <li><div><b>A ideia</b>, em uma frase e em imagem. 2 slides.</div></li>
-  <li><div><b>A experiência</b>: módulos, jornada do folião, momento do cadastro, papel da loja. 4 slides.</div></li>
-  <li><div><b>A amplificação</b>. 1 slide.</div></li>
-  <li><div><b>Como vamos medir</b> e o painel ao vivo. 2 slides.</div></li>
-  <li><div><b>Cenários de investimento</b> com custo por resultado. 1 slide.</div></li>
-  <li><div><b>Operação e cronograma</b>, com os nomes. 1 slide.</div></li>
-  <li><div><b>O que pedimos para decidir hoje.</b> 1 slide.</div></li>
-</ol>
-<div class="cols">
-  <div><h4>Perguntas que virão e precisam de resposta pronta</h4><ul>
-    <li>Quanto custou cada cadastro em 2026 e quanto vai custar em 2027?</li>
-    <li>O que muda em relação aos anos anteriores?</li>
-    <li>Como o franqueado da praça ganha com isso?</li>
-    <li>O que acontece se chover?</li>
-    <li>Quem é o responsável por cada praça?</li>
-    <li>O que dá para testar menor antes de escalar?</li>
-  </ul></div>
-  <div><h4>Como falar</h4><ul>
-    <li>Frases curtas e dados com fonte.</li>
-    <li>Vocabulário da casa: jornada, território, envolver, relevância cultural, consistência, cadastro, escalar.</li>
-    <li>dot. sempre em minúsculas, em todo material.</li>
-    <li>Ensaiar antes com a banca Boticário e corrigir o que ela reprovar.</li>
-  </ul></div>
-</div>
-</section>
+<article class="et">
+  <span class="n">2</span>
+  <div>
+    <h3>Mostrar o que já construímos</h3>
+    <p class="q">Pergunta a responder: que resultados a dot. já entregou e o que evolui em 2027?</p>
+    <ul>
+      <li>Números por praça do São João e do Carnaval 2026.</li>
+      <li>Cadastros com série histórica. Confirmar se os 20 mil de 2025 e os 4.821 de 2026 medem a mesma coisa.</li>
+      <li>O que continua e o que melhora, em uma lista curta.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> 2 slides de resultados. <span class="who j">Juliana</span> <span class="who p">Roberta</span></p>
+  </div>
+</article>
 
-<section id="e12" class="etapa">
-<h2><small>Etapa 12 · Defesa</small>Depois da apresentação</h2>
-<p class="porque"><b>Por que importa.</b> A relação é de dez anos. O que a dot. entrega depois do evento decide o próximo contrato mais do que a apresentação.</p>
-<div class="cols">
-  <div><h4>O que precisa existir</h4><ul>
-    <li>Ata da reunião em 24 horas, com as decisões e os próximos passos.</li>
-    <li>Relatório de resultado em até 15 dias após o evento, por praça, com os mesmos KPIs prometidos.</li>
-    <li>Aprendizados e proposta de ajuste para a próxima edição.</li>
-  </ul></div>
-  <div><h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
+<article class="et">
+  <span class="n">3</span>
+  <div>
+    <h3>Ouvir o público e a rede</h3>
+    <p class="q">Pergunta a responder: o que o folião e o franqueado sentem e pedem no carnaval?</p>
+    <ul>
+      <li>Escuta social por praça: perfume, calor, se arrumar, ser vista.</li>
+      <li>Conversa rápida com 3 a 5 franqueados.</li>
+      <li>Mapa do que outras marcas fazem e do espaço livre (pesquisa Carnaval de Camarote).</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> 1 página com os achados e os prints. <span class="who r">Renata</span> <span class="who j">Juliana</span></p>
+  </div>
+</article>
+
+<article class="et">
+  <span class="n">4</span>
+  <div>
+    <h3>Encontrar o insight e a ideia</h3>
+    <p class="q">Pergunta a responder: qual tensão real a marca resolve, e qual ideia nasce dela?</p>
+    <ul>
+      <li>Insight em uma frase: as pessoas sentem X, mas vivem Y.</li>
+      <li>Ideia em uma frase, ligada a perfumaria e a presente.</li>
+      <li>Passar nos 5 filtros: tensão real, cabe numa frase, gera conversa, leva gente à loja, dura mais de um ano.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> 1 ideia recomendada e 1 alternativa, já avaliadas pela banca. <span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p>
+  </div>
+</article>
+
+<article class="et">
+  <span class="n">5</span>
+  <div>
+    <h3>Desenhar a experiência</h3>
+    <p class="q">Pergunta a responder: isso funciona na festa, às 23h, com calor e multidão?</p>
+    <ul>
+      <li>Mecânica simples, com cadastro por QR em menos de 30 segundos.</li>
+      <li>Brinde útil na festa, com perfume no centro.</li>
+      <li>Papel da loja franqueada: cupom, resgate ou extensão da experiência.</li>
+      <li>Capacidade por hora, acessibilidade e plano de chuva desde o primeiro render.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> planta, jornada do folião e renders. <span class="who p">Roberta</span> <span class="who j">Juliana</span></p>
+  </div>
+</article>
+
+<article class="et">
+  <span class="n">6</span>
+  <div>
+    <h3>Levar para o digital</h3>
+    <p class="q">Pergunta a responder: como a festa vira conversa e conteúdo depois do dia?</p>
+    <ul>
+      <li>Creators locais de cada praça.</li>
+      <li>O momento de foto de cada módulo.</li>
+      <li>Conteúdo pós-evento já planejado.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> plano de 1 página. <span class="who r">Renata</span> <span class="who p">Roberta</span></p>
+  </div>
+</article>
+
+<article class="et">
+  <span class="n">7</span>
+  <div>
+    <h3>Medir e mostrar o custo por resultado</h3>
+    <p class="q">Pergunta a responder: quanto cada real vai gerar, e como vamos provar?</p>
+    <ul>
+      <li>Meta de cadastro por praça, com linha de base.</li>
+      <li>Custo por cadastro e conversão em compra (propor cruzar com o fidelidade).</li>
+      <li>Painel ao vivo durante a festa, com gatilho para ajustar.</li>
+      <li>Três cenários de investimento.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> tabela de metas e de cenários. <span class="who r">Renata</span> <span class="who j">Juliana</span></p>
+  </div>
+</article>
+
+<article class="et">
+  <span class="n">8</span>
+  <div>
+    <h3>Garantir a operação</h3>
+    <p class="q">Pergunta a responder: quem entrega o quê, e quando?</p>
+    <ul>
+      <li>Guide de montagem com antecedência.</li>
+      <li>Responsável sênior com nome por praça.</li>
+      <li>Entregáveis de patrocínio claros por praça.</li>
+      <li>Relatório de resultados em até 15 dias após o evento.</li>
+    </ul>
+    <p class="ent"><b>Entrega:</b> cronograma e caderno técnico. <span class="who j">Juliana</span> <span class="who p">Roberta</span></p>
+  </div>
+</article>
+
 </div>
 </section>
 
 <section id="dados">
-<h2><small>Diferencial</small>Os dados que tornam a dot. diferente</h2>
-<p class="lede">Nenhuma destas informações é difícil de conseguir, mas quase nenhuma agência de live marketing leva. Chegar com elas muda o lugar da dot. na conversa.</p>
-<div class="tbl"><table>
-<thead><tr><th>Dado</th><th>Como conseguir</th><th>Por que diferencia</th><th>Quem valoriza</th></tr></thead>
-<tbody>
-<tr><td class="r">Cadastros por praça, com série histórica</td><td>Pós-vendas de 2025 e 2026, pedido ao cliente</td><td>Responde direto ao "casa x cadastros"</td><td><span class="who j">Juliana</span> <span class="who p">Roberta</span></td></tr>
-<tr><td class="r">Custo por cadastro qualificado</td><td>Orçamento dividido pelos cadastros válidos</td><td>É a métrica de eficiência que o momento do grupo pede</td><td><span class="who r">Renata</span> <span class="who j">Juliana</span></td></tr>
-<tr><td class="r">Conversão de cadastro em compra</td><td>Acordo de dados com o Boticário (fidelidade)</td><td>Liga o evento à venda. Quase ninguém propõe</td><td><span class="who r">Renata</span></td></tr>
-<tr><td class="r">Escuta social por praça</td><td>Ferramenta de social listening e leitura manual</td><td>É o método da Renata e da Juliana</td><td><span class="who r">Renata</span> <span class="who j">Juliana</span></td></tr>
-<tr><td class="r">Voz do franqueado</td><td>Entrevistas curtas com franqueados das praças</td><td>Mostra que a dot. entende a rede, não só o público</td><td><span class="who j">Juliana</span></td></tr>
-<tr><td class="r">Fluxo e venda na loja da praça</td><td>Dados do franqueado durante o evento</td><td>Prova que a festa leva gente para a loja</td><td><span class="who j">Juliana</span> <span class="who r">Renata</span></td></tr>
-<tr><td class="r">Capacidade por hora de cada módulo</td><td>Cálculo de projeto e dados de 2026</td><td>Transforma render em previsão</td><td><span class="who p">Roberta</span></td></tr>
-<tr><td class="r">Mapa de território do carnaval</td><td>Pesquisa Carnaval de Camarote, 37 ações de 24 marcas</td><td>Mostra onde há espaço livre</td><td><span class="who r">Renata</span> <span class="who p">Roberta</span></td></tr>
-<tr><td class="r">Recall regional antes e depois</td><td>Pesquisa curta em campo ou online</td><td>É a métrica que a Renata cita primeiro</td><td><span class="who r">Renata</span></td></tr>
-<tr><td class="r">Brinde mais usado e mais fotografado</td><td>Contagem de retirada e de menções</td><td>Prova que o brinde faz sentido na festa</td><td><span class="who p">Roberta</span></td></tr>
-</tbody></table></div>
-</section>
-
-<section id="ideias">
-<h2><small>Processo criativo</small>Como gerar as ideias</h2>
-<ol class="steps">
-  <li><div><b>Três lentes, uma por decisora.</b> Cada pessoa do time gera ideias pensando numa das três: o que faria a Renata falar da marca, o que faria a Juliana dizer que a rede ganhou, o que faria a Roberta dizer que fez sentido na festa.</div></li>
-  <li><div><b>Volume antes de filtro.</b> Pelo menos 30 ideias soltas, todas ligadas ao insight.</div></li>
-  <li><div><b>Os cinco filtros da etapa 5.</b> O que não passa em três dos cinco sai.</div></li>
-  <li><div><b>Três rotas.</b> As sobreviventes se agrupam em três rotas com lógicas diferentes, não três versões da mesma ideia.</div></li>
-  <li><div><b>Banca Boticário.</b> As três rotas passam pela banca simulada. Cada decisora dá nota e objeção.</div></li>
-  <li><div><b>Uma recomendação e uma alternativa.</b> Com o porquê, a objeção prevista e a resposta.</div></li>
-</ol>
-</section>
-
-<section id="banca">
-<h2><small>Ferramenta</small>A banca Boticário</h2>
-<p>O squad <b>squad-boticario</b> simula as três decisoras com base em tudo que elas disseram em público e no que a dot. sabe da relação. Cada uma avalia a proposta pelos próprios critérios, dá nota de 0 a 10 e aponta a objeção que faria na reunião. A banca junta os três pareceres, mostra onde elas concordam e discordam e diz o que precisa mudar antes do cliente ver.</p>
-<div class="grid2">
-  <div class="card"><h4>Quando usar</h4><p>Nos entregáveis 5 (ideia), 8 (mensuração) e 11 (apresentação completa). Também para ensaiar perguntas difíceis.</p></div>
-  <div class="card"><h4>Como chamar</h4><p>Pedir ao Claude: "leva para a banca Boticário" e anexar a proposta, o deck ou a ideia em texto.</p></div>
-  <div class="card"><h4>O que ela não é</h4><p>Não é a opinião real das três. É uma simulação fundamentada. Serve para achar furos antes, nunca para falar em nome delas nem para ser mostrada ao cliente.</p></div>
+<h2><small>Diferencial</small>Dados que nos destacam</h2>
+<p class="lede">Poucas agências levam estes números. Chegar com eles coloca a dot. em outro patamar.</p>
+<div class="chips-dados">
+  <span>Cadastros por praça, ano a ano</span>
+  <span>Custo por cadastro</span>
+  <span>Cadastro que virou compra</span>
+  <span>Escuta social por praça</span>
+  <span>Voz do franqueado</span>
+  <span>Fluxo na loja da praça</span>
+  <span>Capacidade por hora</span>
+  <span>Recall antes e depois</span>
+  <span>Brinde mais usado</span>
 </div>
 </section>
 
-<section id="checklist">
-<h2><small>Antes de enviar</small>Checklist de contundência</h2>
-<ol class="check">
-  <li>A pergunta de negócio está escrita em uma frase no começo.</li>
-  <li>O que deu errado em 2026 está assumido, com número e com correção.</li>
-  <li>Existe pelo menos um dado de escuta que o cliente não conhecia.</li>
-  <li>O insight é uma tensão humana, não um tema.</li>
-  <li>A ideia cabe numa frase e é nova em relação aos anos anteriores.</li>
-  <li>Cada módulo tem objetivo, capacidade por hora e preço.</li>
-  <li>O cadastro está dentro da mecânica, e a loja da praça ganha algo concreto.</li>
-  <li>Acessibilidade, escoamento, conforto térmico e retaguarda estão no projeto.</li>
-  <li>Toda meta tem linha de base, e o painel ao vivo está previsto.</li>
-  <li>Há três cenários de investimento com custo por resultado.</li>
-  <li>Cada praça tem um responsável sênior com nome.</li>
-  <li>A banca Boticário avaliou, e nenhuma das três deu nota abaixo de 7.</li>
-  <li>dot. está em minúsculas em todo o material.</li>
+<section id="roteiro">
+<h2><small>Na reunião</small>Roteiro da apresentação</h2>
+<p class="lede">Cerca de 20 slides, 30 minutos. Abrir com um dado do público, nunca com a agência.</p>
+<ol class="roteiro">
+  <li>Um dado do folião que elas não conhecem</li>
+  <li>O que construímos juntos, com números</li>
+  <li>O objetivo de 2027</li>
+  <li>O que ouvimos do público e da rede</li>
+  <li>O insight</li>
+  <li>A ideia</li>
+  <li>A experiência e o papel da loja</li>
+  <li>O digital</li>
+  <li>Metas e painel ao vivo</li>
+  <li>Cenários de investimento</li>
+  <li>Operação e responsáveis</li>
+  <li>O que decidimos hoje</li>
 </ol>
+<div class="grid2">
+  <div class="card"><h4>Respostas que precisam estar prontas</h4><p>Quanto custa cada cadastro? O que muda em relação a 2026? O que o franqueado ganha? E se chover? Quem responde por cada praça? O que dá para testar menor antes?</p></div>
+  <div class="card"><h4>Como falar</h4><p>Frases curtas, dado com fonte, vocabulário da casa: jornada, território, envolver, relevância cultural, cadastro, escalar. dot. sempre em minúsculas.</p></div>
+</div>
 </section>
 
-<footer>
-<p class="src">Base: dossiê das decisoras (index.html), feedback do São João 2026, pós-venda de Caruaru 2026, proposta de Carnaval 2026 da dot. e pesquisa Carnaval de Camarote. Os números públicos do grupo têm fonte no dossiê.</p>
-</footer>
+<section id="banca">
+<h2><small>Ferramenta</small>Banca Boticário</h2>
+<p>Antes do cliente, a proposta passa pelo squad que simula as três decisoras. Cada uma dá nota de 0 a 10 e aponta a objeção que faria. Só segue com as três em 7 ou mais. Para usar, peça ao Claude: <b>"leva para a banca Boticário"</b>.</p>
+<p class="src">É simulação baseada no que elas disseram em público. Serve para achar furos antes, nunca para falar em nome delas.</p>
+</section>
+
+<section id="checklist">
+<h2><small>Antes de enviar</small>Checklist final</h2>
+<ol class="check">
+  <li>Objetivo de negócio em uma frase.</li>
+  <li>Resultados de 2026 com número.</li>
+  <li>Um dado do público que o cliente não conhecia.</li>
+  <li>Ideia em uma frase, nova e ligada a perfumaria.</li>
+  <li>Cadastro dentro da mecânica, com meta por praça.</li>
+  <li>A loja da praça ganha algo concreto.</li>
+  <li>Capacidade por hora, acessibilidade e plano de chuva.</li>
+  <li>Custo por resultado e três cenários.</li>
+  <li>Responsável com nome por praça.</li>
+  <li>Aprovada pela banca com as três em 7 ou mais.</li>
+</ol>
+</section>
 </main>
 </div>
 
