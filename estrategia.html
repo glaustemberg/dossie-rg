@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>Método de Apresentação Boticário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dossiê de inteligência. Coluna de leitura central, índice lateral no desktop, fichas de fato x inferência marcadas por selo. */
+:root{
+  --bg:#ffffff; --surface:#f2f4f7; --line:#dfe3ea; --ink:#15181e; --muted:#5b6372;
+  --accent:#1f45c9; --accent-soft:#e6ecfc; --fact:#0b6646; --fact-soft:#e3f4ec; --inf:#8a4608; --inf-soft:#fbeedd; --warn:#b3261e; --warn-soft:#fbe7e5;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1115; --surface:#181b21; --line:#2a2f38; --ink:#e9ecf1; --muted:#9aa3b2;
+  --accent:#7d9bff; --accent-soft:#1c2542; --fact:#4cc995; --fact-soft:#13291f; --inf:#f0a95a; --inf-soft:#2e2112; --warn:#ff8a80; --warn-soft:#331614; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --surface:#181b21; --line:#2a2f38; --ink:#e9ecf1; --muted:#9aa3b2;
+  --accent:#7d9bff; --accent-soft:#1c2542; --fact:#4cc995; --fact-soft:#13291f; --inf:#f0a95a; --inf-soft:#2e2112; --warn:#ff8a80; --warn-soft:#331614; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:40px 80px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;font-family:var(--mono);font-size:12.5px}
+nav.toc p{margin:0 0 10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:t}
+nav.toc a{color:var(--muted);text-decoration:none;display:block;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--accent);border-left-color:var(--accent);outline:none}
+main{min-width:0}
+header.top{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:8px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:0 0 20px}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-family:var(--mono);font-size:12.5px;color:var(--muted);align-items:center}
+.tag{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap;vertical-align:2px}
+.tag.f{background:var(--fact-soft);color:var(--fact)}
+.tag.i{background:var(--inf-soft);color:var(--inf)}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+section{padding-top:48px;scroll-margin-top:16px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,32px);letter-spacing:-.01em;line-height:1.15;margin:0 0 6px;text-wrap:balance}
+h2 small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+h3{font-family:var(--display);font-weight:700;font-size:20px;margin:30px 0 8px;line-height:1.25}
+p{margin:0 0 14px;max-width:70ch}
+.lede{font-size:19px;color:var(--muted);max-width:66ch}
+ul.clean{margin:0 0 14px;padding-left:20px;max-width:72ch;display:grid;gap:6px}
+a{color:var(--accent);text-underline-offset:2px}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.src a{color:var(--muted)}
+
+/* síntese */
+.verdict{background:var(--ink);color:var(--bg);border-radius:6px;padding:28px 30px;margin-top:32px}
+.verdict h2{color:var(--bg)}
+.verdict h2 small{color:var(--bg)}
+.verdict ol{margin:14px 0 0;padding-left:22px;display:grid;gap:10px;max-width:78ch}
+.verdict li::marker{font-family:var(--mono);font-size:14px}
+
+/* ficha */
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:18px 0 8px}
+.ficha div{background:var(--bg);padding:14px 16px;min-width:0}
+.ficha dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ficha dd{margin:0;font-family:var(--display);font-weight:500;font-size:16px;line-height:1.35}
+
+/* linha do tempo */
+.timeline{list-style:none;margin:18px 0 0;padding:0;border-left:2px solid var(--line);display:grid;gap:18px}
+.timeline li{position:relative;padding-left:22px;max-width:72ch}
+.timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline .yr{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500;display:block}
+.timeline b{font-family:var(--display);font-weight:700}
+
+/* tabelas */
+.tbl{overflow-x:auto;margin:16px 0 8px;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;background:var(--surface);padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.y{font-family:var(--mono);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.r{font-weight:600}
+
+/* grades de cartões */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px}
+.card{border:1px solid var(--line);border-radius:6px;padding:18px 20px;min-width:0}
+.card h4{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 6px;line-height:1.3}
+.card p{font-size:15.5px;margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+.card.do{border-top:3px solid var(--fact)}
+.card.dont{border-top:3px solid var(--warn)}
+
+/* números */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.num{background:var(--surface);border-radius:6px;padding:16px}
+.num b{display:block;font-family:var(--display);font-weight:700;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums}
+.num span{font-size:14px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+
+/* organograma */
+.org{display:grid;gap:10px;margin:18px 0;font-family:var(--display)}
+.org .lvl{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.org .n{border:1px solid var(--line);border-radius:6px;padding:10px 14px;background:var(--bg);min-width:0;flex:1 1 200px}
+.org .n b{display:block;font-size:15.5px}
+.org .n span{font-family:var(--body);font-size:14px;color:var(--muted)}
+.org .n.key{border:2px solid var(--accent);background:var(--accent-soft)}
+.org .n.dot{border:2px dashed var(--fact)}
+.org .arrow{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:14px}
+
+/* vocabulário */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.chips span{font-family:var(--mono);font-size:13px;background:var(--surface);border:1px solid var(--line);padding:4px 10px;border-radius:99px}
+
+.quote{font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,30px);line-height:1.2;border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:22px 0;max-width:30ch;text-wrap:balance}
+.quote cite{display:block;font-family:var(--mono);font-size:12px;font-style:normal;color:var(--muted);margin-top:10px;font-weight:400}
+
+.callout{background:var(--accent-soft);border-radius:6px;padding:18px 20px;margin:18px 0;max-width:78ch}
+.callout p:last-child{margin-bottom:0}
+.callout.w{background:var(--warn-soft)}
+
+ol.steps{margin:14px 0;padding-left:0;list-style:none;counter-reset:s;display:grid;gap:12px;max-width:76ch}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:500;font-size:13px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;margin-top:2px}
+
+/* imagens */
+header.top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:32px;align-items:end}
+.hero-img{margin:0;border-radius:6px;overflow:hidden;background:var(--surface);aspect-ratio:4/5;max-width:100%}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:62% 20%;display:block}
+figcaption,.cap{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.4;margin-top:6px}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:18px 0 6px}
+.strip a{text-decoration:none;color:var(--ink);display:block;min-width:0}
+.strip img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;display:block;background:var(--surface)}
+.strip b{display:block;font-family:var(--display);font-size:14.5px;margin-top:8px;line-height:1.3}
+.strip a:hover b,.strip a:focus-visible b{color:var(--accent)}
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;margin:20px 0 8px}
+.case{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:var(--bg)}
+.case img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 30%;display:block;background:var(--surface)}
+.case .b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.case .meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.case h4{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.25;margin:0}
+.case p{font-size:14.5px;line-height:1.5;margin:0}
+.case .res{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);font-size:14px}
+.case .res b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px;font-weight:500}
+.org .n{display:flex;gap:12px;align-items:center}
+.org .n img,.org .n .ini{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none;background:var(--surface)}
+.org .n .ini{display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--muted)}
+.org .n div{min-width:0}
+.sj{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px 10px;margin:18px 0 22px}
+.sj figure{margin:0;min-width:0}
+.sj img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;display:block;background:var(--surface)}
+.sj .big{grid-column:span 4;grid-row:span 2;display:flex;flex-direction:column}
+.sj .big img{flex:1 1 auto;aspect-ratio:auto;min-height:0}
+.sj .sm{grid-column:span 2}
+.sj .md{grid-column:span 3}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+.duo figure{margin:0;min-width:0}
+.duo img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:4px;display:block;background:var(--surface)}
+@media (max-width:700px){
+  header.top{grid-template-columns:minmax(0,1fr)}
+  .hero-img{aspect-ratio:4/3;order:-1}
+  .sj{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sj .big,.sj .md,.sj .sm{grid-column:span 2;grid-row:auto}
+  .sj .big img{aspect-ratio:3/2}
+}
+
+.trio-hero{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.trio-hero figure{margin:0;min-width:0}
+.trio-hero img,.trio-hero .ini-g{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:4px;display:block;background:var(--surface)}
+.trio-hero .ini-g{display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:28px;color:var(--muted)}
+.pessoa{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:22px;align-items:start;margin-top:14px}
+.pessoa .ficha{margin:0}
+.retrato{margin:0}
+.retrato img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:6px;display:block}
+.retrato.vazio span{display:grid;place-items:center;aspect-ratio:4/5;border-radius:6px;background:var(--surface);font-family:var(--display);font-weight:700;font-size:40px;color:var(--muted)}
+.ponte{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--ink);color:var(--bg);border-radius:6px;padding:18px 22px;margin-top:40px}
+.ponte a{color:var(--bg);font-family:var(--display);font-weight:700;font-size:18px}
+@media (max-width:700px){.pessoa{grid-template-columns:minmax(0,1fr)}.retrato{max-width:220px}}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line)}
+footer ol{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:20px;display:grid;gap:4px;word-break:break-word}
+footer a{color:var(--muted)}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:0;padding-block:24px 64px}
+  nav.toc{position:static;margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:18px}
+  nav.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .verdict{padding:22px 20px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<style>
+header.top.solo{grid-template-columns:minmax(0,1fr)}
+.who{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:99px;white-space:nowrap;display:inline-block}
+.who.r{background:var(--accent-soft);color:var(--accent)}
+.who.j{background:var(--fact-soft);color:var(--fact)}
+.who.p{background:var(--inf-soft);color:var(--inf)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0 10px}
+.bloco{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.bloco .bt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.bloco a{font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);text-decoration:none}
+.bloco a:hover,.bloco a:focus-visible{color:var(--accent)}
+.etapa{border-top:1px solid var(--line);margin-top:48px}
+.porque{font-size:18px;max-width:72ch}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:10px}
+.cols>div{min-width:0}
+.cols h4{font-family:var(--display);font-weight:700;font-size:16px;margin:14px 0 6px}
+.cols h4:first-child{margin-top:0}
+.cols ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:16px}
+.cols p{font-size:16px}
+.erro{background:var(--warn-soft);border-radius:6px;padding:12px 16px;font-size:15.5px;max-width:78ch;margin-top:16px}
+ol.mini{margin:0;padding-left:22px;display:grid;gap:4px;font-size:16px}
+ol.check{margin:14px 0;padding-left:0;list-style:none;display:grid;gap:10px;max-width:76ch;counter-reset:c}
+ol.check li{counter-increment:c;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:start}
+ol.check li::before{content:"";width:18px;height:18px;border:2px solid var(--accent);border-radius:4px;margin-top:4px}
+.tbl table{min-width:720px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <p>Índice</p>
+  <ol>
+    <li><a href="#tese">A tese</a></li>
+    <li><a href="#mapa">O mapa das etapas</a></li>
+    <li><a href="#e0">0 · Enquadrar</a></li>
+    <li><a href="#e1">1 · Autoauditoria</a></li>
+    <li><a href="#e2">2 · Escuta</a></li>
+    <li><a href="#e3">3 · Insight</a></li>
+    <li><a href="#e4">4 · Estratégia</a></li>
+    <li><a href="#e5">5 · Ideia</a></li>
+    <li><a href="#e6">6 · Experiência</a></li>
+    <li><a href="#e7">7 · Amplificação</a></li>
+    <li><a href="#e8">8 · Mensuração</a></li>
+    <li><a href="#e9">9 · Economia</a></li>
+    <li><a href="#e10">10 · Operação</a></li>
+    <li><a href="#e11">11 · Narrativa</a></li>
+    <li><a href="#e12">12 · Depois</a></li>
+    <li><a href="#dados">Dados que diferenciam</a></li>
+    <li><a href="#ideias">Como gerar as ideias</a></li>
+    <li><a href="#banca">A banca Boticário</a></li>
+    <li><a href="#checklist">Checklist final</a></li>
+    <li><a href="index.html">Voltar ao dossiê</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top solo">
+  <div>
+  <p class="eyebrow">dot.promo · Grupo Boticário · Carnaval 2027 e próximos projetos · 29/09/2026</p>
+  <h1>Método de Apresentação Boticário</h1>
+  <p class="role">Como construir o planejamento, gerar as ideias e defender a proposta para Renata Gomide, Juliana Razini e Roberta Pepe. Cada etapa diz o que precisa existir, por que importa, que dado usar e quem da banca vai cobrar.</p>
+  <div class="legend">
+    <span><span class="who r">Renata</span> marca e negócio</span>
+    <span><span class="who j">Juliana</span> rede e território</span>
+    <span><span class="who p">Roberta</span> festa e execução</span>
+  </div>
+  </div>
+</header>
+
+<section id="tese">
+<div class="verdict">
+  <h2><small>A tese</small>A dot. precisa mudar de lugar na cabeça do cliente</h2>
+  <p>Hoje a dot. é lembrada como a agência que monta a casa bonita no Nordeste. O feedback de julho mostra o limite desse lugar: elogio para criação e luz, cobrança por acabamento, prazo e, principalmente, por cadastro. As três decisoras medem outra coisa. A Renata mede marca e negócio, a Juliana mede rede e relação com a cidade, a Roberta mede se a ativação faz sentido para quem está na festa.</p>
+  <p>O novo lugar é este: <b>a agência que conhece o território melhor do que ninguém e prova, com número, o que cada real fez pela marca e pela loja da praça.</b> Tudo neste método serve para chegar lá. Ideia sem prova volta a ser casa bonita. Prova sem ideia vira relatório. A apresentação que vence traz as duas.</p>
+</div>
+</section>
+
+<section id="mapa">
+<h2><small>Visão geral</small>O mapa das etapas</h2>
+<p class="lede">São 13 etapas em quatro blocos. A ordem importa: cada etapa usa o que a anterior produziu. Pular a escuta produz ideia genérica. Pular a mensuração produz proposta que a Renata não aprova. Pular a operação repete o São João 2026.</p>
+<div class="flow">
+  <div class="bloco"><span class="bt">Fundamento</span><a href="#e0">0 Enquadrar</a><a href="#e1">1 Autoauditoria</a><a href="#e2">2 Escuta</a></div>
+  <div class="bloco"><span class="bt">Pensamento</span><a href="#e3">3 Insight</a><a href="#e4">4 Estratégia</a><a href="#e5">5 Ideia</a></div>
+  <div class="bloco"><span class="bt">Construção</span><a href="#e6">6 Experiência</a><a href="#e7">7 Amplificação</a><a href="#e8">8 Mensuração</a><a href="#e9">9 Economia</a><a href="#e10">10 Operação</a></div>
+  <div class="bloco"><span class="bt">Defesa</span><a href="#e11">11 Narrativa</a><a href="#e12">12 Depois</a></div>
+</div>
+<p class="src">Cada etapa termina com um entregável. Nenhuma etapa começa sem o entregável da anterior aprovado internamente. A banca Boticário (squad simulado das três) avalia os entregáveis 5, 8 e 11 antes do cliente ver qualquer coisa.</p>
+</section>
+
+<section id="e0" class="etapa">
+<h2><small>Etapa 0 · Fundamento</small>Enquadrar o problema de negócio</h2>
+<p class="porque"><b>Por que importa.</b> A pergunta do cliente nunca é "façam um carnaval bonito". É o que o carnaval precisa fazer pela marca e pela rede em 2027. Quem responde a pergunta certa já sai na frente de quem responde o briefing ao pé da letra.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>A pergunta de negócio escrita em uma frase. Exemplo: como o Carnaval 2027 aumenta cadastros qualificados e venda de perfumaria nas lojas das praças, com custo por resultado menor que em 2026.</li>
+    <li>O contexto do grupo: o GMV cresceu 6,7% em 2025 contra 19% em 2024, o CEO fala em "apertar parafusos", e a disputa com Natura e Avon está em 15,5% contra 15,7%.</li>
+    <li>Os três combinados do feedback de julho, na ordem do cliente: análise dos dados, planos de ação mais ágeis, aprimoramento do detalhe.</li>
+    <li>Quem decide e quem assina: Renata, Juliana, Roberta e a confirmação sobre Jacqueline Tobaru.</li>
+    <li>Restrições: verba provável, praças, datas, marcas do grupo que já ocupam território (maquiagem e cabelo são de outras marcas).</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Dados públicos do grupo citados com fonte. Mostra que a dot. lê o negócio, não só o briefing.</li>
+    <li>O calendário da marca: para a Juliana, o São João pesa como Dia das Mães e Natal. Qual é o peso do Carnaval?</li>
+  </ul>
+  <h4>Entregável</h4><p>Uma página: pergunta de negócio, objetivos, restrições e decisoras.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Começar pela ideia criativa. Sem pergunta de negócio, não há critério para escolher entre ideias, e a discussão vira gosto.</p>
+</section>
+
+<section id="e1" class="etapa">
+<h2><small>Etapa 1 · Fundamento</small>Autoauditoria com números</h2>
+<p class="porque"><b>Por que importa.</b> O cliente já disse o que achou do São João 2026. A dot. ganha autoridade quando chega antes com a própria análise, com números, e com o plano de correção. Quem chega com o número primeiro define o terreno da conversa.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Retrospectiva do São João 2026 e do Carnaval 2026 por praça: público, visitas, cadastros, experimentação, brindes, incidentes.</li>
+    <li>A comparação de cadastros: mais de 20 mil em Caruaru 2025 (citado pela Juliana na InfoMoney) contra 4.821 leads em Caruaru 2026 (pós-venda da dot.). Primeiro confirmar se medem a mesma coisa. Se medirem, explicar a causa e mostrar a correção.</li>
+    <li>Resposta a cada item do "PARAR" e do "COMEÇAR" do feedback, com a mudança de processo correspondente.</li>
+    <li>O que funcionou e deve continuar: criação, iluminação, shows na varanda, perfume de bolso como o brinde de maior sucesso.</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Taxa de conversão de abordagem em cadastro (em Caruaru: 26.830 abordagens da volante, 4.821 leads).</li>
+    <li>Cadastros por hora e por metro quadrado.</li>
+    <li>Série histórica por praça, mesmo incompleta.</li>
+  </ul>
+  <h4>Entregável</h4><p>Retrospectiva de 3 a 4 slides, com números e com o erro assumido sem rodeio.</p>
+  <h4>Quem cobra</h4><p><span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Esconder o que deu errado ou defender o acabamento quando a pergunta é eficiência. As três já sabem o que deu errado. A dúvida delas é se a dot. sabe.</p>
+</section>
+
+<section id="e2" class="etapa">
+<h2><small>Etapa 2 · Fundamento</small>Escuta do consumidor e do território</h2>
+<p class="porque"><b>Por que importa.</b> A Renata diz que as estratégias vêm de fora para dentro e lê o que as pessoas escrevem sobre a marca. A Juliana usou 9 mil conversas para desenhar o projeto gaúcho. Ideia que nasce de escuta real vence ideia que nasce de brainstorm.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Escuta social do carnaval de cada praça (Recife, Olinda, Salvador e as demais): como as pessoas falam de perfume, calor, suor, se arrumar, se ver, ser vista.</li>
+    <li>Conversa com franqueados das praças: o que vende no carnaval, o que falta, o que o público pede na loja.</li>
+    <li>Leitura das ações de concorrentes e de outras categorias: a pesquisa Carnaval de Camarote já tem 37 ações de 24 marcas.</li>
+    <li>O que o próprio Boticário já fez no Carnaval: Galo da Madrugada desde 2023, camarote, trio, camarim com números de 2024 e 2025.</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Volume de conversa, termos mais usados e a tensão principal, com prints reais.</li>
+    <li>Citação literal de franqueado. Poucas agências trazem a voz da rede.</li>
+    <li>Mapa de território: quais marcas ocupam quais momentos da festa e o que está livre.</li>
+  </ul>
+  <h4>Entregável</h4><p>Relatório de escuta de 1 página por praça e 1 página de síntese.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Tratar o Nordeste como um bloco. Recife não é Salvador, e a Juliana já disse que a marca não quer ser uma loja de Curitiba no Nordeste.</p>
+</section>
+
+<section id="e3" class="etapa">
+<h2><small>Etapa 3 · Pensamento</small>Insight e tensão cultural</h2>
+<p class="porque"><b>Por que importa.</b> O insight é a ponte entre o que se ouviu e a ideia. Sem ele, a ideia é decoração. As campanhas que a Renata aprova (Tormenta, Despedidas, 5 dias?) nascem de uma tensão real, às vezes medida: 64% da conversa sobre ninho vazio era de tristeza.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Uma frase no formato: as pessoas sentem X, mas vivem Y, e a marca pode fazer Z.</li>
+    <li>O dado da escuta que sustenta a frase.</li>
+    <li>O teste de verdade: um franqueado ou um folião reconhece a frase como verdadeira?</li>
+  </ul>
+  <h4>Exemplo de hipótese (a validar)</h4>
+  <p>No carnaval, a pessoa se arruma para ser vista, mas o calor, o suor e as horas de rua desmancham tudo. O espelho é o último momento em que ela se vê como queria. O Boticário pode estar nesse momento e fazer ele durar, com cheiro que acompanha a noite inteira.</p></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Percentual de conversas com a tensão identificada.</li>
+    <li>Comportamento observado em campo no carnaval anterior (fotos, falas).</li>
+  </ul>
+  <h4>Entregável</h4><p>Um insight principal e no máximo dois alternativos, cada um com o dado que o sustenta.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Confundir tema com insight. "Espelho" é um tema. O insight é a tensão humana que faz o espelho importar.</p>
+</section>
+
+<section id="e4" class="etapa">
+<h2><small>Etapa 4 · Pensamento</small>Estratégia: o papel do Carnaval na jornada</h2>
+<p class="porque"><b>Por que importa.</b> A Renata pensa em jornada em looping, não em funil, e quer saber o papel de cada ponto de contato e a métrica de cada um antes da criação. É a etapa que transforma evento em plano de marketing.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>A jornada desenhada: descoberta na festa, experimentação, cadastro, conteúdo compartilhado, visita ou compra na loja da praça, recompra pelo fidelidade.</li>
+    <li>O papel de cada ponto: camarote, rua, trio, loja franqueada, creators, CRM.</li>
+    <li>Objetivos com número e linha de base: cadastros, custo por cadastro, conversão em compra, recall regional, mídia ganha.</li>
+    <li>O papel do franqueado: como a ação leva gente para a loja dele.</li>
+    <li>O que é estruturante (fica anos) e o que é hype (testa e corta), na linguagem da Renata.</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Base do fidelidade: 26 milhões de clientes ativos no grupo. Qual é a meta de entrada de base nova pelo Carnaval?</li>
+    <li>Rede do Nordeste: 860 pontos de venda e mais de 100 franqueados.</li>
+  </ul>
+  <h4>Entregável</h4><p>Um diagrama de jornada e uma tabela de objetivos com meta e linha de base.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Meta sem linha de base. "Aumentar cadastros" não é meta. "Passar de 4.821 para 12 mil em Caruaru, a R$ X por cadastro" é.</p>
+</section>
+
+<section id="e5" class="etapa">
+<h2><small>Etapa 5 · Pensamento</small>A ideia central</h2>
+<p class="porque"><b>Por que importa.</b> Uma ideia forte organiza tudo o resto e cabe numa frase. Para a Renata, a mídia constrói marca, mas o criativo é o que faz a diferença. Para a Juliana e a Roberta, a ideia precisa pertencer ao lugar e fazer sentido na festa.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>A ideia em uma frase, derivada do insight.</li>
+    <li>A ligação com o posicionamento: Boticário como perfumaria e como presente.</li>
+    <li>O que ela provoca de conversa. Quem vai falar disso, e por quê?</li>
+    <li>A versão de cada praça: a mesma ideia com sotaque local.</li>
+    <li>Por que ela é nova em relação aos anos anteriores. A Renata critica repetição.</li>
+  </ul>
+  <h4>Os cinco filtros antes de levar</h4>
+  <ol class="mini">
+    <li>Nasce de uma tensão real e medida?</li>
+    <li>Cabe numa frase e num gesto?</li>
+    <li>Gera conversa sem mídia paga?</li>
+    <li>Leva gente e venda para a loja da praça?</li>
+    <li>Pode durar mais de um ano?</li>
+  </ol></div>
+  <div><h4>Sobre o tema do espelho</h4><p>O tema tem força: é objeto de perfumaria e de maquiagem, é íntimo, é o momento antes de sair, e vira brinde útil na festa (espelho de bolso junto com o perfume de bolso, que foi o brinde de maior sucesso do São João 2026). O risco é ficar só estético. Ele precisa de uma tensão e de um mecanismo de cadastro e de venda, senão vira cenário.</p>
+  <h4>Entregável</h4><p>Três rotas avaliadas pela banca, uma recomendada e uma alternativa.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Levar oito ideias para o cliente escolher. Isso transfere o trabalho para ele. Leve uma recomendação e uma alternativa, com o porquê.</p>
+</section>
+
+<section id="e6" class="etapa">
+<h2><small>Etapa 6 · Construção</small>Desdobramento em experiência</h2>
+<p class="porque"><b>Por que importa.</b> É onde a Roberta avalia se funciona na festa e onde a Juliana avalia se a rede ganha. É também onde o São João 2026 falhou: acessibilidade, escoamento de água, conforto térmico, retaguarda.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Arquitetura modular: um núcleo estruturante e satélites testáveis, cada um com preço e objetivo.</li>
+    <li>A jornada do folião dentro da ação, minuto a minuto, com o momento exato do cadastro.</li>
+    <li>O cadastro embutido na mecânica, sem fila e sem fricção.</li>
+    <li>Brinde útil na festa (espelho, perfume de bolso, item de calor), pensado para ser usado e fotografado.</li>
+    <li>O papel da loja franqueada: cupom, retirada de brinde, extensão da experiência.</li>
+    <li>Acessibilidade, escoamento, cobertura, conforto térmico e retaguarda desde o primeiro render.</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Capacidade por hora de cada módulo e cadastros esperados.</li>
+    <li>Fluxo esperado com base nos números reais de 2025 e 2026.</li>
+  </ul>
+  <h4>Entregável</h4><p>Planta, jornada do folião, renders e tabela de capacidade.</p>
+  <h4>Quem cobra</h4><p><span class="who p">Roberta</span> <span class="who j">Juliana</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Render bonito sem capacidade calculada. A pergunta que vem é "quantas pessoas isso atende por hora e quantas cadastra".</p>
+</section>
+
+<section id="e7" class="etapa">
+<h2><small>Etapa 7 · Construção</small>Amplificação: nasce no físico, escala no digital</h2>
+<p class="porque"><b>Por que importa.</b> A Renata cita o São João como exemplo de ação física que se estende para o digital. A Roberta lembra que festival regional se espalha para o Brasil pela transmissão. Evento que não vira conteúdo morre no dia.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Creators locais com papel definido antes, durante e depois.</li>
+    <li>O momento compartilhável de cada módulo: a foto que as pessoas querem tirar.</li>
+    <li>Plano de conteúdo pós-evento: o que vira filme, post, case.</li>
+    <li>Integração com a comunicação da marca e com a loja (vitrine, CRM).</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Alcance e engajamento previstos por creator, com histórico.</li>
+    <li>Menções orgânicas esperadas e como serão medidas.</li>
+  </ul>
+  <h4>Entregável</h4><p>Plano de amplificação em uma página.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who p">Roberta</span></p></div>
+</div>
+</section>
+
+<section id="e8" class="etapa">
+<h2><small>Etapa 8 · Construção</small>Mensuração definida antes</h2>
+<p class="porque"><b>Por que importa.</b> É a etapa que mais diferencia a dot. O feedback de julho não trouxe um único número. As três medem, e nenhuma agência de live marketing do Nordeste costuma chegar com plano de mensuração pronto. Quem define como medir define como será julgado.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>KPIs por estágio da jornada, com meta e linha de base.</li>
+    <li>Como cada número será coletado: tablet, QR, código no cupom, contador de fluxo.</li>
+    <li>Painel em tempo real durante a festa, para ajustar enquanto ainda dá tempo. É o "teste, corte e escala" da Renata aplicado ao evento.</li>
+    <li>Gatilhos: o que se faz se o cadastro por hora ficar abaixo da meta no primeiro dia.</li>
+    <li>Proposta de acordo de dados com o Boticário para cruzar cadastro com compra no fidelidade.</li>
+    <li>Relatório final em até 15 dias.</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Custo por cadastro qualificado.</li>
+    <li>Conversão de cadastro em compra em 30 e 90 dias.</li>
+    <li>Recall regional antes e depois.</li>
+    <li>Fluxo na loja da praça durante o evento, comparado a semanas normais.</li>
+  </ul>
+  <h4>Entregável</h4><p>Plano de mensuração e maquete do painel.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
+</div>
+<p class="erro"><b>Erro comum.</b> Medir só público e impacto. Público estimado não prova nada para quem mede base ativa e custo por resultado.</p>
+</section>
+
+<section id="e9" class="etapa">
+<h2><small>Etapa 9 · Construção</small>Economia da proposta</h2>
+<p class="porque"><b>Por que importa.</b> Com o grupo apertando custos, cada real será questionado. A proposta de Carnaval 2026 já era modular por cotas. O próximo passo é mostrar custo por resultado e o que se ganha em cada cenário.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Três cenários de investimento, cada um com o resultado esperado.</li>
+    <li>Custo por módulo e custo por cadastro previsto em cada cenário.</li>
+    <li>Reaproveitamento: o que vem de ações anteriores e o que dura para os próximos anos.</li>
+    <li>Transparência de custo, na linha do ganha-ganha que a Renata defende.</li>
+  </ul></div>
+  <div><h4>Dados que diferenciam</h4><ul>
+    <li>Comparação do custo por cadastro com 2026.</li>
+    <li>Economia gerada por reaproveitamento.</li>
+  </ul>
+  <h4>Entregável</h4><p>Tabela de cenários, de uma página.</p>
+  <h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span></p></div>
+</div>
+</section>
+
+<section id="e10" class="etapa">
+<h2><small>Etapa 10 · Construção</small>Operação e governança</h2>
+<p class="porque"><b>Por que importa.</b> É a resposta direta ao "COMEÇAR" do feedback: a dot. como primeiro filtro técnico, com cronograma, governança e senioridade proporcional à praça. Uma ideia ótima com a operação de 2026 repete as críticas de 2026.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Cronograma reverso com o guide entregue com antecedência real, não uma semana antes.</li>
+    <li>Caderno técnico com acessibilidade, escoamento, caimento de cobertura, iluminação, conforto térmico e retaguarda.</li>
+    <li>Responsável sênior por praça, com nome.</li>
+    <li>Rotina de acompanhamento com o cliente e prazo de resposta de dúvidas.</li>
+    <li>Checklist de entregáveis de patrocínio por praça (a crítica de Mossoró).</li>
+  </ul></div>
+  <div><h4>Entregável</h4><p>Cronograma, organograma da operação e amostra do caderno técnico.</p>
+  <h4>Quem cobra</h4><p><span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
+</div>
+</section>
+
+<section id="e11" class="etapa">
+<h2><small>Etapa 11 · Defesa</small>A narrativa da apresentação</h2>
+<p class="porque"><b>Por que importa.</b> A ordem muda o resultado. A Renata vive com atenção escassa. Abrir com a agência perde a sala. Abrir com um dado do consumidor que ela não conhece ganha.</p>
+<h4>Roteiro recomendado (cerca de 20 slides, 30 minutos)</h4>
+<ol class="steps">
+  <li><div><b>Um dado que elas não conhecem</b> sobre o folião ou sobre o território. 1 slide.</div></li>
+  <li><div><b>O que aprendemos em 2026</b>, com números e com o erro assumido. 2 slides.</div></li>
+  <li><div><b>A pergunta de negócio</b> do Carnaval 2027. 1 slide.</div></li>
+  <li><div><b>A escuta</b>: o que as pessoas e os franqueados disseram. 2 slides.</div></li>
+  <li><div><b>O insight</b>, em uma frase. 1 slide.</div></li>
+  <li><div><b>A jornada</b> e o papel do Carnaval nela. 1 slide.</div></li>
+  <li><div><b>A ideia</b>, em uma frase e em imagem. 2 slides.</div></li>
+  <li><div><b>A experiência</b>: módulos, jornada do folião, momento do cadastro, papel da loja. 4 slides.</div></li>
+  <li><div><b>A amplificação</b>. 1 slide.</div></li>
+  <li><div><b>Como vamos medir</b> e o painel ao vivo. 2 slides.</div></li>
+  <li><div><b>Cenários de investimento</b> com custo por resultado. 1 slide.</div></li>
+  <li><div><b>Operação e cronograma</b>, com os nomes. 1 slide.</div></li>
+  <li><div><b>O que pedimos para decidir hoje.</b> 1 slide.</div></li>
+</ol>
+<div class="cols">
+  <div><h4>Perguntas que virão e precisam de resposta pronta</h4><ul>
+    <li>Quanto custou cada cadastro em 2026 e quanto vai custar em 2027?</li>
+    <li>O que muda em relação aos anos anteriores?</li>
+    <li>Como o franqueado da praça ganha com isso?</li>
+    <li>O que acontece se chover?</li>
+    <li>Quem é o responsável por cada praça?</li>
+    <li>O que dá para testar menor antes de escalar?</li>
+  </ul></div>
+  <div><h4>Como falar</h4><ul>
+    <li>Frases curtas e dados com fonte.</li>
+    <li>Vocabulário da casa: jornada, território, envolver, relevância cultural, consistência, cadastro, escalar.</li>
+    <li>dot. sempre em minúsculas, em todo material.</li>
+    <li>Ensaiar antes com a banca Boticário e corrigir o que ela reprovar.</li>
+  </ul></div>
+</div>
+</section>
+
+<section id="e12" class="etapa">
+<h2><small>Etapa 12 · Defesa</small>Depois da apresentação</h2>
+<p class="porque"><b>Por que importa.</b> A relação é de dez anos. O que a dot. entrega depois do evento decide o próximo contrato mais do que a apresentação.</p>
+<div class="cols">
+  <div><h4>O que precisa existir</h4><ul>
+    <li>Ata da reunião em 24 horas, com as decisões e os próximos passos.</li>
+    <li>Relatório de resultado em até 15 dias após o evento, por praça, com os mesmos KPIs prometidos.</li>
+    <li>Aprendizados e proposta de ajuste para a próxima edição.</li>
+  </ul></div>
+  <div><h4>Quem cobra</h4><p><span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p></div>
+</div>
+</section>
+
+<section id="dados">
+<h2><small>Diferencial</small>Os dados que tornam a dot. diferente</h2>
+<p class="lede">Nenhuma destas informações é difícil de conseguir, mas quase nenhuma agência de live marketing leva. Chegar com elas muda o lugar da dot. na conversa.</p>
+<div class="tbl"><table>
+<thead><tr><th>Dado</th><th>Como conseguir</th><th>Por que diferencia</th><th>Quem valoriza</th></tr></thead>
+<tbody>
+<tr><td class="r">Cadastros por praça, com série histórica</td><td>Pós-vendas de 2025 e 2026, pedido ao cliente</td><td>Responde direto ao "casa x cadastros"</td><td><span class="who j">Juliana</span> <span class="who p">Roberta</span></td></tr>
+<tr><td class="r">Custo por cadastro qualificado</td><td>Orçamento dividido pelos cadastros válidos</td><td>É a métrica de eficiência que o momento do grupo pede</td><td><span class="who r">Renata</span> <span class="who j">Juliana</span></td></tr>
+<tr><td class="r">Conversão de cadastro em compra</td><td>Acordo de dados com o Boticário (fidelidade)</td><td>Liga o evento à venda. Quase ninguém propõe</td><td><span class="who r">Renata</span></td></tr>
+<tr><td class="r">Escuta social por praça</td><td>Ferramenta de social listening e leitura manual</td><td>É o método da Renata e da Juliana</td><td><span class="who r">Renata</span> <span class="who j">Juliana</span></td></tr>
+<tr><td class="r">Voz do franqueado</td><td>Entrevistas curtas com franqueados das praças</td><td>Mostra que a dot. entende a rede, não só o público</td><td><span class="who j">Juliana</span></td></tr>
+<tr><td class="r">Fluxo e venda na loja da praça</td><td>Dados do franqueado durante o evento</td><td>Prova que a festa leva gente para a loja</td><td><span class="who j">Juliana</span> <span class="who r">Renata</span></td></tr>
+<tr><td class="r">Capacidade por hora de cada módulo</td><td>Cálculo de projeto e dados de 2026</td><td>Transforma render em previsão</td><td><span class="who p">Roberta</span></td></tr>
+<tr><td class="r">Mapa de território do carnaval</td><td>Pesquisa Carnaval de Camarote, 37 ações de 24 marcas</td><td>Mostra onde há espaço livre</td><td><span class="who r">Renata</span> <span class="who p">Roberta</span></td></tr>
+<tr><td class="r">Recall regional antes e depois</td><td>Pesquisa curta em campo ou online</td><td>É a métrica que a Renata cita primeiro</td><td><span class="who r">Renata</span></td></tr>
+<tr><td class="r">Brinde mais usado e mais fotografado</td><td>Contagem de retirada e de menções</td><td>Prova que o brinde faz sentido na festa</td><td><span class="who p">Roberta</span></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="ideias">
+<h2><small>Processo criativo</small>Como gerar as ideias</h2>
+<ol class="steps">
+  <li><div><b>Três lentes, uma por decisora.</b> Cada pessoa do time gera ideias pensando numa das três: o que faria a Renata falar da marca, o que faria a Juliana dizer que a rede ganhou, o que faria a Roberta dizer que fez sentido na festa.</div></li>
+  <li><div><b>Volume antes de filtro.</b> Pelo menos 30 ideias soltas, todas ligadas ao insight.</div></li>
+  <li><div><b>Os cinco filtros da etapa 5.</b> O que não passa em três dos cinco sai.</div></li>
+  <li><div><b>Três rotas.</b> As sobreviventes se agrupam em três rotas com lógicas diferentes, não três versões da mesma ideia.</div></li>
+  <li><div><b>Banca Boticário.</b> As três rotas passam pela banca simulada. Cada decisora dá nota e objeção.</div></li>
+  <li><div><b>Uma recomendação e uma alternativa.</b> Com o porquê, a objeção prevista e a resposta.</div></li>
+</ol>
+</section>
+
+<section id="banca">
+<h2><small>Ferramenta</small>A banca Boticário</h2>
+<p>O squad <b>squad-boticario</b> simula as três decisoras com base em tudo que elas disseram em público e no que a dot. sabe da relação. Cada uma avalia a proposta pelos próprios critérios, dá nota de 0 a 10 e aponta a objeção que faria na reunião. A banca junta os três pareceres, mostra onde elas concordam e discordam e diz o que precisa mudar antes do cliente ver.</p>
+<div class="grid2">
+  <div class="card"><h4>Quando usar</h4><p>Nos entregáveis 5 (ideia), 8 (mensuração) e 11 (apresentação completa). Também para ensaiar perguntas difíceis.</p></div>
+  <div class="card"><h4>Como chamar</h4><p>Pedir ao Claude: "leva para a banca Boticário" e anexar a proposta, o deck ou a ideia em texto.</p></div>
+  <div class="card"><h4>O que ela não é</h4><p>Não é a opinião real das três. É uma simulação fundamentada. Serve para achar furos antes, nunca para falar em nome delas nem para ser mostrada ao cliente.</p></div>
+</div>
+</section>
+
+<section id="checklist">
+<h2><small>Antes de enviar</small>Checklist de contundência</h2>
+<ol class="check">
+  <li>A pergunta de negócio está escrita em uma frase no começo.</li>
+  <li>O que deu errado em 2026 está assumido, com número e com correção.</li>
+  <li>Existe pelo menos um dado de escuta que o cliente não conhecia.</li>
+  <li>O insight é uma tensão humana, não um tema.</li>
+  <li>A ideia cabe numa frase e é nova em relação aos anos anteriores.</li>
+  <li>Cada módulo tem objetivo, capacidade por hora e preço.</li>
+  <li>O cadastro está dentro da mecânica, e a loja da praça ganha algo concreto.</li>
+  <li>Acessibilidade, escoamento, conforto térmico e retaguarda estão no projeto.</li>
+  <li>Toda meta tem linha de base, e o painel ao vivo está previsto.</li>
+  <li>Há três cenários de investimento com custo por resultado.</li>
+  <li>Cada praça tem um responsável sênior com nome.</li>
+  <li>A banca Boticário avaliou, e nenhuma das três deu nota abaixo de 7.</li>
+  <li>dot. está em minúsculas em todo o material.</li>
+</ol>
+</section>
+
+<footer>
+<p class="src">Base: dossiê das decisoras (index.html), feedback do São João 2026, pós-venda de Caruaru 2026, proposta de Carnaval 2026 da dot. e pesquisa Carnaval de Camarote. Os números públicos do grupo têm fonte no dossiê.</p>
+</footer>
+</main>
+</div>
+
+</body>
+</html>

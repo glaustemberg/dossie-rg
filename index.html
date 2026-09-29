@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-<title>Dossiê Renata Gomide</title>
+<title>Decisoras do Boticário</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -162,6 +162,19 @@ figcaption,.cap{font-family:var(--mono);font-size:11.5px;color:var(--muted);line
   .sj .big img{aspect-ratio:3/2}
 }
 
+.trio-hero{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.trio-hero figure{margin:0;min-width:0}
+.trio-hero img,.trio-hero .ini-g{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:4px;display:block;background:var(--surface)}
+.trio-hero .ini-g{display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:28px;color:var(--muted)}
+.pessoa{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:22px;align-items:start;margin-top:14px}
+.pessoa .ficha{margin:0}
+.retrato{margin:0}
+.retrato img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:6px;display:block}
+.retrato.vazio span{display:grid;place-items:center;aspect-ratio:4/5;border-radius:6px;background:var(--surface);font-family:var(--display);font-weight:700;font-size:40px;color:var(--muted)}
+.ponte{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--ink);color:var(--bg);border-radius:6px;padding:18px 22px;margin-top:40px}
+.ponte a{color:var(--bg);font-family:var(--display);font-weight:700;font-size:18px}
+@media (max-width:700px){.pessoa{grid-template-columns:minmax(0,1fr)}.retrato{max-width:220px}}
+
 footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line)}
 footer ol{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:20px;display:grid;gap:4px;word-break:break-word}
 footer a{color:var(--muted)}
@@ -182,16 +195,20 @@ footer a{color:var(--muted)}
   <p>Índice</p>
   <ol>
     <li><a href="#sintese">Síntese</a></li>
-    <li><a href="#quem">Quem é</a></li>
+    <li><a href="#quem">Renata Gomide</a></li>
     <li><a href="#cases">O que construiu</a></li>
     <li><a href="#parceiros">Com quem deu resultado</a></li>
     <li><a href="#pensa">Como pensa</a></li>
     <li><a href="#qualidades">Qualidades e pontos cegos</a></li>
     <li><a href="#entorno">Quem está ao redor</a></li>
+    <li><a href="#trio">Quem decide o quê</a></li>
+    <li><a href="#juliana">Juliana Razini</a></li>
+    <li><a href="#roberta">Roberta Pepe</a></li>
     <li><a href="#saojoao">São João e a dot.</a></li>
     <li><a href="#apresentar">Como apresentar</a></li>
     <li><a href="#lacunas">Lacunas</a></li>
     <li><a href="#fontes">Fontes</a></li>
+    <li><a href="estrategia.html">Estratégia de apresentação</a></li>
   </ol>
 </nav>
 
@@ -199,15 +216,15 @@ footer a{color:var(--muted)}
 <header class="top">
   <div>
   <p class="eyebrow">dot.promo · inteligência de cliente · Grupo Boticário · 29/09/2026</p>
-  <h1>Renata Gomide</h1>
-  <p class="role">VP de Marketing do Grupo Boticário. No grupo desde 2015. Responde por mais de 14 marcas e um time de cerca de 900 pessoas.</p>
+  <h1>Decisoras do Boticário</h1>
+  <p class="role">Renata Gomide, VP de Marketing. Juliana Razini, Diretora de Franquias. Roberta Pepe, Gerente de Marketing Regional. As três pessoas que a Simone pediu para o time estudar antes do Carnaval Boti 2027.</p>
   <div class="legend">
     <span><span class="tag f">Fato</span> com fonte pública</span>
     <span><span class="tag i">Inferência</span> leitura nossa, confirmar antes de usar</span>
     <span><span class="tag w">Atenção</span> risco ou contradição</span>
   </div>
   </div>
-  <figure class="hero-img"><img src="img/renata-01-retrato-forbes.jpg" alt="Retrato de Renata Gomide"></figure>
+  <div class="trio-hero"><figure><img src="img/renata-02-retrato-mma.jpg" alt="Renata Gomide"><figcaption>Renata Gomide</figcaption></figure><figure><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini"><figcaption>Juliana Razini</figcaption></figure><figure><span class="ini-g" aria-hidden="true">RP</span><figcaption>Roberta Pepe</figcaption></figure></div>
 </header>
 
 <section id="sintese">
@@ -219,13 +236,15 @@ footer a{color:var(--muted)}
     <li>Ela vem do varejo (Grupo Pão de Açúcar) e trata o Boticário como marca física: mais de 4 mil lojas. Loja, franqueado e revendedora são público para ela, não só canal.</li>
     <li>Regionalidade é crença declarada dela, não modismo. Ela cita o São João e Parintins como fundamentais e rejeita a comunicação única e nacional. É o território onde a dot. tem autoridade real.</li>
     <li>Ela opera com teste, corte e escala: pilotos pequenos, ajuste em tempo real e mesa de performance. Proposta modular, com gatilhos de decisão, vence proposta grande do tipo tudo ou nada.</li>
+    <li>A Renata decide marca e negócio. A Juliana decide rede e território. A Roberta cuida da festa e da execução regional. A proposta precisa responder às três ao mesmo tempo, e a dot. precisa confirmar se Jacqueline Tobaru, porta-voz do Carnaval 2026, também assina.</li>
+    <li>A Juliana citou em público mais de 20 mil cadastros no Beautybox em Caruaru em 2025. O pós-venda de 2026 da dot. registra 4.821 leads. Se forem a mesma métrica, esse é o assunto da próxima reunião.</li>
     <li>O feedback do São João 2026 cobrou "análise dos dados" e "casa x cadastros". Isso é exatamente a régua dela. A dot. entra na sala com número ou não entra.</li>
   </ol>
 </div>
 </section>
 
 <section id="quem">
-<h2><small>01 · Perfil</small>Quem é</h2>
+<h2><small>01 · Perfil</small>Renata Gomide</h2>
 <dl class="ficha">
   <div><dt>Nome completo</dt><dd>Renata Araujo Gomide de Carvalho</dd></div>
   <div><dt>Cargo hoje</dt><dd>VP de Marketing (formalmente VP de Consumer), CMO do grupo</dd></div>
@@ -362,7 +381,7 @@ footer a{color:var(--muted)}
 
 <section id="entorno">
 <h2><small>06 · Mapa de poder</small>Quem está ao redor dela</h2>
-<p>Não há registro público de quem são as "pessoas importantes" que entraram agora no relacionamento com a dot. O mapa abaixo mostra quem existe hoje no entorno de marketing. Os vínculos de reporte são <span class="tag i">Inferência</span>.</p>
+<p>A Simone confirmou em 29/09/2026 as três pessoas-chave: Renata Gomide, Juliana Razini e Roberta Pepe. O mapa mostra onde cada uma está e quem mais aparece em volta. Os vínculos de reporte são <span class="tag i">Inferência</span>.</p>
 <div class="org" role="list">
   <div class="lvl"><div class="n" role="listitem"><img src="img/pessoa-fernando-mode.jpg" alt="Fernando Modé" loading="lazy"><div><b>Fernando Modé</b><span>CEO desde 2021</span></div></div></div>
   <div class="arrow">responde a</div>
@@ -378,15 +397,146 @@ footer a{color:var(--muted)}
   </div>
   <div class="arrow">quem opera o São João hoje</div>
   <div class="lvl">
-    <div class="n dot" role="listitem"><span class="ini" aria-hidden="true">JR</span><div><b>Juliana Razini</b><span>Diretora de Franquias de O Boticário, porta-voz do São João</span></div></div>
-    <div class="n dot" role="listitem"><img src="img/pessoa-jacqueline-tobaru.jpg" alt="Jacqueline Tobaru" loading="lazy"><div><b>Jacqueline Tobaru</b><span>Diretora de marketing de Franquias (regional), porta-voz em Campina Grande 2025</span></div></div>
+    <div class="n dot" role="listitem"><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini" loading="lazy"><div><b>Juliana Razini</b><span>Diretora de Franquias (Treinamento e Eficiência), porta-voz do São João</span></div></div>
+    <div class="n dot" role="listitem"><img src="img/pessoa-jacqueline-tobaru.jpg" alt="Jacqueline Tobaru" loading="lazy"><div><b>Jacqueline Tobaru</b><span>Diretora de Marketing Regional, porta-voz do Carnaval 2026 e de Campina Grande 2025</span></div></div>
+  </div>
+  <div class="arrow">marketing regional (provável)</div>
+  <div class="lvl">
+    <div class="n dot" role="listitem"><span class="ini" aria-hidden="true">RP</span><div><b>Roberta Pepe</b><span>Gerente de Marketing Regional: João Rock, Chapada, Verão Amazônico, Joinville</span></div></div>
   </div>
 </div>
 <div class="callout w"><p><b>O que isso significa.</b> Se a Renata passou a olhar o São João diretamente, a conversa subiu dois degraus: sai de Franquias e regional e chega à VP que responde pela marca inteira. O critério de avaliação muda de "a casa ficou pronta e bonita" para "o que isso fez pela marca e pelo negócio". Se as pessoas novas forem Marcela De Masi ou Carolina Carrasco, vale o mesmo: são executivas de branding formadas no método dela.</p></div>
 </section>
 
+<section id="trio">
+<h2><small>07 · As três</small>Quem decide o quê</h2>
+<p class="lede">A Simone indicou três pessoas. Elas não avaliam a mesma coisa. Uma proposta que agrada uma e ignora as outras perde. A dot. precisa falar as três línguas na mesma apresentação.</p>
+<div class="grid2">
+  <div class="card"><h4>Renata Gomide · a marca e o negócio</h4><p>VP de Marketing. Pergunta o que a ideia faz pela marca e pelo crescimento. Régua: jornada, recall, base ativa, teste e escala. Não tolera repetição nem dinheiro onde o consumidor não olha.</p></div>
+  <div class="card"><h4>Juliana Razini · a rede e o território</h4><p>Diretora de Franquias. Pergunta o que a ideia faz pelo franqueado e pela relação com a cidade. Régua: consistência de anos, envolvimento em vez de impacto, cadastro, marca que pertence ao lugar.</p></div>
+  <div class="card"><h4>Roberta Pepe · a festa e a execução</h4><p>Gerente de Marketing Regional. Pergunta se a ativação faz sentido para quem está na festa. Régua: conexão local, relevância cultural, brinde útil, cadastro, continuidade de edições.</p></div>
+</div>
+<div class="callout w"><p><b>Ponto de atenção.</b> Quem falou em nome do Carnaval 2026 foi Jacqueline Tobaru, Diretora de Marketing Regional, e não nenhuma das três. Pelo cargo, é provável que Roberta responda a ela. Antes do Carnaval 2027, a dot. precisa confirmar com a Simone se Tobaru também decide. Não saber quem assina é o erro mais caro possível. <span class="tag i">Inferência</span></p></div>
+</section>
+
+<section id="juliana">
+<h2><small>08 · Perfil</small>Juliana Razini</h2>
+<div class="pessoa">
+  <figure class="retrato"><img src="img/pessoa-juliana-razini.jpg" alt="Retrato de Juliana Razini"><figcaption>Foto: Propmark / divulgação</figcaption></figure>
+  <dl class="ficha">
+    <div><dt>Cargo</dt><dd>Diretora de Franquias de O Boticário. Em set/2026 aparece como Diretora de Treinamento e Eficiência de Franquias</dd></div>
+    <div><dt>Na visão da dot.</dt><dd>"A nossa diretora da nossa área" (Simone, 29/09/2026)</dd></div>
+    <div><dt>Casa</dt><dd>Mais de 11 anos no Grupo Boticário</dd></div>
+    <div><dt>Antes</dt><dd>Mondelez e Ferrero, em trade marketing e gestão de produto</dd></div>
+    <div><dt>Formação</dt><dd>Publicidade (UFPR), pós em Marketing (FAE)</dd></div>
+    <div><dt>Time</dt><dd>Cerca de 10 pessoas diretas: treinamento, analistas e comunicação <span class="tag i">Fonte secundária</span></dd></div>
+  </dl>
+</div>
+<p class="src">Fontes: Promoview (jun e set/2026), Propmark (24/06/2026), InfoMoney (jun/2026), The Org. O LinkedIn dela não abriu para leitura. O cargo muda conforme o veículo: usar o título que ela mesma usar na próxima reunião.</p>
+
+<h3>Trajetória</h3>
+<ol class="timeline">
+  <li><span class="yr">antes do GB</span><b>Ferrero e Mondelez</b>, trade marketing e gestão de produto. Escola de ponto de venda e de giro de produto.</li>
+  <li><span class="yr">~2015</span><b>Entra no Grupo Boticário</b> e chega a gerente de categoria sênior de alta perfumaria e desodorantes. Conhece produto por dentro, e isso aparece quando ela liga lançamento (Liz D'Essence, Arbo) à festa.</li>
+  <li><span class="yr">2025 e 2026</span><b>Diretora de Franquias</b>, porta-voz do São João nos anos 9 e 10.</li>
+  <li><span class="yr">set/2026</span><b>Diretora de Treinamento e Eficiência de Franquias</b> na comunicação do projeto gaúcho "A beleza de ser gaúcho". <span class="tag w">Mudança recente</span> A palavra eficiência entrou no cargo.</li>
+</ol>
+
+<h3>O que ela disse</h3>
+<blockquote class="quote">"A gente não quer ser uma loja de Curitiba que está no Nordeste."<cite>Juliana Razini · Propmark · 24/06/2026</cite></blockquote>
+<ul class="clean">
+  <li>A marca não quer ser passagem na festa. Quer construir relações que durem além do evento (Propmark).</li>
+  <li>A posição de marca preferida do São João foi construída em dez anos de consistência e de investimento (Propmark).</li>
+  <li>Existe diferença entre impactar e envolver o consumidor. Na festa, ele está aberto a ser envolvido (InfoMoney).</li>
+  <li>Os franqueados traduzem a marca para a cultura de cada território. O São João faz parte da memória afetiva de milhões de pessoas (Promoview).</li>
+  <li>A visão de futuro que ela citou: mais casas, mais cidades e mais acolhimento.</li>
+</ul>
+
+<h3>Projetos e resultados ligados a ela</h3>
+<div class="nums">
+  <div class="num"><b>20 mil+</b><span>pessoas passaram pela casa de Caruaru em 2025 e se cadastraram no Beautybox (InfoMoney)</span></div>
+  <div class="num"><b>860</b><span>pontos de venda no Nordeste, 242 Espaços Revendedor e 100+ franqueados em 9 estados</span></div>
+  <div class="num"><b>9</b><span>franquias só em Caruaru</span></div>
+  <div class="num"><b>9 mil+</b><span>conversas lidas na escuta social do projeto gaúcho de 2026</span></div>
+</div>
+<ul class="clean">
+  <li>São João 2026: 10º ano, investimento 30% maior, Casa Boti em Caruaru, Mossoró, Itabaiana e outras praças. Restauro do pórtico do Alto do Moura. Agências nordestinas no processo criativo. No calendário da marca, o São João pesa como Dia das Mães e Natal (Propmark).</li>
+  <li>Rio Grande do Sul 2026: segunda edição de "A beleza de ser gaúcho", com shows gratuitos no Cais Embarcadero e Casa Boti aberta por dez meses.</li>
+  <li>Ela não aparece no recorde Guinness de 2024, no Carnaval 2026 nem no prêmio ABF Franqueador do Ano 2026 (quem falou foi Fabiano Olivo, diretor executivo de franquias).</li>
+</ul>
+
+<div class="callout w"><p><b>O número que pode definir a próxima reunião.</b> Ela citou publicamente mais de 20 mil cadastros no Beautybox em Caruaru em 2025. O pós-venda da dot. para Caruaru 2026 registra 4.821 leads. Se as duas métricas forem a mesma coisa, a queda explica o "casa x cadastros" do feedback de julho, e ela conhece o número de cor. Confirmar a definição de cada métrica antes de qualquer apresentação. Se a dot. não trouxer esse ponto, ela traz. <span class="tag i">Inferência</span></p></div>
+
+<h3>O que ela valoriza <span class="tag i">Inferência</span></h3>
+<div class="grid2">
+  <div class="card do"><h4>Ganha pontos com ela</h4>
+    <p>Pertencimento real: gente, fornecedor e linguagem do lugar, não logo na festa.</p>
+    <p>Continuidade: projeto pensado para vários anos, com memória de edição para edição.</p>
+    <p>O franqueado da praça ganhando: fluxo, venda, protagonismo local.</p>
+    <p>Cadastro como prova, com número comparável entre praças e entre anos.</p>
+    <p>Eficiência: processo, cronograma e treinamento. É a palavra nova do cargo dela.</p>
+  </div>
+  <div class="card dont"><h4>Perde pontos com ela</h4>
+    <p>Casa bonita com pouco cadastro.</p>
+    <p>Proposta que trata o Nordeste como bloco único.</p>
+    <p>Execução que gera retrabalho para a rede ou para o time dela.</p>
+    <p>Novidade que quebra a construção de dez anos sem motivo.</p>
+  </div>
+</div>
+<p><b>Vocabulário dela:</b> cultura, território, relações, consistência, envolver, narrativas, memória afetiva, acolhimento, casa.</p>
+</section>
+
+<section id="roberta">
+<h2><small>09 · Perfil</small>Roberta Pepe</h2>
+<div class="pessoa">
+  <figure class="retrato vazio" aria-hidden="true"><span>RP</span><figcaption>Sem foto pública identificada</figcaption></figure>
+  <dl class="ficha">
+    <div><dt>Cargo público</dt><dd>Gerente de Marketing Regional do Grupo Boticário (todas as matérias de 2026)</dd></div>
+    <div><dt>Na visão da dot.</dt><dd>"A nossa gerente, gerente sênior do Brasil" (Simone, 29/09/2026)</dd></div>
+    <div><dt>Provável chefe</dt><dd>Jacqueline Tobaru, Diretora de Marketing Regional <span class="tag i">Inferência</span></dd></div>
+    <div><dt>Passado</dt><dd>Agregador sugere gerente de brand marketing da Eudora, em Curitiba <span class="tag w">Não confirmado</span></dd></div>
+  </dl>
+</div>
+<p class="src">Fontes: entrevista à rádio 89 no João Rock (YouTube, 12/08/2026), Jornal do Brás (29/07/2026), Em Tempo, Live Marketing News (20/07/2026), Publicitários Criativos. Atenção: o LinkedIn /in/robertapepe é de uma homônima do Mercado Livre. Não confundir.</p>
+
+<h3>O que ela conduz</h3>
+<div class="grid2">
+  <div class="card"><h4>João Rock 2026</h4><p>Ribeirão Preto (SP). Ativação aberta com Floratta Red e o lançamento Malbec EDP, jogos, cadastro e brindes de festival: bucket hat, óculos, miniaturas.</p></div>
+  <div class="card"><h4>Festival de Inverno de Chapada dos Guimarães</h4><p>Mato Grosso, 4º ano seguido. Ativação imersiva e fomento à cultura local.</p></div>
+  <div class="card"><h4>Verão Amazônico</h4><p>Manaus, 4º ano. Parceria de longo prazo e apoio à Remada Ambiental em Ponta Negra.</p></div>
+  <div class="card"><h4>Festival de Dança de Joinville</h4><p>Santa Catarina. Experiência inspirada nos bastidores da dança.</p></div>
+</div>
+
+<h3>O que ela disse</h3>
+<ul class="clean">
+  <li>A grande estratégia do marketing regional é criar conexões locais e ter relevância cultural (rádio 89, João Rock).</li>
+  <li>O Boticário foi reconhecido como marca de beleza preferida do estado de São Paulo e do interior.</li>
+  <li>O brinde precisa fazer sentido para quem está no festival.</li>
+  <li>Festival regional se espalha para o Brasil todo pela transmissão. O regional também é nacional.</li>
+  <li>Patrocínio serve para fomentar e valorizar a cultura local e construir memórias com o público (Chapada).</li>
+</ul>
+
+<h3>Como ela deve ler uma proposta <span class="tag i">Inferência</span></h3>
+<div class="grid2">
+  <div class="card do"><h4>Ganha pontos com ela</h4>
+    <p>Ativação aberta, participativa e fácil de entrar.</p>
+    <p>Produto de perfumaria no centro da experiência, principalmente lançamento.</p>
+    <p>Brinde pensado para o uso real na festa, não brinde genérico.</p>
+    <p>Cadastro embutido na mecânica, sem fricção.</p>
+    <p>Projeto com cara de ano 1 de vários.</p>
+  </div>
+  <div class="card dont"><h4>Perde pontos com ela</h4>
+    <p>Ideia que só funciona no papel e trava a operação no dia.</p>
+    <p>Cultura local usada como cenário, sem troca real com a cidade.</p>
+    <p>Entregável de patrocínio pouco claro. Foi uma das críticas do São João 2026 em Mossoró.</p>
+  </div>
+</div>
+<p><b>Vocabulário dela:</b> conexão local, relevância cultural, memórias, experiência, ativação, fomentar a cultura, fazer sentido.</p>
+<div class="callout"><p><b>Lacuna.</b> Não existe trajetória pública verificável, palestra nem prêmio no nome dela. A Simone é a melhor fonte: vale perguntar há quanto tempo ela está no cargo, de onde veio, o que elogiou e criticou nos trabalhos da dot. e como gosta de receber material.</p></div>
+</section>
+
 <section id="saojoao">
-<h2><small>07 · O território da dot.</small>O Boticário no São João</h2>
+<h2><small>10 · O território da dot.</small>O Boticário no São João</h2>
 <div class="nums">
   <div class="num"><b>10 anos</b><span>de São João em 2026, com o conceito "O São João é a nossa casa"</span></div>
   <div class="num"><b>+30%</b><span>de investimento em 2026 sobre 2025</span></div>
@@ -414,7 +564,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="apresentar">
-<h2><small>08 · Playbook</small>Como apresentar para ela</h2>
+<h2><small>11 · Playbook</small>Como apresentar para ela</h2>
 
 <h3>Estrutura de apresentação na língua dela</h3>
 <ol class="steps">
@@ -458,9 +608,12 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="lacunas">
-<h2><small>09 · A confirmar</small>Lacunas</h2>
+<h2><small>12 · A confirmar</small>Lacunas</h2>
 <ul class="clean">
-  <li><b>Quem são as outras pessoas que entraram.</b> O Berg precisa passar os nomes para aprofundarmos cada uma.</li>
+  <li><b>Roberta Pepe:</b> trajetória, tempo de cargo e a quem responde. Perguntar à Simone.</li>
+  <li><b>Jacqueline Tobaru:</b> se decide o Carnaval 2027.</li>
+  <li><b>Cadastros:</b> se os 20 mil de Caruaru 2025 e os 4.821 leads de 2026 medem a mesma coisa.</li>
+  <li><b>Juliana Razini:</b> qual título usar (Franquias, ou Treinamento e Eficiência de Franquias).</li>
   <li>Título exato dela hoje (VP de Consumer ou VP de Marketing) e se Marcela De Masi responde a ela.</li>
   <li>Se a Renata vai decidir o São João 2027 ou se continua com Franquias e o regional.</li>
   <li>O estudo Kantar do São João e os números internos de cadastros e vendas por praça.</li>
@@ -470,6 +623,8 @@ footer a{color:var(--muted)}
 </ul>
 <p class="src">Este dossiê usa só informação profissional pública. Nada sobre vida pessoal foi levantado.</p>
 </section>
+
+<div class="ponte"><span>Próximo passo:</span><a href="estrategia.html">Estratégia de construção da apresentação e do planejamento</a></div>
 
 <footer id="fontes">
 <p class="eyebrow">Fontes principais</p>
@@ -496,6 +651,15 @@ footer a{color:var(--muted)}
   <li><a href="https://exame.com/negocios/o-conflito-entre-canais-nao-tem-solucao-diz-ceo-do-grupo-boticario-apos-r-38-bilhoes-em-vendas/">Exame · entrevista Fernando Modé (2026)</a></li>
   <li><a href="https://timesbrasil.com.br/empresas-e-negocios/wellness/boticario-ultrapassa-natura-perfumaria-maquiagem-skincare-gmv-38-bilhoes-2025/">Times Brasil · participação de mercado 2025</a></li>
   <li><a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview · 10 anos de São João</a></li>
+  <li><a href="https://propmark.com.br/anunciantes/marcas-entram-no-ritual-de-consumo-do-sao-joao/">Propmark · Juliana Razini e o ritual do São João (jun/2026)</a></li>
+  <li><a href="https://www.infomoney.com.br/business/como-sao-joao-principal-aposta-marcas-nordeste/">InfoMoney · São João como aposta das marcas (jun/2026)</a></li>
+  <li><a href="https://www.promoview.com.br/boticario-cultura-gaucha-cais-embarcadero-2026/">Promoview · A beleza de ser gaúcho (set/2026)</a></li>
+  <li><a href="https://theorg.com/org/grupo-boticario/org-chart/juliana-razini">The Org · Juliana Razini</a></li>
+  <li><a href="https://www.youtube.com/watch?v=wqCn2_5E5DA">Rádio 89 · Roberta Pepe no João Rock (ago/2026)</a></li>
+  <li><a href="https://jornaldobras.com.br/noticia/132120/pelo-4-ano-consecutivo-o-boticario-leva-ativacao-imersiva-e-fomenta-a-cultura-local-no-festival-de-inverno-de-chapada-dos-guimaraes">Jornal do Brás · Chapada dos Guimarães (jul/2026)</a></li>
+  <li><a href="https://emtempo.com.br/480058/cultura/o-boticario-verao-amazonico-manaus-2026/">Em Tempo · Verão Amazônico 2026</a></li>
+  <li><a href="https://livemarketing.com.br/o-boticario-no-festival-de-danca-de-joinville-tem-experiencia-inspirada-nos-bastidores">Live Marketing News · Joinville (jul/2026)</a></li>
+  <li><a href="https://portalg.com.br/boticario-carnaval-2026-experiencias-beleza/">Portal G · Carnaval 2026 com Jacqueline Tobaru</a></li>
   <li><a href="https://livemarketing.com.br/o-boticario-celebra-10-anos-no-sao-joao-de-caruaru-2026-com-casa-boti">Live Marketing News · Casa Boti Caruaru 2026</a></li>
   <li><a href="https://portalg.com.br/o-boticario-sao-joao-2026-9-milhoes/">Portal G · São João 2026, 9 milhões</a></li>
   <li><a href="https://www.portaldacapital.com/2025/06/03/o-boticario-presenteia-campina-grande-com-casa-do-boti-no-maior-sao-joao-do-mundo/">Portal da Capital · Campina Grande 2025</a></li>
@@ -543,6 +707,7 @@ footer a{color:var(--muted)}
   <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
   <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
   <li>Key visual &#x27;O São João é a nossa casa&#x27;: <a href="https://politicaporelas.tv.br/2026/06/09/o-boticario-celebra-10-anos-de-sao-joao-com-campanha-sobre-pertencimento-cultura-e-conexao-emocional/">Política por Elas / O Boticário (divulgação)</a></li>
+  <li>Juliana Razini: <a href="https://propmark.com.br/anunciantes/marcas-entram-no-ritual-de-consumo-do-sao-joao/">Propmark / divulgação (jun/2026)</a></li>
 </ol>
 <p class="src">Imagens de divulgação e de imprensa reunidas para uso interno da dot. Não usar em peça pública sem licença.</p>
 </footer>
