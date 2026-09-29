@@ -33,7 +33,7 @@ nav.toc a{color:var(--muted);text-decoration:none;display:block;padding:3px 0 3p
 nav.toc a:hover,nav.toc a:focus-visible{color:var(--accent);border-left-color:var(--accent);outline:none}
 main{min-width:0}
 header.top{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:8px}
-.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--muted);margin:0 0 14px}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance}
 .role{font-family:var(--display);font-weight:500;font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:0 0 20px}
 .legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-family:var(--mono);font-size:12.5px;color:var(--muted);align-items:center}
@@ -62,6 +62,10 @@ a{color:var(--accent);text-underline-offset:2px}
 /* ficha */
 .ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:18px 0 8px}
 .ficha div{background:var(--bg);padding:14px 16px;min-width:0}
+.ficha{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ficha>div:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:560px){.ficha{grid-template-columns:1fr}}
+.ficha dd .tag{display:inline-block;max-width:100%;white-space:normal}
 .ficha dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .ficha dd{margin:0;font-family:var(--display);font-weight:500;font-size:16px;line-height:1.35}
 
@@ -110,7 +114,7 @@ td.r{font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
 .chips span{font-family:var(--mono);font-size:13px;background:var(--surface);border:1px solid var(--line);padding:4px 10px;border-radius:99px}
 
-.quote{font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,30px);line-height:1.2;border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:22px 0;max-width:30ch;text-wrap:balance}
+.quote{font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,30px);line-height:1.2;border-top:1px solid var(--line);padding:16px 0 0;margin:26px 0;max-width:30ch;text-wrap:balance}
 .quote cite{display:block;font-family:var(--mono);font-size:12px;font-style:normal;color:var(--muted);margin-top:10px;font-weight:400}
 
 .callout{background:var(--accent-soft);border-radius:6px;padding:18px 20px;margin:18px 0;max-width:78ch}
@@ -186,6 +190,50 @@ footer a{color:var(--muted)}
   .verdict{padding:22px 20px}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.lp-svg{width:100%;max-width:760px;height:auto;display:block;margin:10px auto 0}
+.lp-mini{width:72px;height:66px;flex:none}
+.lp-vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.lp-vs>div{display:flex;gap:14px;align-items:center;border-radius:10px;padding:14px 16px;background:var(--surface);min-width:0}
+.lp-vs b{display:block;font-size:17px;margin-bottom:2px}
+.lp-vs span{font-size:14.5px;color:var(--muted);line-height:1.45}
+.lp-quote{font-size:clamp(20px,2.4vw,26px);font-weight:700;line-height:1.25;margin:18px 0 4px;max-width:34ch}
+.lp-quote cite{display:block;font-family:var(--mono);font-size:12px;font-weight:400;font-style:normal;color:var(--muted);margin-top:6px}
+.lp-tab{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:10px}
+.lp-tab table{border-collapse:collapse;width:100%;min-width:720px;font-size:14.5px;line-height:1.45}
+.lp-tab th{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;background:var(--surface);padding:10px 12px}
+.lp-tab td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+.lp-tab td:first-child{font-weight:700;white-space:nowrap}
+.lp-n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--green, var(--accent));color:var(--bg);font-family:var(--mono);font-size:12px;margin-right:8px}
+.lp-map{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:14px}
+.lp-map div{border-radius:8px;background:var(--surface);padding:10px;min-width:0;font-size:13.5px;line-height:1.4}
+.lp-map b{display:block;font-size:15px}
+.lp-map small{display:block;font-family:var(--mono);font-size:11px;color:var(--green, var(--accent));margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
+.lp-classes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.lp-cl{border-radius:12px;padding:16px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.lp-cl.A{background:var(--gold-soft, var(--inf-soft))} .lp-cl.B{background:var(--green-soft, var(--fact-soft))} .lp-cl.C{background:var(--blue-soft, var(--accent-soft))}
+.lp-cl h4{margin:0;font-size:20px;font-weight:800}
+.lp-cl .tg{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lp-cl dl{margin:0;display:grid;gap:8px}
+.lp-cl dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lp-cl dd{margin:0;font-size:14.5px;line-height:1.45}
+.lp-cl .av{display:flex;gap:4px;flex-wrap:wrap}
+.lp-cl .av img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.lp-cl .lp-svg{margin:0 auto;max-width:300px}
+.lp-dir{font-weight:700;border-top:1px solid var(--line);padding-top:8px;font-size:15px}
+.lp-nota{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:10px}
+@media (max-width:900px){.lp-vs,.lp-classes{grid-template-columns:minmax(0,1fr)}.lp-map{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.aa-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.aa{border-radius:10px;border:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.aa .rj{display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--red, var(--warn))}
+.aa .rj svg{width:16px;height:16px;flex:none}
+.aa b{font-size:16.5px;line-height:1.35}
+.aa .se{margin-top:auto;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.aa .se strong{color:var(--ink);font-weight:600}
+.aa-regra{margin-top:12px;display:flex;gap:10px;align-items:center;background:var(--ink);color:var(--bg);border-radius:8px;padding:12px 16px;font-weight:600}
+@media (max-width:900px){.aa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.aa-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -199,12 +247,13 @@ footer a{color:var(--muted)}
     <li><a href="#cases">O que construiu</a></li>
     <li><a href="#parceiros">Com quem deu resultado</a></li>
     <li><a href="#pensa">Como pensa</a></li>
-    <li><a href="#qualidades">Qualidades e pontos cegos</a></li>
+    <li><a href="#decide">Como decide e lidera</a></li>
+    <li><a href="#qualidades">Qualidades e contexto de negócio</a></li>
     <li><a href="#entorno">Quem está ao redor</a></li>
-    <li><a href="#trio">Quem decide o quê</a></li>
     <li><a href="#juliana">Juliana Razini</a></li>
     <li><a href="#roberta">Roberta Pepe</a></li>
-    <li><a href="#saojoao">São João e a dot.</a></li>
+    <li><a href="#trio">Como as três se dividem</a></li>
+    <li><a href="#regional">Ativações regionais</a></li>
     <li><a href="#apresentar">Como apresentar</a></li>
     <li><a href="#lacunas">Lacunas</a></li>
     <li><a href="#fontes">Fontes</a></li>
@@ -217,28 +266,28 @@ footer a{color:var(--muted)}
   <div>
   <p class="eyebrow">dot.promo · inteligência de cliente · Grupo Boticário · 29/09/2026</p>
   <h1>Decisoras do Boticário</h1>
-  <p class="role">Renata Gomide, VP de Marketing. Juliana Razini, Diretora de Franquias. Roberta Pepe, Gerente de Marketing Regional. As três pessoas que a Simone pediu para o time estudar antes do Carnaval Boti 2027.</p>
+  <p class="role">Renata Gomide, VP de Marketing. Juliana Razini, Diretora de Franquias. Roberta Pepe, Gerente de Marketing Regional. Quem são, como pensam, como decidem e o que esperam de um parceiro.</p>
   <div class="legend">
     <span><span class="tag f">Fato</span> com fonte pública</span>
     <span><span class="tag i">Inferência</span> leitura nossa, confirmar antes de usar</span>
     <span><span class="tag w">Atenção</span> risco ou contradição</span>
   </div>
   </div>
-  <div class="trio-hero"><figure><img src="img/renata-02-retrato-mma.jpg" alt="Renata Gomide"><figcaption>Renata Gomide</figcaption></figure><figure><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini"><figcaption>Juliana Razini</figcaption></figure><figure><span class="ini-g" aria-hidden="true">RP</span><figcaption>Roberta Pepe</figcaption></figure></div>
+  <div class="trio-hero"><figure><img src="img/renata-02-retrato-mma.jpg" alt="Renata Gomide"><figcaption>Renata Gomide</figcaption></figure><figure><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini"><figcaption>Juliana Razini</figcaption></figure><figure><img src="img/pessoa-roberta-pepe.jpg" alt="Roberta Pepe" style="object-position:32% 20%"><figcaption>Roberta Pepe</figcaption></figure></div>
 </header>
 
 <section id="sintese">
 <div class="verdict">
-  <h2><small>Síntese para quem vai entrar na sala</small>O que precisa estar na cabeça antes da reunião</h2>
+  <h2><small>Síntese</small>O que precisa estar na cabeça antes da reunião</h2>
   <ol>
-    <li>Ela é a executiva de marketing mais premiada do varejo de beleza no Brasil agora: Caboré 2024, Forbes e jurada do Effie. Ela não se impressiona com execução bem feita. Parte do princípio de que o básico está garantido e já disse que o técnico é o mínimo necessário.</li>
+    <li>Ela está entre as executivas de marketing mais premiadas do país: Caboré 2024, Forbes, Women to Watch e jurada do Effie. Ela não se impressiona com execução bem feita. Parte do princípio de que o básico está garantido e já disse que o técnico é o mínimo necessário.</li>
     <li>Ela pensa em <b>jornada</b>, não em ação. Toda ideia precisa responder a três perguntas: onde entra no caminho do consumidor, o que provoca de conversa digital e qual métrica prova que funcionou.</li>
     <li>Ela vem do varejo (Grupo Pão de Açúcar) e trata o Boticário como marca física: mais de 4 mil lojas. Loja, franqueado e revendedora são público para ela, não só canal.</li>
-    <li>Regionalidade é crença declarada dela, não modismo. Ela cita o São João e Parintins como fundamentais e rejeita a comunicação única e nacional. É o território onde a dot. tem autoridade real.</li>
+    <li>Regionalidade é crença declarada dela, não modismo: "o Brasil tem quatro países dentro de um". Primeiro a grande mensagem nacional, depois a conexão local, sem tropicalizar. Carnaval, Parintins, São João e festivais entram como capítulos dessa mesma lógica.</li>
     <li>Ela opera com teste, corte e escala: pilotos pequenos, ajuste em tempo real e mesa de performance. Proposta modular, com gatilhos de decisão, vence proposta grande do tipo tudo ou nada.</li>
-    <li>A Renata decide marca e negócio. A Juliana decide rede e território. A Roberta cuida da festa e da execução regional. A proposta precisa responder às três ao mesmo tempo, e a dot. precisa confirmar se Jacqueline Tobaru, porta-voz do Carnaval 2026, também assina.</li>
-    <li>A Juliana citou em público mais de 20 mil cadastros no Beautybox em Caruaru em 2025. O pós-venda de 2026 da dot. registra 4.821 leads. Se forem a mesma métrica, esse é o assunto da próxima reunião.</li>
-    <li>O feedback do São João 2026 cobrou "análise dos dados" e "casa x cadastros". Isso é exatamente a régua dela. A dot. entra na sala com número ou não entra.</li>
+    <li>A Renata decide marca e negócio. A Juliana olha rede, franqueado e território. A Roberta olha a experiência no lugar e a execução regional. Qualquer proposta precisa responder às três ao mesmo tempo.</li>
+    <li>A régua comum às três é prova: recall, base ativa, cadastro e venda na loja. Ideia bonita sem conta montada não passa.</li>
+    <li>A agenda dela em 2026 é IA agêntica ("fazer os agentes amarem nossas marcas"), CRM com cliente único entre as marcas e os 50 anos de O Boticário em 2027. Quem conversar com ela sobre isso fala de prioridade real.</li>
   </ol>
 </div>
 </section>
@@ -257,23 +306,30 @@ footer a{color:var(--muted)}
 
 <h3>Trajetória</h3>
 <ol class="timeline">
-  <li><span class="yr">até 2014/15</span><b>Grupo Pão de Açúcar</b>, gerente de marketing. Fez patrocínio esportivo (corrida) cedo na carreira. As fontes divergem sobre o tempo de casa: o LinkedIn diz 2009 a 2014, o Meio &amp; Mensagem fala em 13 anos e o Caboré em 5. <span class="tag w">Divergência</span></li>
+  <li><span class="yr">até 2014/15</span><b>Grupo Pão de Açúcar</b>, gerente de marketing. Fez patrocínio esportivo (corrida) cedo na carreira. Foram 13 anos no GPA segundo o <a href="https://www.meioemensagem.com.br/womentowatch/renata-gomide-destaca-o-papel-da-industria-da-beleza-na-transformacao-de-padroes">Meio &amp; Mensagem</a>, 14 segundo ela mesma (<a href="https://www.youtube.com/watch?v=ZUDoWtXbGik">Mundotri</a>).</li>
   <li><span class="yr">2015</span><b>Entra no Boticário para construir a Eudora</b>, então uma marca pouco conhecida. Criou o bordão "Chega lá e Eudora", usou influenciadores e inventou o Dia do Batom. A marca cresceu entre 60% e 80% nos primeiros anos e virou a marca mais multicanal do grupo.</li>
-  <li><span class="yr">2020</span><b>Assume Marketing e Vendas da Quem Disse, Berenice?</b>, a marca de maquiagem das lojas de shopping.</li>
+  <li><span class="yr">2020</span><b>Assume Marketing e Vendas da Quem Disse, Berenice?</b>, a marca de maquiagem das lojas de shopping. Ali cuidava também de P&amp;D de produto e da logística do franqueado (<a href="https://www.youtube.com/watch?v=ZUDoWtXbGik&amp;t=758">Mundotri</a>). É a origem do olhar dela para a rede.</li>
   <li><span class="yr">mar/2021</span><b>Diretora Executiva de Branding e Comunicação de todas as marcas</b>, na reestruturação que trouxe Fernando Modé para o comando e ampliou o grupo de 4 para 7 vice-presidências.</li>
   <li><span class="yr">nov/2022</span><b>VP de Consumer.</b> No mesmo ano é eleita Profissional de Marketing do Ano pelo Propmark.</li>
   <li><span class="yr">2023 a 2025</span><b>Consagração:</b> Women to Watch (2023), Forbes 10 melhores CMOs (2023), Caboré Profissional de Marketing (2024), Forbes Mulheres Mais Poderosas (2025), jurada do Effie Brasil (2025) e Hall da Fama da Abramark.</li>
+  <li><span class="yr">mar/2025</span><b>Estreia no SXSW</b>, no painel "Beauty 2030" com a CEO da WGSN, onde anuncia o Centro de Pesquisa da Mulher (<a href="https://creativosbr.com.br/renata-gomide-cmo-do-grupo-boticario-estreia-como-palestrante-no-sxsw-2025/">CreativosBR</a>). Em maio, divide palco com o CFO Marcelo Azevedo no MMA Impact sobre ROI da inovação (<a href="https://www.retailmedianews.com.br/noticias/mma-impact-brasil-2025-promove-conversas-entre-ceos-cmos-e-cfos/">Retail Media News</a>).</li>
   <li><span class="yr">2025 a 2026</span><b>Fase de escala com eficiência.</b> O grupo foi Anunciante do Ano no Effie 2025, levou Ouro em Cannes 2025 e três Leões em 2026. Em paralelo, o CEO fala em "apertar parafusos" num mercado parado.</li>
+  <li><span class="yr">30/09/2026</span><b>Maximídia</b>, painel "Itaú, Ambev e Grupo Boticário: qual é o desafio dos CMOs?" (<a href="https://www.meioemensagem.com.br/maximidia/cmos-de-ambev-itau-e-grupo-boticario-debaterao-desafios">Meio &amp; Mensagem</a>). É a fala pública mais próxima: vale acompanhar.</li>
 </ol>
+<p class="src"><span class="tag w">Atenção</span> O Meio &amp; Mensagem (2023) data a chegada dela como Diretora de Marketing da Eudora em 2019. Outras fontes e as falas dela apontam 2015. Não imprimir o ano sem confirmar.</p>
+<div class="duo">
+  <figure><img src="img/renata-13-maximidia-2026.jpg" alt="Renata Gomide em retrato de divulgação" loading="lazy" style="object-position:50% 20%"><figcaption>Divulgação do Maximídia 2026. Foto: Arthur Nobre / Divulgação, via Meio &amp; Mensagem</figcaption></figure>
+  <figure><img src="img/renata-05-cabore-2024.jpg" alt="Renata Gomide no Caboré 2024" loading="lazy" style="object-position:50% 25%"><figcaption>Caboré 2024, Profissional de Marketing do Ano</figcaption></figure>
+</div>
 
 <h3>Onde ela fala em público</h3>
-<p>As oito falas usadas neste dossiê. As de 2026 são as mais recentes sobre como ela pensa jornada, regionalidade e mídia. Assistir às duas primeiras antes da reunião.</p>
+<p>As falas em vídeo usadas neste dossiê. As de 2026 são as mais recentes sobre jornada, IA, regionalidade e liderança. Por escrito, vale ler também a entrevista da <a href="https://abramark.com.br/abramark/entrevistas/vozes-no-marketing-de-fevereiro-com-renata-gomide-vice-presidente-de-marketing-do-grupo-boticario/">Abramark (fev/2026)</a> e a do <a href="https://www.meioemensagem.com.br/womentowatch/renata-gomide-o-papel-das-marcas-em-datas-como-dia-das-maes">Meio &amp; Mensagem sobre datas (mai/2024)</a>.</p>
 <div class="strip">
-  <a href="https://www.youtube.com/watch?v=B7sN5eXb-PM"><img src="img/renata-07-yt-jcdtalks.jpg" alt="Renata Gomide no JCDtalks"><b>JCDtalks · JCDecaux</b><span class="cap">jul/2026 · jornada, out-of-home, Natal 2025, São João</span></a>
-  <a href="https://www.youtube.com/watch?v=8xh-oQnwVRA"><img src="img/renata-06-yt-mckinsey-talks.jpg" alt="Renata Gomide no McKinsey Talks"><b>McKinsey Talks · Brasil Journal</b><span class="cap">jul/2026 · marketing como motor de crescimento, regionalidade</span></a>
-  <a href="https://www.youtube.com/watch?v=ahwDGhjqb_g"><img src="img/renata-09-yt-10mais10.jpg" alt="Renata Gomide no programa 10+10"><b>10+10 · btrvarese</b><span class="cap">mar/2026 · mesa de performance, CRM, IA</span></a>
+  <a href="https://www.youtube.com/watch?v=B7sN5eXb-PM"><img src="img/renata-07-yt-jcdtalks.jpg" alt="Renata Gomide no JCDtalks"><b>JCDtalks · JCDecaux</b><span class="cap">jul/2026 · jornada, out-of-home, Natal 2025, regionalidade</span></a>
+  <a href="https://www.youtube.com/watch?v=8xh-oQnwVRA"><img src="img/renata-06-yt-mckinsey-talks.jpg" alt="Renata Gomide no McKinsey Talks"><b>McKinsey Talks · Brasil Journal</b><span class="cap">jul/2026 · crescimento, liderança, venda direta, 50 anos</span></a>
+  <a href="https://www.youtube.com/watch?v=ahwDGhjqb_g"><img src="img/renata-09-yt-10mais10.jpg" alt="Renata Gomide no programa 10+10"><b>10+10 · btrvarese</b><span class="cap">mar/2026 · mesa de performance, CRM, IA agêntica</span></a>
   <a href="https://www.youtube.com/watch?v=nutuVgJzHJQ"><img src="img/renata-10-yt-perfil-estadao.jpg" alt="Renata Gomide no Perfil Profissional do Estadão"><b>Perfil Profissional · Estadão Blue Studio</b><span class="cap">nov/2025 · carreira, tecnologia como meio</span></a>
-  <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0"><img src="img/renata-12-yt-entrevista.jpg" alt="Renata Gomide em entrevista ao Estadão"><b>Entrevista · Estadão</b><span class="cap">out/2025 · ganha-ganha com parceiros, Ovo de Melancia</span></a>
+  <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0"><img src="img/renata-12-yt-entrevista.jpg" alt="Renata Gomide em entrevista ao Estadão"><b>Entrevista · Estadão</b><span class="cap">out/2025 · ganha-ganha com parceiros, Egeo Melancia</span></a>
   <a href="https://www.youtube.com/watch?v=qor6F6d1Htg"><img src="img/renata-11-yt-desmarketize-se.jpg" alt="Renata Gomide no podcast Desmarketize-se"><b>Desmarketize-se #09</b><span class="cap">dez/2023 · o que não funciona, escassez e criatividade</span></a>
   <a href="https://www.youtube.com/watch?v=GVrfj5PNXJk"><img src="img/renata-08-yt-midia-e-marketing.jpg" alt="Renata Gomide no programa Mídia e Marketing"><b>Mídia &amp; Marketing · UOL</b><span class="cap">ago/2023 · beleza, padrões e diversidade</span></a>
 </div>
@@ -281,61 +337,100 @@ footer a{color:var(--muted)}
 
 <section id="cases">
 <h2><small>02 · Histórico</small>O que ela construiu</h2>
-<p class="lede">Os cases que a definem são de dois tipos: construção emocional de marca (datas comemorativas com a AlmapBBDO) e causa com impacto cultural (GUT, Centro de Pesquisa da Mulher). Por baixo dos dois roda uma máquina de comunidade, teste e performance que ela mesma montou dentro de casa.</p>
+<p class="lede">Quatro frentes aparecem sempre: datas de marca com emoção (AlmapBBDO), causa com impacto cultural (GUT), produto nascido da comunidade e um varejo físico que ela trata como mídia. Por baixo de tudo roda uma máquina interna de dado, CRM, IA e teste.</p>
+<h3>Datas de marca: emoção com a AlmapBBDO</h3>
 <div class="cases">
-<article class="case"><img src="img/case-2025-eudora-chega-la-e-eudora.jpg" alt="Desafio Chega lá e Eudora" loading="lazy"><div class="b"><span class="meta">2015 em diante · Eudora</span><h4>Construção da Eudora do zero</h4><p>Bordão "Chega lá e Eudora", influenciadores e a criação do Dia do Batom. A imagem é do desafio com Juliana Paes.</p><p class="res"><b>Resultado</b>Crescimento de 60% a 80% nos primeiros anos. Hoje é a marca mais multicanal do grupo.</p></div></article>
-<article class="case"><img src="img/case-2022-cordeis-01.jpg" alt="Campanha com Vitória Rodrigues" loading="lazy" style="object-position:50% 15%"><div class="b"><span class="meta">2022 · O Boticário · AlmapBBDO</span><h4>Cordéis, com Vitória Rodrigues</h4><p>Histórias de mulheres do Nordeste contadas em cordel, para Liz Sublime.</p><p class="res"><b>Resultado</b>Sem métrica pública. É o precedente de linguagem nordestina na marca.</p></div></article>
-<article class="case"><img src="img/case-2022-black-dragons-time.jpg" alt="Time feminino Black Dragons" loading="lazy"><div class="b"><span class="meta">2022 · O Boticário · games</span><h4>Black Dragons e Avakin</h4><p>Patrocínio do time feminino de e-sports e presença dentro do jogo Avakin Life.</p><p class="res"><b>Resultado</b>Ela diz que o Boticário virou a marca mais reconhecida no jogo.</p></div></article>
-<article class="case"><img src="img/case-2022-botiverso.jpg" alt="Identidade do Botiverso" loading="lazy" style="object-fit:contain"><div class="b"><span class="meta">2022 e 2023 · O Boticário · interno</span><h4>Botiverso</h4><p>Aceleradora de creators no TikTok: 10 em 2022, 300 vagas em 2023, prêmio de R$ 50 mil e protagonismo em campanha.</p><p class="res"><b>Resultado</b>Sem métrica pública. Base da comunidade que depois cocriou produtos.</p></div></article>
-<article class="case"><img src="img/case-2024-egeo-melancia.jpg" alt="Egeo Melancia" loading="lazy"><div class="b"><span class="meta">2024 · Egeo · interno</span><h4>Egeo Melancia</h4><p>A comunidade do TikTok pediu e votou no cheiro. A ideia apareceu em 2023 e o lançamento foi em maio de 2024.</p><p class="res"><b>Resultado</b>Mais vendido do e-commerce em 10 horas, 1,5 mi de views orgânicas e 70% das menções à marca em 3 meses.</p></div></article>
 <article class="case"><img src="img/case-2024-tormenta-02.jpg" alt="Frame do filme Tormenta" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · AlmapBBDO</span><h4>Tormenta, Dia das Mães</h4><p>A relação de uma mãe com o filho adolescente. Ela diz que foi preciso coragem para aprovar.</p><p class="res"><b>Resultado</b>Recorde de vendas da data. Prêmios em Cannes, Effie e Clio.</p></div></article>
-<article class="case"><img src="img/case-2024-dia-dos-pais-01.jpg" alt="Frame do filme 5 dias" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · AlmapBBDO</span><h4>5 dias?, Dia dos Pais</h4><p>Campanha pela ampliação da licença-paternidade.</p><p class="res"><b>Resultado</b>Bronze em Glass, Cannes 2024.</p></div></article>
-<article class="case"><img src="img/case-2024-ovo-melancia-unboxing-01.jpg" alt="Convenção de franqueados no unboxing recorde" loading="lazy"><div class="b"><span class="meta">ago/2024 · O Boticário · interno</span><h4>Ovo de Melancia e o unboxing recorde</h4><p>Viu a conversa no TikTok e lançou em 1 mês. Testou no e-commerce e fez o maior unboxing simultâneo na convenção de franqueados, na Bienal, em 21/08/2024.</p><p class="res"><b>Resultado</b>Esgotou em 4 dias no e-commerce. Recorde Guinness.</p></div></article>
-<article class="case"><img src="img/case-2024-casa-214-madonna.jpg" alt="Narcisa Tamborindeguy e o prédio do camarote" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · SoWhat</span><h4>Camarote do show da Madonna</h4><p>Camarote na casa de Narcisa Tamborindeguy, em Copacabana. Antes teve Taylor Swift e Lollapalooza.</p><p class="res"><b>Resultado</b>Sem métrica pública. É o precedente de experiência física de alto impacto.</p></div></article>
+<article class="case"><img src="img/case-2026-despedida-01.jpg" alt="Frame do filme Despedidas" loading="lazy"><div class="b"><span class="meta">2026 · O Boticário · AlmapBBDO</span><h4>Despedidas, Dia das Mães</h4><p>O ninho vazio, a partir de dado social: 64% da conversa sobre o tema é de tristeza.</p><p class="res"><b>Resultado</b>40 milhões de views orgânicas em 5 dias, recorde da marca. Bronze em Film Craft, Cannes 2026.</p></div></article>
+<article class="case"><img src="img/case-2024-dia-dos-pais-01.jpg" alt="Frame do filme 5 dias" loading="lazy"><div class="b"><span class="meta">2023 · O Boticário · AlmapBBDO</span><h4>Instinto Paterno ("5 dias são suficientes?"), Dia dos Pais</h4><p>Campanha pela ampliação da licença-paternidade.</p><p class="res"><b>Resultado</b>Bronze em Glass, Cannes 2024, único Leão brasileiro na categoria.</p></div></article>
+<article class="case"><img src="img/case-2023-natal-abduzidos-01.jpg" alt="Frame do filme Abduzidos" loading="lazy"><div class="b"><span class="meta">Natal 2023 · O Boticário · AlmapBBDO, Iconoclast</span><h4>Abduzidos</h4><p>A partir da ideia de "intimidade artificial" de Esther Perel: pessoas abduzidas pelas telas. Estreia no intervalo de novela e show de drones.</p><p class="res"><b>Resultado</b>Sem métrica pública. <a href="https://www.b9.com.br/165855/natal-boticario-conexao-genuina-campanha-2023/">B9</a></p></div></article>
+<article class="case"><img src="img/case-2024-natal-casa-de-vidro-01.jpg" alt="Frame do curta Casa de Vidro" loading="lazy"><div class="b"><span class="meta">Natal 2024 · O Boticário · AlmapBBDO, MyMama</span><h4>Casa de Vidro</h4><p>Curta sobre filhos que passam a cuidar dos pais.</p><p class="res"><b>Resultado</b>Maior produção da marca: 250 profissionais, 50 horas de gravação, 6 meses de pesquisa. <a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-emociona-com-campanha-de-natal-que-celebra-o-cuidado-familiar/">Marcas pelo Mundo</a></p></div></article>
+<article class="case"><img src="img/case-2025-natal-esteiras-01.jpg" alt="Kits de Natal na esteira de bagagem de Guarulhos" loading="lazy"><div class="b"><span class="meta">Natal 2025 · O Boticário · Pros</span><h4>Presentes nas esteiras de aeroporto</h4><p>"Presenteie com Amor": kits na esteira de bagagem de Guarulhos, cheiro de Malbec e out-of-home massivo com digital e TV.</p><p class="res"><b>Resultado</b>Segundo ela, o maior crescimento de negócio e de recall da data.</p></div></article>
+<article class="case"><img src="img/case-2025-dia-do-amor-01.jpg" alt="Campanha O amor se encontra no Boticário" loading="lazy"><div class="b"><span class="meta">Namorados 2025 · O Boticário · AlmapBBDO</span><h4>O amor se encontra no Boticário</h4><p>Com Fernanda Paes Leme e João Vicente: amor sem rótulo e humor leve.</p><p class="res"><b>Resultado</b>Sem métrica pública. <a href="https://acontecendoaqui.com.br/propaganda/o-boticario-aposta-em-amor-sem-rotulos-e-humor-leve-para-campanha-do-dia-do-amor/">Acontecendo Aqui</a></p></div></article>
+</div>
+<h3>Causa e relevância cultural</h3>
+<div class="cases">
 <article class="case"><img src="img/case-2025-vult-respeita-meu-capelo-01.jpg" alt="Respeita Meu Capelo" loading="lazy"><div class="b"><span class="meta">2025 · Vult · GUT</span><h4>Respeita Meu Capelo</h4><p>Movimento de representatividade na formatura, a partir do capelo, com design da marca baiana Dendezeiro.</p><p class="res"><b>Resultado</b>Bronze em Glass, Cannes 2025. Virou lei municipal em Salvador.</p></div></article>
 <article class="case"><img src="img/case-2025-pesquise-meu-corpo-01.jpg" alt="Pesquise Meu Corpo" loading="lazy"><div class="b"><span class="meta">2025 · Grupo · GUT</span><h4>Pesquise o Meu Corpo</h4><p>Criação do Centro de Pesquisa da Mulher, com filme estrelado por Deborah Secco.</p><p class="res"><b>Resultado</b>Ouro em ODS, Cannes 2025.</p></div></article>
 <article class="case"><img src="img/case-2025-pacto-skincare-01.jpg" alt="Pacto Skincare Responsável" loading="lazy"><div class="b"><span class="meta">out/2025 · Grupo · GUT</span><h4>Pacto Skincare Responsável</h4><p>Quatro marcas contra o skincare precoce, com Angélica e exibição no Fantástico.</p><p class="res"><b>Resultado</b>Selo "recomendado para peles adultas" nos produtos.</p></div></article>
-<article class="case"><img src="img/case-2025-natal-esteiras-01.jpg" alt="Kits de Natal na esteira de bagagem de Guarulhos" loading="lazy"><div class="b"><span class="meta">Natal 2025 · O Boticário · Pros</span><h4>Presentes nas esteiras de aeroporto</h4><p>"Presenteie com Amor": kits na esteira de bagagem de Guarulhos, cheiro de Malbec e out-of-home massivo com digital e TV.</p><p class="res"><b>Resultado</b>Segundo ela, o maior crescimento de negócio e de recall da data.</p></div></article>
-<article class="case"><img src="img/case-2026-despedida-01.jpg" alt="Frame do filme Despedidas" loading="lazy"><div class="b"><span class="meta">2026 · O Boticário · AlmapBBDO</span><h4>Despedidas, Dia das Mães</h4><p>O ninho vazio, a partir de dado social: 64% da conversa sobre o tema é de tristeza.</p><p class="res"><b>Resultado</b>Lançada em abril/2026.</p></div></article>
-<article class="case"><img src="img/case-2026-her-code-01.jpg" alt="Code Her com Marina Sena" loading="lazy"><div class="b"><span class="meta">2026 · O Boticário · AlmapBBDO</span><h4>Code Her, com Marina Sena</h4><p>Bot contra a manipulação de imagens de mulheres por IA. Pela fala dela, o lançamento teve uma hora de bloqueio de mídia antes de escalar com influenciadores.</p><p class="res"><b>Resultado</b>Cannes 2026: 1 Prata (Social &amp; Creator) e 2 Bronzes.</p></div></article>
+<article class="case"><img src="img/case-2026-her-code-01.jpg" alt="Code Her com Marina Sena" loading="lazy"><div class="b"><span class="meta">2026 · O Boticário · AlmapBBDO</span><h4>Code Her, com Marina Sena</h4><p>Bot contra a manipulação de imagens de mulheres por IA. Pela fala dela, o lançamento teve uma hora de bloqueio das telas de out-of-home.</p><p class="res"><b>Resultado</b>Cannes 2026: Prata em Social &amp; Creator e Bronze em Digital Craft.</p></div></article>
+<article class="case"><img src="img/case-2022-cordeis-01.jpg" alt="Campanha com Vitória Rodrigues" loading="lazy" style="object-position:50% 15%"><div class="b"><span class="meta">2022 · O Boticário · AlmapBBDO</span><h4>Cordéis, com Vitória Rodrigues</h4><p>Histórias de mulheres do Nordeste contadas em cordel, para Liz Sublime.</p><p class="res"><b>Resultado</b>Sem métrica pública. É o precedente de linguagem nordestina na marca.</p></div></article>
 </div>
-<p>Além dos cases abaixo, o grupo foi Anunciante do Ano no Effie Brasil 2025, com 10 cases premiados feitos com Almap, W+K e GUT. O Boticário é a marca mais premiada da história do Effie Brasil.</p>
-<p class="src">Fontes: Meio &amp; Mensagem, Exame, Experience Club, Marcas pelo Mundo, Propmark, Roastbrief, Estadão e palestra JCDecaux (jul/2026). A lista completa está no rodapé. Onde aparece "sem métrica pública", o dado existe dentro do grupo mas não foi divulgado.</p>
+<h3>Produto, comunidade e creators</h3>
+<div class="cases">
+<article class="case"><img src="img/case-2025-eudora-chega-la-e-eudora.jpg" alt="Desafio Chega lá e Eudora" loading="lazy"><div class="b"><span class="meta">2015 em diante · Eudora</span><h4>Construção da Eudora do zero</h4><p>Bordão "Chega lá e Eudora", influenciadores e a criação do Dia do Batom. A imagem é do desafio com Juliana Paes.</p><p class="res"><b>Resultado</b>Crescimento de 60% a 80% nos primeiros anos. Hoje é a marca mais multicanal do grupo.</p></div></article>
+<article class="case"><img src="img/case-2024-egeo-melancia.jpg" alt="Egeo Melancia" loading="lazy"><div class="b"><span class="meta">2024 · Egeo · interno</span><h4>Egeo Melancia</h4><p>A comunidade do TikTok pediu e votou no cheiro. A ideia apareceu em 2023 e o lançamento foi em maio de 2024. Ago/2024: o unboxing das linhas Egeo e Cuide-se Bem Melancia bateu o recorde Guinness de maior unboxing simultâneo, com mais de 1.080 pessoas no Pavilhão da Bienal.</p><p class="res"><b>Resultado</b>Esgotou no e-commerce em 57 horas, com previsão de 14 dias (Consumidor Moderno).</p></div></article>
+<article class="case"><img src="img/case-2022-botiverso.jpg" alt="Identidade do Botiverso" loading="lazy" style="object-fit:contain"><div class="b"><span class="meta">2022 e 2023 · O Boticário · interno</span><h4>Botiverso</h4><p>Aceleradora de creators no TikTok: 10 em 2022, 300 vagas em 2023, prêmio de R$ 50 mil e protagonismo em campanha.</p><p class="res"><b>Resultado</b>Sem métrica pública. Base da comunidade que depois cocriou produtos.</p></div></article>
+<article class="case"><img src="img/case-2022-black-dragons-time.jpg" alt="Time feminino Black Dragons" loading="lazy"><div class="b"><span class="meta">2022 · O Boticário · games</span><h4>Black Dragons e Avakin</h4><p>Patrocínio do time feminino de e-sports e presença dentro do jogo Avakin Life.</p><p class="res"><b>Resultado</b>Ela diz que o Boticário virou a marca mais reconhecida no jogo.</p></div></article>
+<article class="case"><img src="img/case-2024-malbec-icon-01.jpg" alt="Lançamento Malbec Icon" loading="lazy"><div class="b"><span class="meta">2024 · Malbec · AlmapBBDO, W3haus</span><h4>Malbec Icon</h4><p>Frasco desenhado com a Pininfarina, com o piloto Felipe Drugovich, e a ativação Icon Ride com carro de luxo.</p><p class="res"><b>Resultado</b>Sem métrica pública. <a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-cria-experiencia-com-carro-de-luxo-para-o-lancamento-de-malbec-icon/">Marcas pelo Mundo</a></p></div></article>
+</div>
+<h3>Varejo, franquias e mundo</h3>
+<div class="cases">
+<article class="case"><img src="img/case-2024-barco-flagship-para-01.jpg" alt="Render do barco-loja no Pará" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · varejo</span><h4>Loja-conceito flutuante no Pará</h4><p>"Pará, a beleza flui aqui": um barco com Boticário Lab em Belém e show de Viviane Batidão.</p><p class="res"><b>Resultado</b>Três fins de semana de operação. <a href="https://adnews.com.br/post/o-boticario-inaugura-loja-conceito-em-barco-no-para">Adnews</a></p></div></article>
+<article class="case"><img src="img/case-2025-botirecicla-store-01.jpg" alt="Render da BotiRecicla Store" loading="lazy"><div class="b"><span class="meta">2025 · O Boticário · LePub, Guto Requena</span><h4>BotiRecicla Store</h4><p>Loja temporária em Pinheiros onde embalagem vazia de qualquer marca vira moeda.</p><p class="res"><b>Resultado</b>Três dias, com mínimo de 700 g por troca. <a href="https://www.meioemensagem.com.br/marketing/o-boticario-abre-loja-onde-clientes-trocam-embalagens-vazias-por-brindes">Meio &amp; Mensagem</a></p></div></article>
+<article class="case"><img src="img/case-2026-abf-franqueador-do-ano-01.jpg" alt="Prêmio ABF Franqueador do Ano 2026" loading="lazy"><div class="b"><span class="meta">mai/2026 · O Boticário · franquias</span><h4>Franqueador do Ano ABF</h4><p>Prêmio ABF Destaque Franchising, recebido por Fabiano Olivo, diretor executivo de franquias.</p><p class="res"><b>Resultado</b>Primeiro título em 16 anos. Mais de 1.600 cidades e cerca de 4 mil pontos. <a href="https://abf.com.br/o-boticario-e-eleito-franqueador-do-ano-no-premio-abf-destaque-franchising-2026-2/">ABF</a></p></div></article>
+<article class="case"><img src="img/case-2026-portugal-40-anos-01.jpg" alt="Campanha Amo-te, 40 anos em Portugal" loading="lazy"><div class="b"><span class="meta">set/2026 · O Boticário Portugal</span><h4>40 anos em Portugal</h4><p>Campanha "Amo-te" nos 40 anos da marca no país, o maior mercado fora do Brasil.</p><p class="res"><b>Resultado</b>Recorde Guinness: 310 pessoas dizendo "amo-te". <a href="https://hipersuper.pt/2026/09/14/40-anos-depois-portugal-ainda-e-o-maior-mercado-do-boticario-fora-do-brasil">Hipersuper</a></p></div></article>
+<article class="case"><img src="img/case-2024-casa-214-madonna.jpg" alt="Narcisa Tamborindeguy e o prédio do camarote" loading="lazy"><div class="b"><span class="meta">2024 · O Boticário · SoWhat</span><h4>Camarote do show da Madonna</h4><p>Camarote na casa de Narcisa Tamborindeguy, em Copacabana. Antes teve Taylor Swift e Lollapalooza.</p><p class="res"><b>Resultado</b>Sem métrica pública. É o precedente de experiência física de alto impacto.</p></div></article>
+</div>
+<h3>Sem imagem, mas no mesmo padrão</h3>
+<div class="tbl"><table><thead><tr><th>Quando</th><th>Case</th><th>O que foi</th><th>Resultado público</th></tr></thead><tbody>
+<tr><td class="y">2025</td><td class="r">Cuidar é coisa de pai</td><td>Dia dos Pais, AlmapBBDO. Volta à licença-paternidade.</td><td>77% dos homens querem mais de 5 dias. O grupo dá 120 dias, e cerca de 1.097 homens usaram desde 2021 (<a href="https://exame.com/esg/dia-dos-pais-campanha-do-boticario-discute-importancia-da-licenca-paternidade-extendida/">Exame</a>)</td></tr>
+<tr><td class="y">2026</td><td class="r">Indiretas do Dia dos Namorados</td><td>Escuta das "indiretas" de presente, com a W3haus.</td><td>147 mil conversas mapeadas (<a href="https://imirante.com/entretenimento/sao-luis/amp/2026/06/10/o-boticario-cruza-dados-e-comportamento-digital-para-impulsionar-vendas-no-dia-dos-namorados">Imirante</a>)</td></tr>
+<tr><td class="y">2025</td><td class="r">Nativa SPA</td><td>Uva Merlot com Agatha Moreira e Orquídea Lumière com Isis Valverde. PROS e AlmapBBDO.</td><td>Sem métrica pública (<a href="https://rondoniaovivo.com/destaque-empresarial/destaquesempresariais/2025/04/10/o-boticario-agatha-moreira-aceita-convite-para-nova-campanha-de-nativa-spa.html">Rondônia ao Vivo</a>)</td></tr>
+<tr><td class="y">2025</td><td class="r">Assistente de IA no e-commerce</td><td>Assistente no app inspirado nas consultoras, com AWS.</td><td>+46% de conversão no 1º mês e ticket +7,4% (<a href="https://www.grupoboticario.com.br/midia/ia-ecommerce-consultora-beleza/">Grupo Boticário</a>)</td></tr>
+<tr><td class="y">2026</td><td class="r">EssencIA</td><td>A IA lê o feed do Instagram e sugere a família olfativa; um perfumista fecha. AlmapBBDO e Meta AI.</td><td>IA em mais de 70 frentes internas (<a href="https://www.grupoboticario.com.br/midia/boticario-ia-instagram-personalizacao-fragrancias/">Grupo Boticário</a>)</td></tr>
+<tr><td class="y">mai/2025</td><td class="r">Dias de Beleza</td><td>Mês de ofertas com mais de 15 horas de lives.</td><td>+649% em social commerce e e-commerce +169% no mês (<a href="https://exame.com/marketing/como-o-grupo-boticario-aumentou-em-649-as-vendas-pelo-social-commerce/">Exame</a>)</td></tr>
+</tbody></table></div>
+<p>Além dos cases acima, o grupo foi Anunciante do Ano no Effie Brasil 2025, com 10 cases premiados feitos com Almap, W+K e GUT. O Boticário é a marca mais premiada da história do Effie Brasil.</p>
+<p class="src">Fontes: Meio &amp; Mensagem, Exame, Experience Club, Marcas pelo Mundo, Propmark, Roastbrief, B9, Adnews, ABF, Hipersuper, Estadão e palestra JCDecaux (jul/2026). Ativações regionais estão na <a href="#regional">seção 11</a>. A lista completa está no rodapé. Onde aparece "sem métrica pública", o dado existe dentro do grupo mas não foi divulgado.</p>
 </section>
 
 <section id="parceiros">
 <h2><small>03 · Parceiros</small>Com quem deu mais resultado</h2>
 <p>O ranking abaixo conta prêmios e presença em cases. Não existe ranking público de venda por agência. <span class="tag i">Inferência</span></p>
 <div class="grid2">
-  <div class="card"><h4>1. AlmapBBDO · o parceiro de coração</h4><p>Atende o Boticário desde 2004 e criou Tormenta, 5 dias?, Despedidas, Code Her e Cordéis. Teve 55 menções de finalista no Effie 2025 e ganhou Siàge e datas da Eudora. Para ela, a Almap é a guardiã da emoção nas grandes datas.</p></div>
+  <div class="card"><h4>1. AlmapBBDO · o parceiro de coração</h4><p>Atende o Boticário desde 2004 e criou Tormenta, Instinto Paterno, Despedidas, Code Her e Cordéis. Teve 55 menções de finalista no Effie 2025 e ganhou Siàge e datas da Eudora. Para ela, a Almap é a guardiã da emoção nas grandes datas.</p></div>
   <div class="card"><h4>2. GUT · o braço de causa</h4><p>Fez Respeita Meu Capelo, Pesquise o Meu Corpo e o Pacto Skincare. É com ela que o grupo ganha Leão de Glass e ODS, ou seja, reputação e relevância cultural.</p></div>
-  <div class="card"><h4>3. A casa · a máquina interna</h4><p>Comunidade, creators, CRM, IA e teste rápido ficam com o time próprio: o grupo tem mais de 2 mil pessoas em tecnologia. Ela diz que não usa agência para o que exige escala e corte rápido. Os melhores números de retorno direto (Egeo Melancia, Ovo) nasceram aqui.</p></div>
-  <div class="card"><h4>4. Experiência · SoWhat, Pros, Universal Music</h4><p>SoWhat fez os camarotes de show. A Pros assinou a ativação nas esteiras de aeroporto do Natal 2025, que ela contou no palco da JCDecaux como o caso de maior crescimento. A Universal Music está no terceiro ano de parceria de shows no São João.</p></div>
+  <div class="card"><h4>3. A casa · a máquina interna</h4><p>Comunidade, creators, CRM, IA e teste rápido ficam com o time próprio: o grupo tem mais de 2 mil pessoas em tecnologia. Ela diz que não usa agência para o que exige escala e corte rápido. Os melhores números de retorno direto (Egeo Melancia e o unboxing recorde) nasceram aqui.</p></div>
+  <div class="card"><h4>4. Experiência · SoWhat, PROS, Universal Music</h4><p>SoWhat fez os camarotes de show. A PROS assinou as esteiras de aeroporto do Natal 2025, que ela contou no palco da JCDecaux como o caso de maior crescimento, e o lançamento de Nativa SPA. A Universal Music entra nos shows de projetos regionais.</p></div>
+  <div class="card"><h4>5. Dado e tecnologia · W3haus, LePub, AWS, Meta AI</h4><p>W3haus nos dados do Malbec Icon e das indiretas de Namorados. LePub na BotiRecicla. AWS no assistente do e-commerce e Meta AI no EssencIA. Parceiro de tecnologia entra quando traz escala e prova.</p></div>
 </div>
-<div class="callout"><p><b>Onde a dot. pode chegar.</b> Os parceiros que ela exibe publicamente são os que geram <b>conversa, prêmio e prova</b>. Live marketing ainda não aparece como protagonista nas falas dela, e esse espaço está livre. A dot. já domina o território que ela mais valoriza, o regional. Somando conversa e dado à experiência que já entrega, a dot. pode ser a primeira agência de live marketing a entrar nessa lista.</p></div>
+<div class="callout"><p><b>Onde a dot. pode chegar.</b> Os parceiros que ela exibe publicamente são os que geram <b>conversa, prêmio e prova</b>. Live marketing ainda não aparece como protagonista nas falas dela. Uma agência de experiência que chegue com conversa e dado junto do evento fala a língua desta lista. <span class="tag i">Inferência</span></p></div>
 </section>
 
 <section id="pensa">
 <h2><small>04 · Mentalidade</small>Como ela pensa</h2>
-<p class="lede">Sintetizado a partir de oito falas dela em vídeo (2022 a jul/2026) e de cinco entrevistas escritas. Quase tudo abaixo é <span class="tag f">Fato</span>, dito por ela.</p>
+<p class="lede">Sintetizado a partir de oito falas dela em vídeo (2022 a jul/2026) e de mais de dez entrevistas escritas. Quase tudo abaixo é <span class="tag f">Fato</span>, dito por ela.</p>
 
 <div class="grid2">
-  <div class="card"><h4>Jornada em looping, não funil</h4><p>Ela desenha tudo a partir da jornada do consumidor e diz que não existe funil, existe um ciclo. Cada meio precisa de papel e de métrica definidos antes da criação. A fórmula dela: dominar audiência, jornada e meio.</p></div>
-  <div class="card"><h4>Criativo acima do meio</h4><p>A mídia constrói marca, mas o criativo é o que faz a diferença. A atenção é escassa e a marca precisa surpreender. A ideia forte nasce da estratégia, tangibiliza o posicionamento e depois vira conteúdo social.</p></div>
-  <div class="card"><h4>Escuta obsessiva</h4><p>Ela diz ler o que as pessoas escrevem sobre as marcas. Social listening, pedidos em loja e comunidade viram produto. As estratégias vêm de fora para dentro. A Exame a chamou de caçadora de tendências.</p></div>
-  <div class="card"><h4>Medição que ela usa</h4><p>Recall de marca, consideração, crescimento de negócio e base ativa. Em causas, mede profundidade de conversa e transformação cultural. Valoriza mídia que entrega atribuição.</p></div>
-  <div class="card"><h4>Teste, corte e escala</h4><p>Roda mais de 15 campanhas de CRM ao mesmo tempo numa mesa de performance, acelera o que funciona e corta o resto. Produto que levava 2 anos sai em 1 mês. Testa num canal pequeno e só depois leva para as lojas.</p></div>
-  <div class="card"><h4>Estruturante x hype</h4><p>Ela separa o que é estruturante (Centro de Pesquisa da Mulher, ciclos da vida) do que é hype (Ovo de Melancia). O hype ela testa e só mantém se continuar funcionando.</p></div>
-  <div class="card"><h4>Marca física</h4><p>Ela fala do Boticário como uma marca muito física. Loja é essencial em data comemorativa, kit e mensagem emocional. Usa a convenção de franqueados como palco, como no unboxing nacional com telão.</p></div>
-  <div class="card"><h4>Regional é obrigação</h4><p>Primeiro vem a grande mensagem nacional e depois a conexão regional, sem tropicalizar. Existe estrutura de marketing regional. Ela cita São João e Parintins, e defende estar presente do jeito certo, não uma vez só.</p></div>
-  <div class="card"><h4>IA como meio</h4><p>Usa consumidor sintético (personas-agentes) para pesquisar e diz ter economizado milhões em conteúdo. O diferencial, para ela, é um time que decide bem onde investir e sempre pergunta qual é o risco.</p></div>
-  <div class="card"><h4>Liderança com guarda-corpos</h4><p>Dá autonomia dentro de limites claros do que é inegociável para a marca. Líder tem que abrir a mão. Valoriza colaboração entre áreas acima da excelência isolada de cada uma. Para campanhas sensíveis, diz que é preciso coragem.</p></div>
+  <div class="card"><h4>Jornada em looping, não funil</h4><p>Ela desenha tudo a partir da jornada do consumidor e diz que não existe funil, existe um ciclo. Cada meio precisa de papel e de métrica definidos antes da criação. Os meios se complementam por intenção (<a href="https://www.youtube.com/watch?v=B7sN5eXb-PM&amp;t=657">JCDecaux</a>).</p></div>
+  <div class="card"><h4>Criativo acima do meio</h4><p>A mídia constrói marca, mas o criativo faz a diferença. A atenção é escassa e a marca precisa surpreender. Influenciador só com o produto na mão não basta: "ele quer ver história" (<a href="https://www.youtube.com/watch?v=GVrfj5PNXJk&amp;t=1771">UOL</a>).</p></div>
+  <div class="card"><h4>Escuta obsessiva</h4><p>"Sou obcecada em ler tudo o que as pessoas escrevem nas redes" (<a href="https://exame.com/revista-exame/cacadora-de-tendencias/">Exame</a>). Antes o time brifava a agência; hoje o conteúdo nasce do listening (<a href="https://www.youtube.com/watch?v=GVrfj5PNXJk&amp;t=549">UOL</a>).</p></div>
+  <div class="card"><h4>Consumidor plural</h4><p>"A consumidora é várias pessoas, e ela pode mudar" (Exame). Não basta produto bom: é preciso gerar valor e relevância cultural (<a href="https://fastcompanybrasil.com/5-perguntas/5-perguntas-para-renata-gomide-cmo-do-grupo-boticario/">Fast Company</a>).</p></div>
+  <div class="card"><h4>Tecnologia é meio</h4><p>"A tecnologia não é fim, a tecnologia é meio" (<a href="https://www.youtube.com/watch?v=GVrfj5PNXJk&amp;t=667">UOL</a>). Dado sem saber o que fazer com ele não adianta. "Não é sobre estar na próxima tecnologia hypada" (Exame).</p></div>
+  <div class="card"><h4>IA: humildade e escala</h4><p>Sobre IA, "quem falar que tá pronto tá mentindo". A nova fronteira é "fazer os agentes amarem nossas marcas", que ela chama de evolução do SEO. Diz ter economizado milhões com conteúdo feito com IA e estúdio próprio (<a href="https://www.youtube.com/watch?v=ahwDGhjqb_g&amp;t=1444">10+10</a>).</p></div>
+  <div class="card"><h4>Estruturante x hype</h4><p>Ela separa o que é estruturante (Centro de Pesquisa da Mulher, ciclos da vida) do que é hype (Egeo Melancia). O hype ela testa e só mantém se continuar funcionando.</p></div>
+  <div class="card"><h4>Marca física e rede</h4><p>O Boticário é uma marca muito física. Loja é essencial em data, kit e mensagem emocional. O ganha-ganha vale para franqueado, fornecedor e agência (<a href="https://www.youtube.com/watch?v=4_6cEEG3eI0&amp;t=490">Estadão</a>). Venda por catálogo "não vai acabar" (<a href="https://www.youtube.com/watch?v=8xh-oQnwVRA&amp;t=1863">McKinsey</a>).</p></div>
+  <div class="card"><h4>Regional é obrigação</h4><p>Primeiro a grande mensagem nacional, depois a conexão regional, sem tropicalizar. Chega ao planograma: perfumaria mais fresca no Nordeste (<a href="https://www.youtube.com/watch?v=qor6F6d1Htg&amp;t=1769">Desmarketize</a>). Out-of-home serve à marca regional pela segmentação e pela capilaridade.</p></div>
+  <div class="card"><h4>Diversidade de dentro para fora</h4><p>"Como é que eu vou criar um produto para preto se eu não tenho pretos dentro de casa" (<a href="https://www.youtube.com/watch?v=GVrfj5PNXJk&amp;t=946">UOL</a>). A beleza perfeita "não existe". Etarismo entrou na pauta com Seu Auge é Hoje e o Pacto Prateado (<a href="https://www.meioemensagem.com.br/womentowatch/marcas-mulheres-50">Meio &amp; Mensagem</a>).</p></div>
 </div>
 
+<div class="lp-wrap" style="margin-top:28px">
+<h3 class="lp-h">A jornada em looping</h3>
+<blockquote class="lp-quote">"A gente sempre fala que é um looping. Não existe funil."<cite>Renata Gomide · palestra JCDecaux · jul/2026</cite></blockquote>
+<div class="lp-vs">
+  <div><svg viewBox="0 0 120 110" class="lp-mini" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 12h100l-38 42v36l-24 12V54z" fill="none" stroke="var(--muted)" stroke-width="4" stroke-linejoin="round"/><path d="M14 100L106 10" stroke="var(--red, #b3261e)" stroke-width="5" stroke-linecap="round"/></svg><div><b>Funil</b><span>Entra em cima, afunila e termina na compra. Cada pessoa passa uma vez.</span></div></div>
+  <div><svg viewBox="0 0 120 110" class="lp-mini" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="55" rx="44" ry="34" fill="none" stroke="var(--green, var(--accent))" stroke-width="5"/><path d="M96 26l8 12-14 2" fill="none" stroke="var(--green, var(--accent))" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 84l-8-12 14-2" fill="none" stroke="var(--green, var(--accent))" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Looping</b><span>Entra por qualquer ponto. A compra leva ao uso, o uso à conversa, a conversa traz a próxima pessoa e o próximo produto.</span></div></div>
+</div>
+<svg viewBox="0 0 640 430" role="img" aria-label="Ciclo: Descobrir , Reforçar , Comprar , Usar , Compartilhar , Escutar, e de volta ao início" class="lp-svg" xmlns="http://www.w3.org/2000/svg"><ellipse cx="320.0" cy="219.0" rx="235" ry="150" fill="none" stroke="var(--green, var(--accent))" stroke-width="4" stroke-opacity=".35"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(437.5 89.1) rotate(20.2)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(555.0 219.0) rotate(90.0)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(437.5 348.9) rotate(159.8)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(202.5 348.9) rotate(-159.8)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(85.0 219.0) rotate(-90.0)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(202.5 89.1) rotate(-20.2)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="320.0" cy="69.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="320.0" y="74.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">1</text><text x="320.0" y="21.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Descobrir</text><text x="320.0" y="38.0" text-anchor="middle" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">conhece o produto</text><circle cx="523.5" cy="144.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="523.5" y="149.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">2</text><text x="561.0" y="130.2" text-anchor="start" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Reforçar</text><text x="561.0" y="147.2" text-anchor="start" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">marca na cabeça 24/7</text><circle cx="523.5" cy="294.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="523.5" y="299.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">3</text><text x="561.0" y="307.8" text-anchor="start" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Comprar</text><text x="561.0" y="324.8" text-anchor="start" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">impulso ou loja</text><circle cx="320.0" cy="369.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="320.0" y="374.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">4</text><text x="320.0" y="417.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Usar</text><text x="320.0" y="434.0" text-anchor="middle" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">ocasiões de vida</text><circle cx="116.5" cy="294.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="116.5" y="299.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">5</text><text x="79.0" y="307.8" text-anchor="end" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Compartilhar</text><text x="79.0" y="324.8" text-anchor="end" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">posta, indica, lembra</text><circle cx="116.5" cy="144.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="116.5" y="149.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">6</text><text x="79.0" y="130.2" text-anchor="end" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Escutar</text><text x="79.0" y="147.2" text-anchor="end" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">a conversa vira produto</text><text x="320.0" y="213.0" text-anchor="middle" font-size="22" font-weight="800" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Marca na cabeça</text><text x="320.0" y="237.0" text-anchor="middle" font-size="13" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">cada meio com um papel e uma métrica</text></svg>
+<p class="lp-nota">As seis etapas são a leitura da dot. a partir das falas dela: "como descobre, como converte, o que consome, como consome"; "a marca na cabeça 24 por 7"; "ocasiões de vida"; escuta que vira produto.</p>
+<h4 style="margin:22px 0 0;font-size:18px">Como identificar em que ponto a pessoa está</h4>
+<div class="lp-tab"><table><thead><tr><th>Etapa</th><th>Sinal da pessoa</th><th>Como medir</th><th>Exemplo do Boticário</th></tr></thead><tbody><tr><td><span class="lp-n">1</span>Descobrir</td><td>Primeira vez que vê ou sente o produto</td><td>Alcance, awareness, recall</td><td>Presentes nas esteiras do aeroporto no Natal 2025</td></tr><tr><td><span class="lp-n">2</span>Reforçar</td><td>Segue, salva, volta a ver, comenta</td><td>Frequência, consideração, engajamento</td><td>TV, out-of-home e creators se complementando</td></tr><tr><td><span class="lp-n">3</span>Comprar</td><td>Clica, vai à loja, usa voucher, resgata cupom</td><td>Conversão, fluxo em loja, cupom resgatado</td><td>Egeo Melancia: esgotou no e-commerce em 57 horas, com previsão de 14 dias</td></tr><tr><td><span class="lp-n">4</span>Usar</td><td>Usa nas ocasiões de vida: se arrumar, dia, noite, festa</td><td>Experimentação, recompra, base ativa</td><td>Serviço de make, perfume de dia, make à noite</td></tr><tr><td><span class="lp-n">5</span>Compartilhar</td><td>Posta, marca a marca, indica, dá de presente</td><td>UGC, menções, share of voice</td><td>Tormenta: a campanha mais compartilhada da história da marca</td></tr><tr><td><span class="lp-n">6</span>Escutar</td><td>Fala da marca, pede produto, cria tendência</td><td>Social listening, cadastros, base do programa de fidelidade</td><td>Comunidade do TikTok cocriou o Egeo Melancia</td></tr></tbody></table></div>
+</div>
 <div class="duo">
   <figure><img src="img/marca-fisica-boticario-lab.jpg" alt="Fachada da loja O Boticário Lab" loading="lazy"><figcaption>Loja-conceito O Boticário Lab, em Pinheiros (SP). Para ela, o Boticário é uma marca muito física.</figcaption></figure>
   <figure><img src="img/case-2025-natal-esteiras-02.jpg" alt="Kit de Natal na esteira de bagagem" loading="lazy" style="object-position:50% 60%"><figcaption>Natal 2025: o presente chega na esteira de bagagem. É o tipo de surpresa física que ela cita como exemplo.</figcaption></figure>
-  <figure><img src="img/case-2024-ovo-melancia-unboxing-02.jpg" alt="Kit do unboxing recorde" loading="lazy"><figcaption>Kit do unboxing recorde na convenção de franqueados. Franqueado também é público.</figcaption></figure>
+  <figure><img src="img/case-2024-ovo-melancia-unboxing-02.jpg" alt="Unboxing recorde das linhas Melancia" loading="lazy"><figcaption>Unboxing Guinness das linhas Egeo e Cuide-se Bem Melancia, ago/2024: mais de 1.080 pessoas no Pavilhão da Bienal.</figcaption></figure>
 </div>
 
 <blockquote class="quote">"O Brasil tem quatro países dentro de um país só."<cite>Renata Gomide · McKinsey / Brasil Journal · 15/07/2026</cite></blockquote>
@@ -343,45 +438,95 @@ footer a{color:var(--muted)}
 <h3>Vocabulário dela</h3>
 <p>Usar essas palavras naturalmente, sem forçar, sinaliza que a dot. fala a língua da casa.</p>
 <div class="chips">
-  <span>jornada</span><span>looping</span><span>complementaridade</span><span>de fora para dentro</span><span>escuta ativa</span><span>cocriação</span><span>comunidade</span><span>relevância cultural</span><span>ecossistema de beleza</span><span>recall</span><span>base ativa</span><span>tracionar</span><span>escalar</span><span>testar</span><span>estruturante x hype</span><span>guarda-corpos</span><span>atenção escassa</span><span>surpreender</span><span>coragem</span><span>consistência</span><span>ganha-ganha</span>
+  <span>jornada</span><span>looping</span><span>bota gasolina</span><span>agentes</span><span>cliente único</span><span>lugar de fala</span><span>alta performance com abraço</span><span>complementaridade</span><span>de fora para dentro</span><span>escuta ativa</span><span>cocriação</span><span>comunidade</span><span>relevância cultural</span><span>ecossistema de beleza</span><span>recall</span><span>base ativa</span><span>tracionar</span><span>escalar</span><span>testar</span><span>estruturante x hype</span><span>guarda-corpos</span><span>atenção escassa</span><span>surpreender</span><span>coragem</span><span>consistência</span><span>ganha-ganha</span>
 </div>
 
 <h3>O que ela rejeita</h3>
 <ul class="clean">
   <li>Copiar concorrente ou seguir o mercado sem entender o próprio consumidor.</li>
-  <li>Colocar dinheiro onde o consumidor não está olhando. Ela pede rigor extremo para entender o que gera valor.</li>
+  <li>Investir sem entender o que tem valor para o consumidor. Ela diz que o grupo investe entendendo o que tem valor (Desmarketize, dez/2023).</li>
   <li>Marca que fala do que quer em vez do que as pessoas querem conversar.</li>
   <li>Comunicação única e nacional, sem regionalizar.</li>
+  <li>Marca que surfa a onda de uma causa e age ao contrário (<a href="https://www.youtube.com/watch?v=4_6cEEG3eI0&amp;t=1339">Estadão</a>).</li>
+  <li>Estereótipo e aposta grande sem validação.</li>
   <li>Tecnologia adotada por moda.</li>
   <li>Reforçar padrão estético. Ela diz que a indústria da beleza fez isso por décadas e que a marca tem a obrigação de desfazer.</li>
   <li>Áreas excelentes que trabalham em silos.</li>
-  <li>Repetir a mesma ação todo ano sem se renovar. <span class="tag w">Atenção dot.</span> O São João está no 10º ano.</li>
+  <li>Repetir a mesma ação todo ano sem se renovar. Continuidade, para ela, é presença constante com ideia nova, não o mesmo formato.</li>
 </ul>
 </section>
 
+<section id="decide">
+<h2><small>05 · Método</small>Como ela decide, mede e lidera</h2>
+<p class="lede">Quase tudo aqui é <span class="tag f">Fato</span>, dito por ela em vídeo ou entrevista.</p>
+<div class="grid2">
+  <div class="card"><h4>Decide testando</h4><p>"Não adianta eu construir já 4.000 lojas porque pode não funcionar." Testa pequeno e, quando o teste responde, "bota gasolina" (<a href="https://www.youtube.com/watch?v=ahwDGhjqb_g&amp;t=1073">10+10</a>). Produto que levava 2 anos sai em 1 mês.</p></div>
+  <div class="card"><h4>Mede marca e negócio juntos</h4><p>Share em todas as categorias, recall, consideração, base ativa e KPIs de marca mais amada e de marca para presentear (<a href="https://www.youtube.com/watch?v=4_6cEEG3eI0&amp;t=2095">Estadão</a>). Em causa, mede profundidade de conversa.</p></div>
+  <div class="card"><h4>O que fica em casa</h4><p>CRM e performance: "não faz sentido fazer com agência" (<a href="https://www.youtube.com/watch?v=ahwDGhjqb_g&amp;t=748">10+10</a>). Roda mais de 15 campanhas de CRM ao mesmo tempo numa mesa de performance. Na venda direta, a IA decide a promoção de cada pessoa para não dar desconto a quem já compraria.</p></div>
+  <div class="card"><h4>O que vai para parceiro</h4><p>A grande ideia de marca, a emoção das datas e a causa (Almap, GUT). Antes de contratar, clareza de mensagem: "se eu não sei o que eu preciso passar, não adianta ter um expert" (10+10). Não há fala pública dela sobre remuneração de agência.</p></div>
+  <div class="card"><h4>Lidera trocando cadeiras</h4><p>"Gosto bastante de mudar as pessoas de cadeira." "Os líderes têm que confiar no time." "Se acontece de cima para baixo, não acredito no sucesso" (<a href="https://www.youtube.com/watch?v=8xh-oQnwVRA&amp;t=666">McKinsey</a>).</p></div>
+  <div class="card"><h4>Alta performance com abraço</h4><p>O lema que o <a href="https://experienceclub.com.br/alta-performance-com-abraco-a-estrategia-de-marketing-do-grupo-boticario/">Experience Club</a> registrou. Admite que "no passado, procurava pessoas muito parecidas comigo" e aconselha: "não terceirizem sua carreira" (<a href="https://forbes.com.br/escolhas-do-editor/2025/07/como-vp-de-marketing-do-grupo-boticario-redefiniu-a-alta-performance/">Forbes</a>).</p></div>
+</div>
+
+<blockquote class="quote">"Agora a gente precisa fazer os agentes amarem nossas marcas."<cite>Renata Gomide · 10+10 · mar/2026</cite></blockquote>
+
+<h3>Prioridades de 2026</h3>
+<ul class="clean">
+  <li>IA agêntica e conteúdo que os agentes de IA consigam ler e recomendar.</li>
+  <li>CRM com cliente único entre as marcas do grupo (<a href="https://www.youtube.com/watch?v=ahwDGhjqb_g&amp;t=502">10+10</a>).</li>
+  <li>Previsão de demanda por franqueado: "quantos batons nude na loja do Piauí" (<a href="https://www.youtube.com/watch?v=8xh-oQnwVRA&amp;t=1630">McKinsey</a>).</li>
+  <li>Os 50 anos de O Boticário em 2027 (<a href="https://www.youtube.com/watch?v=8xh-oQnwVRA&amp;t=2330">McKinsey</a>).</li>
+  <li>O peso do marketing no resultado do negócio.</li>
+</ul>
+
+<div class="grid2">
+  <div class="card do"><h4>O que ela valoriza numa proposta</h4>
+    <p>Diferenciação clara e mensagem definida antes da execução.</p>
+    <p>Meios que se complementam, cada um com papel e métrica.</p>
+    <p>Lugar de fala: quem vive o tema ajuda a construir.</p>
+    <p>Teste pequeno antes de investimento grande.</p>
+    <p>História, não produto na mão.</p>
+  </div>
+  <div class="card dont"><h4>O que ela rejeita</h4>
+    <p>Aposta grande sem validação.</p>
+    <p>Estereótipo e padrão estético.</p>
+    <p>Tecnologia por moda.</p>
+    <p>Causa usada como onda.</p>
+    <p>A mesma ação repetida sem renovação.</p>
+  </div>
+</div>
+</section>
 <section id="qualidades">
-<h2><small>05 · Análise crítica</small>Qualidades e pontos cegos</h2>
+<h2><small>06 · Análise crítica</small>Qualidades e contexto de negócio</h2>
+<div class="nums">
+  <div class="num"><b>R$ 38,1 bi</b><span>de GMV em 2025, alta de 6,7% (19% em 2024)</span></div>
+  <div class="num"><b>27%</b><span>das vendas vieram de lançamentos com menos de um ano</span></div>
+  <div class="num"><b>26 mi</b><span>de clientes ativos no Beautybox, o programa de fidelidade</span></div>
+  <div class="num"><b>4 mil+</b><span>lojas de O Boticário em 16 países, 113 novas em 2025</span></div>
+  <div class="num"><b>R$ 50 bi</b><span>de GMV é a meta até 2028</span></div>
+</div>
+<p class="src">Fontes: <a href="https://www.grupoboticario.com.br/midia/grupo-boticario-lideranca-mercado-beleza-2025/">Grupo Boticário (2025)</a>, <a href="https://www.infomoney.com.br/business/do-faturamento-zero-na-pandemia-a-projecao-de-r-50-bi-a-saga-do-grupo-boticario/">InfoMoney</a>, <a href="https://mercadoeconsumo.com.br/03/03/2026/destaque-do-dia/exclusivo-com-quase-4-mil-unidades-o-boticario-lidera-ranking-global-de-lojas-de-beleza/">Mercado&amp;Consumo</a>.</p>
 <div class="grid2">
   <div class="card do"><h4>Qualidades</h4>
     <p><b>Visão de varejo e de marca ao mesmo tempo.</b> Poucos CMOs juntam chão de loja (GPA, 4 mil lojas) com construção emocional premiada. Ela entende de conversão e de emoção.</p>
     <p><b>Construtora.</b> Fez a Eudora do zero. Sabe criar do nada, não só administrar marca pronta.</p>
     <p><b>Velocidade com método.</b> Levou o grupo do planejamento trienal para o tempo real, sem perder a construção de longo prazo.</p>
-    <p><b>Coragem calibrada.</b> Aprova temas sensíveis (licença-paternidade, ninho vazio, cabelo) e ganha com eles.</p>
-    <p><b>Líder de gente.</b> Dá autonomia com limites e valoriza diversidade de time. Os diretores dela cresceram dentro de casa.</p>
+    <p><b>Coragem calibrada.</b> Aprova temas sensíveis (licença-paternidade, ninho vazio, cabelo, etarismo) e ganha com eles.</p>
+    <p><b>Líder de gente.</b> Dá autonomia com limites, troca pessoas de cadeira e valoriza time diverso. Os diretores dela cresceram dentro de casa.</p>
   </div>
-  <div class="card dont"><h4>Pontos cegos e tensões</h4>
-    <p><b>Live marketing não está no discurso dela.</b> Ela fala de TV, out-of-home, digital, creators e loja. Evento aparece como amplificador, nunca como centro. <span class="tag i">Inferência</span></p>
-    <p><b>Pressão por eficiência.</b> O CEO fala em "apertar parafusos". O GMV cresceu 6,7% em 2025, bem abaixo dos 19% de 2024. Todo real investido vai ser questionado.</p>
-    <p><b>Disputa apertada pela liderança.</b> Pelo Bradesco BBI com NielsenIQ, o Boticário tem 15,5% de participação contra 15,7% de Natura e Avon, a menor diferença da série. Ela precisa de prova de crescimento, não de beleza.</p>
-    <p><b>Internalização.</b> O que dá escala e dado, ela trouxe para dentro de casa. Agência que só executa corre o risco de virar fornecedor substituível.</p>
-    <p><b>Distância do regional.</b> O São João é conduzido por Franquias e pelo marketing regional. Ela pode não conhecer o trabalho da dot. em detalhe. <span class="tag i">Inferência</span></p>
+  <div class="card"><h4>Contexto de negócio</h4>
+    <p><b>Eficiência.</b> O CEO fala em "apertar parafusos" num mercado parado. O crescimento de 2025 foi um terço do de 2024.</p>
+    <p><b>Disputa apertada pela liderança.</b> Pelo Euromonitor, em análise do Bradesco BBI (abr/2026), o Boticário tem 15,5% de participação contra 15,7% de Natura e Avon, a menor diferença da série.</p>
+    <p><b>Maior varejista de beleza do mundo em lojas.</b> Euromonitor, mar/2026. Canal B2B com 160 mil pontos (+23%) e 40 mil salões (+33%).</p>
+    <p><b>Portugal é a vitrine externa.</b> 61 lojas, mais de 38 mil revendedoras e presença na Amazon Espanha (<a href="https://hipersuper.pt/2026/09/14/40-anos-depois-portugal-ainda-e-o-maior-mercado-do-boticario-fora-do-brasil">Hipersuper</a>).</p>
+    <p><b>Internalização.</b> O que exige escala e dado ficou em casa. Parceiro externo soma com ideia, experiência e prova.</p>
   </div>
 </div>
 </section>
 
 <section id="entorno">
-<h2><small>06 · Mapa de poder</small>Quem está ao redor dela</h2>
-<p>A Simone confirmou em 29/09/2026 as três pessoas-chave: Renata Gomide, Juliana Razini e Roberta Pepe. O mapa mostra onde cada uma está e quem mais aparece em volta. Os vínculos de reporte são <span class="tag i">Inferência</span>.</p>
+<h2><small>07 · Mapa de poder</small>Quem está ao redor dela</h2>
+<p>As três pessoas-chave são Renata Gomide, Juliana Razini e Roberta Pepe. O mapa mostra onde cada uma está e quem mais aparece em volta. Os vínculos de reporte são <span class="tag i">Inferência</span>.</p>
 <div class="org" role="list">
   <div class="lvl"><div class="n" role="listitem"><img src="img/pessoa-fernando-mode.jpg" alt="Fernando Modé" loading="lazy"><div><b>Fernando Modé</b><span>CEO desde 2021</span></div></div></div>
   <div class="arrow">responde a</div>
@@ -395,122 +540,116 @@ footer a{color:var(--muted)}
     <div class="n" role="listitem"><img src="img/pessoa-carolina-carrasco.jpg" alt="Carolina Carrasco" loading="lazy"><div><b>Carolina Carrasco</b><span>Branding e Comunicação de O Boticário e Quem Disse, Berenice? (desde nov/2024)</span></div></div>
     <div class="n" role="listitem"><img src="img/pessoa-giovana-orlandeli.jpg" alt="Giovana Orlandeli" loading="lazy"><div><b>Giovana Orlandeli</b><span>Marketing de Eudora, TRUSS, Vult e O.U.i (desde dez/2025, time de 70 pessoas)</span></div></div>
   </div>
-  <div class="arrow">quem opera o São João hoje</div>
+  <div class="arrow">franquias e marketing regional</div>
   <div class="lvl">
-    <div class="n dot" role="listitem"><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini" loading="lazy"><div><b>Juliana Razini</b><span>Diretora de Franquias (Treinamento e Eficiência), porta-voz do São João</span></div></div>
+    <div class="n dot" role="listitem"><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini" loading="lazy"><div><b>Juliana Razini</b><span>Diretora de Franquias (Treinamento e Eficiência), porta-voz de projetos regionais da rede</span></div></div>
     <div class="n dot" role="listitem"><img src="img/pessoa-jacqueline-tobaru.jpg" alt="Jacqueline Tobaru" loading="lazy"><div><b>Jacqueline Tobaru</b><span>Diretora de Marketing Regional, porta-voz do Carnaval 2026 e de Campina Grande 2025</span></div></div>
   </div>
   <div class="arrow">marketing regional (provável)</div>
   <div class="lvl">
-    <div class="n dot" role="listitem"><span class="ini" aria-hidden="true">RP</span><div><b>Roberta Pepe</b><span>Gerente de Marketing Regional: João Rock, Chapada, Verão Amazônico, Joinville</span></div></div>
+    <div class="n dot" role="listitem"><img src="img/pessoa-roberta-pepe.jpg" alt="Roberta Pepe" loading="lazy" style="object-position:32% 20%"><div><b>Roberta Pepe</b><span>Gerente de Marketing Regional: João Rock, Chapada, Bonito, Verão Amazônico, Joinville</span></div></div>
   </div>
 </div>
-<div class="callout w"><p><b>O que isso significa.</b> Se a Renata passou a olhar o São João diretamente, a conversa subiu dois degraus: sai de Franquias e regional e chega à VP que responde pela marca inteira. O critério de avaliação muda de "a casa ficou pronta e bonita" para "o que isso fez pela marca e pelo negócio". Se as pessoas novas forem Marcela De Masi ou Carolina Carrasco, vale o mesmo: são executivas de branding formadas no método dela.</p></div>
+<div class="callout"><p><b>O que isso significa.</b> Quando um projeto regional chega à mesa da Renata, a conversa sobe dois degraus: sai de Franquias e do regional e chega à VP que responde pela marca inteira. O critério muda de "ficou pronto e bonito" para "o que isso fez pela marca e pelo negócio". Marcela De Masi e Carolina Carrasco, se entrarem na conversa, são executivas de branding formadas no mesmo método. <span class="tag i">Inferência</span></p></div>
 </section>
 
-<section id="trio">
-<h2><small>07 · As três</small>Quem decide o quê</h2>
-<p class="lede">A Simone indicou três pessoas. Elas não avaliam a mesma coisa. Uma proposta que agrada uma e ignora as outras perde. A dot. precisa falar as três línguas na mesma apresentação.</p>
-<div class="grid2">
-  <div class="card"><h4>Renata Gomide · a marca e o negócio</h4><p>VP de Marketing. Pergunta o que a ideia faz pela marca e pelo crescimento. Régua: jornada, recall, base ativa, teste e escala. Não tolera repetição nem dinheiro onde o consumidor não olha.</p></div>
-  <div class="card"><h4>Juliana Razini · a rede e o território</h4><p>Diretora de Franquias. Pergunta o que a ideia faz pelo franqueado e pela relação com a cidade. Régua: consistência de anos, envolvimento em vez de impacto, cadastro, marca que pertence ao lugar.</p></div>
-  <div class="card"><h4>Roberta Pepe · a festa e a execução</h4><p>Gerente de Marketing Regional. Pergunta se a ativação faz sentido para quem está na festa. Régua: conexão local, relevância cultural, brinde útil, cadastro, continuidade de edições.</p></div>
-</div>
-<div class="callout w"><p><b>Ponto de atenção.</b> Quem falou em nome do Carnaval 2026 foi Jacqueline Tobaru, Diretora de Marketing Regional, e não nenhuma das três. Pelo cargo, é provável que Roberta responda a ela. Antes do Carnaval 2027, a dot. precisa confirmar com a Simone se Tobaru também decide. Não saber quem assina é o erro mais caro possível. <span class="tag i">Inferência</span></p></div>
-</section>
 
 <section id="juliana">
 <h2><small>08 · Perfil</small>Juliana Razini</h2>
 <div class="pessoa">
   <figure class="retrato"><img src="img/pessoa-juliana-razini.jpg" alt="Retrato de Juliana Razini"><figcaption>Foto: Propmark / divulgação</figcaption></figure>
   <dl class="ficha">
-    <div><dt>Cargo</dt><dd>Diretora de Franquias de O Boticário. Em set/2026 aparece como Diretora de Treinamento e Eficiência de Franquias</dd></div>
-    <div><dt>Na visão da dot.</dt><dd>"A nossa diretora da nossa área" (Simone, 29/09/2026)</dd></div>
+    <div><dt>Cargo</dt><dd>Diretora de Franquias de O Boticário até meados de 2026. Desde set/2026, Diretora de Treinamento e Eficiência de Franquias</dd></div>
     <div><dt>Casa</dt><dd>Mais de 11 anos no Grupo Boticário</dd></div>
-    <div><dt>Antes</dt><dd>Mondelez e Ferrero, em trade marketing e gestão de produto</dd></div>
-    <div><dt>Formação</dt><dd>Publicidade (UFPR), pós em Marketing (FAE)</dd></div>
-    <div><dt>Time</dt><dd>Cerca de 10 pessoas diretas: treinamento, analistas e comunicação <span class="tag i">Fonte secundária</span></dd></div>
+    <div><dt>Antes</dt><dd>Mondelez e Ferrero, em trade marketing e gestão de produto <span class="tag i">Fonte secundária (The Org)</span></dd></div>
+    <div><dt>Formação</dt><dd>Publicidade (UFPR), pós em Marketing (FAE) <span class="tag i">Fonte secundária (The Org)</span></dd></div>
+    <div><dt>Time</dt><dd>Cerca de 10 pessoas diretas: treinamento, analistas e comunicação <span class="tag i">Fonte secundária (The Org)</span></dd></div>
   </dl>
 </div>
-<p class="src">Fontes: Promoview (jun e set/2026), Propmark (24/06/2026), InfoMoney (jun/2026), The Org. O LinkedIn dela não abriu para leitura. O cargo muda conforme o veículo: usar o título que ela mesma usar na próxima reunião.</p>
+<p class="src">Fontes: Propmark (24/06/2026), InfoMoney (jun/2026), Lagosul (12/06/2026), <a href="https://www.jornaldocomercio.com/especiais/nucleo-i/2026/09/1263185-o-boticario-celebra-a-cultura-gaucha-com-filme-shows-e-experiencias-imersivas-no-cais-embarcadero.html">Jornal do Comércio RS (18/09/2026)</a>, Promoview, The Org. O LinkedIn dela não é indexado. <span class="tag w">Atenção</span> A Gazeta do Acre (ago/2026) a chama de Gerente de Marketing Regional: é troca de nomes com a Roberta, não usar.</p>
 
 <h3>Trajetória</h3>
 <ol class="timeline">
-  <li><span class="yr">antes do GB</span><b>Ferrero e Mondelez</b>, trade marketing e gestão de produto. Escola de ponto de venda e de giro de produto.</li>
-  <li><span class="yr">~2015</span><b>Entra no Grupo Boticário</b> e chega a gerente de categoria sênior de alta perfumaria e desodorantes. Conhece produto por dentro, e isso aparece quando ela liga lançamento (Liz D'Essence, Arbo) à festa.</li>
-  <li><span class="yr">2025 e 2026</span><b>Diretora de Franquias</b>, porta-voz do São João nos anos 9 e 10.</li>
-  <li><span class="yr">set/2026</span><b>Diretora de Treinamento e Eficiência de Franquias</b> na comunicação do projeto gaúcho "A beleza de ser gaúcho". <span class="tag w">Mudança recente</span> A palavra eficiência entrou no cargo.</li>
+  <li><span class="yr">antes do GB</span><b>Ferrero e Mondelez</b>, trade marketing e gestão de produto. Escola de ponto de venda e de giro de produto. <span class="tag i">Fonte secundária (The Org)</span></li>
+  <li><span class="yr">~2015</span><b>Entra no Grupo Boticário</b> e chega a gerente de categoria sênior de alta perfumaria e desodorantes. Conhece produto por dentro e liga lançamento (Liz, Arbo) à ativação.</li>
+  <li><span class="yr">2019 a 2024</span><b>Sem registro público.</b> Não há matéria, palestra nem entrevista no nome dela no período.</li>
+  <li><span class="yr">2025 e 2026</span><b>Diretora de Franquias</b> e porta-voz de projetos regionais da rede, com a estrutura de marketing regional dentro de Franquias.</li>
+  <li><span class="yr">set/2026</span><b>Diretora de Treinamento e Eficiência de Franquias.</b> <span class="tag w">Mudança recente</span> Treinamento da rede e eficiência entram no nome do cargo.</li>
 </ol>
 
 <h3>O que ela disse</h3>
 <blockquote class="quote">"A gente não quer ser uma loja de Curitiba que está no Nordeste."<cite>Juliana Razini · Propmark · 24/06/2026</cite></blockquote>
 <ul class="clean">
-  <li>A marca não quer ser passagem na festa. Quer construir relações que durem além do evento (Propmark).</li>
-  <li>A posição de marca preferida do São João foi construída em dez anos de consistência e de investimento (Propmark).</li>
-  <li>Existe diferença entre impactar e envolver o consumidor. Na festa, ele está aberto a ser envolvido (InfoMoney).</li>
-  <li>Os franqueados traduzem a marca para a cultura de cada território. O São João faz parte da memória afetiva de milhões de pessoas (Promoview).</li>
+  <li>A marca não quer ser passagem: quer construir relações que durem além do evento (<a href="https://propmark.com.br/anunciantes/marcas-entram-no-ritual-de-consumo-do-sao-joao/">Propmark</a>).</li>
+  <li>Posição de marca se constrói com anos de consistência e de investimento (Propmark).</li>
+  <li>Existe diferença entre impactar e envolver o consumidor. Em festa, ele está aberto a ser envolvido (<a href="https://www.infomoney.com.br/business/como-sao-joao-principal-aposta-marcas-nordeste/">InfoMoney</a>).</li>
+  <li>Os franqueados "traduzem culturalmente" as ações da marca em cada território (<a href="https://lagosul.com.br/o-boticario-celebra-10-anos-de-sao-joao-com-campanha-sobre-pertencimento-cultura-e-conexao-emocional/">Lagosul</a>).</li>
+  <li>"O Boticário tem uma relação muito próxima com o público do Rio Grande do Sul" (Jornal do Comércio RS).</li>
   <li>A visão de futuro que ela citou: mais casas, mais cidades e mais acolhimento.</li>
 </ul>
 
-<h3>Projetos e resultados ligados a ela</h3>
+<h3>Projetos ligados a ela</h3>
 <div class="nums">
   <div class="num"><b>20 mil+</b><span>pessoas passaram pela casa de Caruaru em 2025 e se cadastraram no Beautybox (InfoMoney)</span></div>
-  <div class="num"><b>860</b><span>pontos de venda no Nordeste, 242 Espaços Revendedor e 100+ franqueados em 9 estados</span></div>
-  <div class="num"><b>9</b><span>franquias só em Caruaru</span></div>
   <div class="num"><b>9 mil+</b><span>conversas lidas na escuta social do projeto gaúcho de 2026</span></div>
+  <div class="num"><b>+30%</b><span>de investimento no projeto nordestino de 2026, no 10º ano</span></div>
+  <div class="num"><b>100+</b><span>franqueados em 9 estados do Nordeste, com 860 pontos de venda</span></div>
 </div>
 <ul class="clean">
-  <li>São João 2026: 10º ano, investimento 30% maior, Casa Boti em Caruaru, Mossoró, Itabaiana e outras praças. Restauro do pórtico do Alto do Moura. Agências nordestinas no processo criativo. No calendário da marca, o São João pesa como Dia das Mães e Natal (Propmark).</li>
-  <li>Rio Grande do Sul 2026: segunda edição de "A beleza de ser gaúcho", com shows gratuitos no Cais Embarcadero e Casa Boti aberta por dez meses.</li>
-  <li>Ela não aparece no recorde Guinness de 2024, no Carnaval 2026 nem no prêmio ABF Franqueador do Ano 2026 (quem falou foi Fabiano Olivo, diretor executivo de franquias).</li>
+  <li><b>Rio Grande do Sul 2026:</b> segunda edição de "A beleza de ser gaúcho", com Casa Boti no Cais Embarcadero e shows de Renato Borghetti, Shana Müller e Claus e Vanessa (<a href="https://www.promoview.com.br/boticario-cultura-gaucha-cais-embarcadero-2026/">Promoview</a>).</li>
+  <li><b>Nordeste 2026:</b> 10º ano de São João, em 12 estados e 13 praças, com Casa Boti, restauro do Pórtico do Alto do Moura e agências nordestinas no processo criativo (<a href="https://ajufest.com.br/pelo-10o-ano-consecutivo-boticario-patrocina-cultura-popular-do-sao-joao-em-13-pracas-pelo-brasil/">Ajufest</a>, Propmark).</li>
+  <li>Ela não aparece no recorde Guinness de 2024, no Carnaval 2026 nem no prêmio ABF Franqueador do Ano 2026, recebido por Fabiano Olivo, diretor executivo de franquias.</li>
 </ul>
-
-<div class="callout w"><p><b>O número que pode definir a próxima reunião.</b> Ela citou publicamente mais de 20 mil cadastros no Beautybox em Caruaru em 2025. O pós-venda da dot. para Caruaru 2026 registra 4.821 leads. Se as duas métricas forem a mesma coisa, a queda explica o "casa x cadastros" do feedback de julho, e ela conhece o número de cor. Confirmar a definição de cada métrica antes de qualquer apresentação. Se a dot. não trouxer esse ponto, ela traz. <span class="tag i">Inferência</span></p></div>
 
 <h3>O que ela valoriza <span class="tag i">Inferência</span></h3>
 <div class="grid2">
   <div class="card do"><h4>Ganha pontos com ela</h4>
-    <p>Pertencimento real: gente, fornecedor e linguagem do lugar, não logo na festa.</p>
+    <p>Pertencimento real: gente, fornecedor e linguagem do lugar, não logo no evento.</p>
     <p>Continuidade: projeto pensado para vários anos, com memória de edição para edição.</p>
     <p>O franqueado da praça ganhando: fluxo, venda, protagonismo local.</p>
     <p>Cadastro como prova, com número comparável entre praças e entre anos.</p>
-    <p>Eficiência: processo, cronograma e treinamento. É a palavra nova do cargo dela.</p>
+    <p>Eficiência e treinamento: processo claro para a rede executar.</p>
   </div>
   <div class="card dont"><h4>Perde pontos com ela</h4>
-    <p>Casa bonita com pouco cadastro.</p>
-    <p>Proposta que trata o Nordeste como bloco único.</p>
+    <p>Projeto bonito com pouco cadastro.</p>
+    <p>Proposta que trata uma região como bloco único.</p>
     <p>Execução que gera retrabalho para a rede ou para o time dela.</p>
-    <p>Novidade que quebra a construção de dez anos sem motivo.</p>
+    <p>Novidade que quebra uma construção de anos sem motivo.</p>
   </div>
 </div>
-<p><b>Vocabulário dela:</b> cultura, território, relações, consistência, envolver, narrativas, memória afetiva, acolhimento, casa.</p>
+<p><b>Vocabulário dela:</b> cultura, território, relações, consistência, envolver, traduzir, memória afetiva, acolhimento, casa.</p>
 </section>
 
 <section id="roberta">
 <h2><small>09 · Perfil</small>Roberta Pepe</h2>
 <div class="pessoa">
-  <figure class="retrato vazio" aria-hidden="true"><span>RP</span><figcaption>Sem foto pública identificada</figcaption></figure>
+  <figure class="retrato"><img src="img/pessoa-roberta-pepe.jpg" alt="Retrato de Roberta Pepe" style="object-position:32% 20%"><figcaption>Foto: 89 A Rádio Rock, entrevista no João Rock (ago/2026)</figcaption></figure>
   <dl class="ficha">
     <div><dt>Cargo público</dt><dd>Gerente de Marketing Regional do Grupo Boticário (todas as matérias de 2026)</dd></div>
-    <div><dt>Na visão da dot.</dt><dd>"A nossa gerente, gerente sênior do Brasil" (Simone, 29/09/2026)</dd></div>
     <div><dt>Provável chefe</dt><dd>Jacqueline Tobaru, Diretora de Marketing Regional <span class="tag i">Inferência</span></dd></div>
-    <div><dt>Passado</dt><dd>Agregador sugere gerente de brand marketing da Eudora, em Curitiba <span class="tag w">Não confirmado</span></dd></div>
+    <div><dt>Eudora</dt><dd>Aparece na lista de aprovação do cliente da campanha Eudora Siàge com Jade Picon (AlmapBBDO, ago/2024), junto com a Renata</dd></div>
+    <div><dt>Antes do grupo</dt><dd>TikTok (2021 a 2023), Reckitt (2019 a 2021), Nivea/BDF (2018 a 2019) <span class="tag w">Só agregador, não confirmado</span></dd></div>
   </dl>
 </div>
-<p class="src">Fontes: entrevista à rádio 89 no João Rock (YouTube, 12/08/2026), Jornal do Brás (29/07/2026), Em Tempo, Live Marketing News (20/07/2026), Publicitários Criativos. Atenção: o LinkedIn /in/robertapepe é de uma homônima do Mercado Livre. Não confundir.</p>
+<p class="src">Fontes: <a href="https://www.youtube.com/watch?v=wqCn2_5E5DA">89 A Rádio Rock, João Rock (12/08/2026)</a>, <a href="https://marcaspelomundo.com.br/anunciantes/jade-picon-e-dandara-mariana-estrelam-novo-comercial-de-eudora-siage/">Marcas pelo Mundo (Eudora Siàge, 2024)</a>, Em Tempo (23/07/2026), Jornal do Brás, Enfoque MS, A Tribuna Regional, Live Marketing News, ZoomInfo (agregador). O LinkedIn /in/robertapepe é de uma homônima do Mercado Livre.</p>
 
-<h3>O que ela conduz</h3>
+<h3>O que ela conduz em 2026</h3>
 <div class="grid2">
-  <div class="card"><h4>João Rock 2026</h4><p>Ribeirão Preto (SP). Ativação aberta com Floratta Red e o lançamento Malbec EDP, jogos, cadastro e brindes de festival: bucket hat, óculos, miniaturas.</p></div>
-  <div class="card"><h4>Festival de Inverno de Chapada dos Guimarães</h4><p>Mato Grosso, 4º ano seguido. Ativação imersiva e fomento à cultura local.</p></div>
-  <div class="card"><h4>Verão Amazônico</h4><p>Manaus, 4º ano. Parceria de longo prazo e apoio à Remada Ambiental em Ponta Negra.</p></div>
-  <div class="card"><h4>Festival de Dança de Joinville</h4><p>Santa Catarina. Experiência inspirada nos bastidores da dança.</p></div>
+  <div class="card"><h4>João Rock · 3º ano</h4><p>Ribeirão Preto (SP), 65 mil pessoas. Experiência olfativa com os lançamentos Malbec EDP e Floratta Red, jogos, cadastro no Beautybox e brindes de festival (<a href="https://atribunaregional.com.br/o-boticario-promove-experiencia-olfativa-no-joao-rock">A Tribuna Regional</a>).</p></div>
+  <div class="card"><h4>Verão Amazônico · 4º ano</h4><p>Manaus. Boti Club de Verão na Ponta Negra e Remada Ambiental no Igarapé do Gigante, que retirou 4 toneladas de resíduos nas duas edições anteriores. Investimento no Norte 54% maior (<a href="https://oprimeiroportal.com/pelo-4o-ano-o-boticario-consolida-presenca-no-verao-amazonico-com-boti-club-de-verao-e-acoes-de-sustentabilidade-em-manaus/">O Primeiro Portal</a>).</p></div>
+  <div class="card"><h4>Festivais de Inverno · 4º ano</h4><p>Chapada dos Guimarães (MT) e Bonito (MS, 26 a 30/08). Ativação imersiva e fomento à cultura local (<a href="https://portal.saladanoticia.com.br/noticia/60438/pelo-4-ano-consecutivo-o-boticario-leva-ativacao-imersiva-e-fomenta-a-cultura-local-no-festival-de-inverno-de-chapada-dos-guimaraes">Sala da Notícia</a>, <a href="https://www.enfoquems.com.br/o-boticario-leva-ativacao-imersiva-e-fomenta-a-cultura-no-festival-de-inverno-de-bonito/">Enfoque MS</a>).</p></div>
+  <div class="card"><h4>Festival de Dança de Joinville</h4><p>Santa Catarina. Experiência inspirada nos bastidores da dança (<a href="https://livemarketing.com.br/o-boticario-no-festival-de-danca-de-joinville-tem-experiencia-inspirada-nos-bastidores">Live Marketing News</a>).</p></div>
 </div>
 
+<h3>O formato que ela repete</h3>
+<div class="chips"><span>jogo de adivinhar a fragrância</span><span>retoque com Make B.</span><span>brinde útil no evento</span><span>cadastro no Beautybox</span><span>lançamento de perfumaria</span><span>4º ano seguido</span></div>
+<p>Um mesmo kit de ativação que viaja por festivais muito diferentes, ajustado ao lugar. Continuidade é o argumento dela.</p>
+
 <h3>O que ela disse</h3>
+<blockquote class="quote">"A nossa grande estratégia é realmente criar conexões locais e ter uma relevância cultural."<cite>Roberta Pepe · 89 A Rádio Rock · ago/2026</cite></blockquote>
 <ul class="clean">
-  <li>A grande estratégia do marketing regional é criar conexões locais e ter relevância cultural (rádio 89, João Rock).</li>
-  <li>O Boticário foi reconhecido como marca de beleza preferida do estado de São Paulo e do interior.</li>
+  <li>O Boticário foi reconhecido como marca de beleza preferida do estado de São Paulo e do interior (mesma entrevista).</li>
+  <li>Chegar ao quarto ano de ações consistentes no Verão Amazônico consolida a parceria de longo prazo (<a href="https://emtempo.com.br/480058/cultura/o-boticario-verao-amazonico-manaus-2026/">Em Tempo</a>).</li>
   <li>O brinde precisa fazer sentido para quem está no festival.</li>
   <li>Festival regional se espalha para o Brasil todo pela transmissão. O regional também é nacional.</li>
   <li>Patrocínio serve para fomentar e valorizar a cultura local e construir memórias com o público (Chapada).</li>
@@ -521,105 +660,109 @@ footer a{color:var(--muted)}
   <div class="card do"><h4>Ganha pontos com ela</h4>
     <p>Ativação aberta, participativa e fácil de entrar.</p>
     <p>Produto de perfumaria no centro da experiência, principalmente lançamento.</p>
-    <p>Brinde pensado para o uso real na festa, não brinde genérico.</p>
+    <p>Brinde pensado para o uso real no evento, não brinde genérico.</p>
     <p>Cadastro embutido na mecânica, sem fricção.</p>
-    <p>Projeto com cara de ano 1 de vários.</p>
+    <p>Projeto com cara de ano 1 de vários, e com causa local quando couber.</p>
   </div>
   <div class="card dont"><h4>Perde pontos com ela</h4>
     <p>Ideia que só funciona no papel e trava a operação no dia.</p>
     <p>Cultura local usada como cenário, sem troca real com a cidade.</p>
-    <p>Entregável de patrocínio pouco claro. Foi uma das críticas do São João 2026 em Mossoró.</p>
+    <p>Entregável de patrocínio pouco claro.</p>
   </div>
 </div>
-<p><b>Vocabulário dela:</b> conexão local, relevância cultural, memórias, experiência, ativação, fomentar a cultura, fazer sentido.</p>
-<div class="callout"><p><b>Lacuna.</b> Não existe trajetória pública verificável, palestra nem prêmio no nome dela. A Simone é a melhor fonte: vale perguntar há quanto tempo ela está no cargo, de onde veio, o que elogiou e criticou nos trabalhos da dot. e como gosta de receber material.</p></div>
+<p><b>Vocabulário dela:</b> conexão local, relevância cultural, consistência, parceria de longo prazo, memórias, fomentar a cultura, fazer sentido.</p>
+<div class="callout"><p><b>Lacuna.</b> Não há palestra, prêmio nem trajetória confirmada no nome dela. Nenhuma matéria a liga a Parintins, Carnaval ou Oktoberfest.</p></div>
 </section>
 
-<section id="saojoao">
-<h2><small>10 · O território da dot.</small>O Boticário no São João</h2>
-<div class="nums">
-  <div class="num"><b>10 anos</b><span>de São João em 2026, com o conceito "O São João é a nossa casa"</span></div>
-  <div class="num"><b>+30%</b><span>de investimento em 2026 sobre 2025</span></div>
-  <div class="num"><b>13</b><span>municípios em 2026, com meta de ~9,3 mi de pessoas</span></div>
-  <div class="num"><b>2,5 bi</b><span>de impactos acumulados na década (dado do grupo)</span></div>
-  <div class="num"><b>26 mi</b><span>de clientes ativos no programa de fidelidade do grupo</span></div>
+<section id="trio">
+<h2><small>10 · As três</small>Como as três se dividem</h2>
+<p class="lede">Elas não avaliam a mesma coisa. Uma proposta que agrada uma e ignora as outras perde. É preciso falar as três línguas na mesma apresentação.</p>
+<div class="trio-hero" style="max-width:520px;margin:18px 0"><figure><img src="img/renata-02-retrato-mma.jpg" alt="Renata Gomide"><figcaption>Renata · marca e negócio</figcaption></figure><figure><img src="img/pessoa-juliana-razini.jpg" alt="Juliana Razini"><figcaption>Juliana · rede e território</figcaption></figure><figure><img src="img/pessoa-roberta-pepe.jpg" alt="Roberta Pepe" style="object-position:32% 20%"><figcaption>Roberta · experiência local</figcaption></figure></div>
+<div class="grid2">
+  <div class="card"><h4>Renata Gomide · a marca e o negócio</h4><p>VP de Marketing. Pergunta o que a ideia faz pela marca e pelo crescimento. Régua: jornada, recall, base ativa, teste e escala. Não tolera repetição nem investimento sem entender o que tem valor para o consumidor.</p></div>
+  <div class="card"><h4>Juliana Razini · a rede e o território</h4><p>Franquias, treinamento e eficiência. Pergunta o que a ideia faz pelo franqueado e pela relação com a cidade. Régua: consistência de anos, envolvimento em vez de impacto, cadastro, marca que pertence ao lugar.</p></div>
+  <div class="card"><h4>Roberta Pepe · a experiência no lugar</h4><p>Gerente de Marketing Regional. Pergunta se a ativação faz sentido para quem está lá. Régua: conexão local, relevância cultural, brinde útil, cadastro, continuidade de edições.</p></div>
 </div>
+<p>Pelo que é público, os grandes projetos nordestinos saem pela voz de Franquias (Juliana) e os festivais de Sudeste, Centro-Oeste, Sul e Norte pela do marketing regional (Roberta). A Renata aparece quando o projeto vira exemplo de marca, como fez ao citar regionalização no palco da JCDecaux. <span class="tag i">Inferência</span></p>
+<div class="callout w"><p><b>Ponto de atenção.</b> Quem falou em nome do Carnaval 2026 foi Jacqueline Tobaru, Diretora de Marketing Regional, e não nenhuma das três. Pelo cargo, é provável que Roberta responda a ela. Vale confirmar se Tobaru também decide os próximos projetos. <span class="tag i">Inferência</span></p></div>
+</section>
+<section id="regional">
+<h2><small>11 · Brasil de quatro países</small>Ativações regionais</h2>
+<p class="lede">A crença dela, "o Brasil tem quatro países dentro de um", vira calendário: festa popular, festival e verão de cada região, quase sempre com vários anos seguidos.</p>
 <div class="sj">
-  <figure class="big"><img src="img/sj-2026-casa-boti-caruaru-01.jpg" alt="Fachada noturna da Casa Boti na Estação Ferroviária de Caruaru" loading="lazy"><figcaption>Casa Boti na antiga Estação Ferroviária de Caruaru, 2026</figcaption></figure>
-  <figure class="sm"><img src="img/sj-2026-casa-boti-caruaru-02.jpg" alt="Ambiente A beleza da mulher nordestina" loading="lazy"><figcaption>Ambiente "A beleza da mulher nordestina"</figcaption></figure>
-  <figure class="sm"><img src="img/sj-2026-casa-boti-caruaru-03.jpg" alt="Camarim com cobogós" loading="lazy"><figcaption>Camarim com cobogós, Caruaru 2026</figcaption></figure>
-  <figure class="md"><img src="img/sj-2026-o-sao-joao-e-a-nossa-casa-01.jpg" alt="Render da fachada da Casa São João 2026" loading="lazy"><figcaption>Render da fachada 2026: "a marca preferida do São João"</figcaption></figure>
-  <figure class="md"><img src="img/sj-2026-casa-boti-campina-grande.jpg" alt="Render da Casa do Boti em Campina Grande 2026" loading="lazy"><figcaption>Render da Casa do Boti, Campina Grande 2026</figcaption></figure>
-  <figure class="md"><img src="img/sj-2025-casa-boti-campina-grande-01.jpg" alt="Casa do Boti em Campina Grande 2025" loading="lazy"><figcaption>Casa do Boti, Campina Grande 2025</figcaption></figure>
-  <figure class="md"><img src="img/sj-2025-casa-boti-campina-grande-02.jpg" alt="Render da Casa do Boti no Spazzio" loading="lazy"><figcaption>Render da Casa do Boti no Spazzio, Campina Grande 2025</figcaption></figure>
+  <figure class="big"><img src="img/case-2026-carnaval-15-experiencias-01.jpg" alt="Ativação de O Boticário no Carnaval 2026" loading="lazy"><figcaption>Carnaval 2026: 15 experiências em 5 cidades. Foto: O Boticário (divulgação, via Promoview)</figcaption></figure>
+  <figure class="sm"><img src="img/sj-2026-casa-boti-caruaru-01.jpg" alt="Casa Boti na antiga Estação Ferroviária de Caruaru" loading="lazy"><figcaption>Casa Boti, Caruaru 2026</figcaption></figure>
+  <figure class="sm"><img src="img/case-2024-barco-flagship-para-01.jpg" alt="Render do barco-loja no Pará" loading="lazy"><figcaption>Loja-conceito flutuante, Pará 2024 (render)</figcaption></figure>
 </div>
-<ul class="clean">
-  <li>A Casa Boti de Caruaru ocupa a antiga Estação Ferroviária, com projeto de Zé Vagner, identidade de Jota Zeroff e shows da Universal Music (Elba Ramalho, Solange Almeida, Lucy Alves). <span class="tag f">Fato</span></li>
-  <li>A Kantar aponta o Boticário como marca de beleza preferida do São João no Nordeste. O grupo divulga, mas o estudo não é público. <span class="tag f">Fato</span></li>
-  <li>A Promoview cita a dot. como agência do São João e como Melhor Agência de Live Marketing do Nordeste no Prêmio Live 2024. <span class="tag f">Fato</span></li>
-  <li>A Renata cita o São João como exemplo de regionalização bem feita: metrô adesivado e extrapolação para o digital (palestra JCDecaux, jul/2026). <span class="tag f">Fato</span></li>
-  <li>Concorrem pela atenção no mesmo festival: Nestlé, LUX, Electrolux, Bradesco e Riachuelo. <span class="tag f">Fato</span></li>
-</ul>
-<div class="callout"><p><b>A ponte com o feedback de julho.</b> O documento que o regional entregou sobre o São João 2026 pede "análise dos dados" como primeiro combinado e repete "casa x cadastros" em 5 das 6 praças, sem trazer um único número. A régua da Renata é recall, base ativa e crescimento de negócio. Os dois apontam para o mesmo lugar: <b>a casa precisa virar cadastro, o cadastro precisa virar base ativa no programa de fidelidade e isso precisa virar venda na loja da praça.</b> Quem chegar com essa conta montada define o terreno da conversa.</p></div>
+<div class="tbl"><table><thead><tr><th>Região e festa</th><th>Desde</th><th>O que é</th><th>Número público</th><th>Porta-voz</th></tr></thead><tbody>
+<tr><td class="r">Carnaval (Salvador, Recife, BH, Rio, SP)</td><td class="y">ed. 2026</td><td>15 ativações em 3 pilares: rua, premium e CRM Beautybox. Malbec Black Legend e Her Code Tríade (<a href="https://www.promoview.com.br/o-boticario-no-carnaval-2026-integra-cultura-experiencia-e-fidelizacao/">Promoview</a>)</td><td>sem número</td><td>Jacqueline Tobaru</td></tr>
+<tr><td class="r">Parintins (AM)</td><td class="y">2018</td><td>Marca de beleza oficial em 2024, Clube Kwati e sampling no Bumbódromo (<a href="https://www.promoview.com.br/mercado/marcas/patrocinios/o-boticario-e-marca-de-beleza-oficial-do-festival-de-parintins-2024/">Promoview</a>)</td><td>previsão de 120 mil visitantes</td><td>não informado</td></tr>
+<tr><td class="r">Verão no Norte (PA, AM, TO, AP, RO)</td><td class="y">2023</td><td>Verão Amazônico em Manaus e quiosques Boti Verão (<a href="https://www.portalrondonia.com/2025/07/09/o-boticario-lanca-ativacoes-com-a-tematica-do-verao-em-5-estados-do-norte/">Portal Rondônia</a>)</td><td>52,1% dizem que é a marca favorita do Norte (Kantar)</td><td>Roberta Pepe</td></tr>
+<tr><td class="r">São João (Nordeste)</td><td class="y">2017</td><td>Casa Boti em Caruaru, Campina Grande, Mossoró e outras praças (<a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview</a>)</td><td>2,5 bi de impressões em 10 anos; marca de beleza preferida da festa (Kantar 2025)</td><td>Juliana Razini</td></tr>
+<tr><td class="r">Festivais de Inverno (MT, MS)</td><td class="y">2023</td><td>Chapada dos Guimarães e Bonito, com fomento à cultura local</td><td>4º ano</td><td>Roberta Pepe</td></tr>
+<tr><td class="r">João Rock (SP)</td><td class="y">2024</td><td>Experiência olfativa com lançamentos</td><td>65 mil pessoas</td><td>Roberta Pepe</td></tr>
+<tr><td class="r">Rio Grande do Sul</td><td class="y">2025</td><td>"A beleza de ser gaúcho", Casa Boti no Cais Embarcadero</td><td>9 mil conversas de escuta na origem</td><td>Juliana Razini</td></tr>
+</tbody></table></div>
+<p class="src">"Desde" foi calculado a partir do número da edição citado em cada matéria de 2026 (ex.: 4º ano em 2026 indica início em 2023). <span class="tag i">Inferência</span> Renata citou o São João como exemplo de regionalização bem feita, com metrô adesivado e extrapolação para o digital (palestra JCDecaux, jul/2026).</p>
+<div class="callout"><p><b>O padrão.</b> Presença de vários anos, lançamento de perfumaria no centro, cadastro no Beautybox como prova e cultura local como conteúdo. A régua é recall, base ativa e venda na loja da praça.</p></div>
 </section>
 
 <section id="apresentar">
-<h2><small>11 · Playbook</small>Como apresentar para ela</h2>
+<h2><small>12 · Playbook</small>Como apresentar qualquer projeto a elas</h2>
+<p class="lede">Vale para data comemorativa, lançamento, evento, loja ou ativação regional. A lógica é a mesma: consumidor primeiro, papel na jornada, prova no fim.</p>
 
-<h3>Estrutura de apresentação na língua dela</h3>
+<h3>Estrutura na língua delas</h3>
 <ol class="steps">
-  <li><div><b>Comece pelo consumidor, não pela dot.</b> O que o público do São João fala, faz e quer, com escuta real: social listening das praças, falas de visitantes, pedidos em loja. As estratégias vêm de fora para dentro.</div></li>
-  <li><div><b>Posicione o evento na jornada.</b> Mostre onde a casa entra no ciclo (descoberta, experimentação, cadastro, recompra) e qual é o papel de cada ponto de contato físico e digital.</div></li>
-  <li><div><b>Uma ideia com tensão cultural, não um cenário.</b> Algo que tangibilize "O São João é a nossa casa" e gere conversa própria. Ela premia coragem com propósito. Pense em Cordéis, que é linguagem do Nordeste com verdade.</div></li>
-  <li><div><b>Plano de amplificação.</b> Como o físico vira conteúdo, creator e social. Nasce no físico e escala no digital.</div></li>
-  <li><div><b>Franqueado e loja como público.</b> Como a ação leva fluxo e venda para as lojas da praça, e como o franqueado participa.</div></li>
-  <li><div><b>Métricas definidas antes, com linha de base.</b> Cadastros por praça, conversão em base ativa do fidelidade, cupom resgatado na loja, recall regional e mídia ganha. Com meta e custo por resultado.</div></li>
-  <li><div><b>Modular, com gatilhos.</b> Piloto numa praça, leitura em tempo real e escala onde funcionar. Mostre o que se corta se o indicador não vier.</div></li>
-  <li><div><b>Fechamento em ganha-ganha.</b> Transparência de custo, o aprendizado de 2026 assumido com clareza e o que muda no processo.</div></li>
+  <li><div><b>Comece pelo consumidor, não pela agência.</b> O que o público fala, faz e quer, com escuta real: social listening, falas de gente, pedidos em loja. As estratégias vêm de fora para dentro.</div></li>
+  <li><div><b>Posicione a ideia na jornada.</b> Onde ela entra no looping (descobrir, reforçar, comprar, usar, compartilhar, escutar) e qual é o papel e a métrica de cada ponto de contato.</div></li>
+  <li><div><b>Uma ideia com tensão cultural, não um cenário.</b> Algo que gere conversa própria e tangibilize o posicionamento. Ela premia coragem com propósito: Tormenta, Instinto Paterno, Respeita Meu Capelo.</div></li>
+  <li><div><b>Nacional primeiro, local de verdade depois.</b> Como a grande mensagem da marca ganha sotaque em cada praça, sem tropicalizar e sem tratar uma região como bloco único.</div></li>
+  <li><div><b>Plano de amplificação.</b> Como o físico vira conteúdo, creator e social. Nasce na loja ou no evento e escala no digital.</div></li>
+  <li><div><b>Franqueado e loja como público.</b> Como a ação leva fluxo e venda para as lojas e como a rede participa sem retrabalho.</div></li>
+  <li><div><b>Métricas definidas antes, com linha de base.</b> Recall, consideração, cadastro, conversão em base ativa do programa de fidelidade, venda em loja e mídia ganha. Com meta e custo por resultado.</div></li>
+  <li><div><b>Modular, com gatilhos.</b> Piloto pequeno, leitura em tempo real e escala onde funcionar. Mostre o que se corta se o indicador não vier.</div></li>
+  <li><div><b>Fechamento em ganha-ganha.</b> Transparência de custo, aprendizados anteriores assumidos com clareza e o que muda no processo.</div></li>
 </ol>
 
 <div class="grid2">
   <div class="card do"><h4>Fazer</h4>
-    <p>Abrir com um dado do consumidor que ela ainda não conhece.</p>
-    <p>Mostrar os números do São João 2026 por praça, inclusive os ruins.</p>
-    <p>Falar de Nordeste com propriedade de quem mora lá: praça por praça, diferença entre Caruaru e Campina, e não "o Nordeste".</p>
-    <p>Trazer acessibilidade como padrão de projeto. É causa dela, virou lei com Vult e foi apontada como falha no feedback.</p>
+    <p>Abrir com um dado do consumidor que elas ainda não conhecem.</p>
+    <p>Mostrar resultados anteriores por praça ou por ação, inclusive os ruins.</p>
+    <p>Falar de região com propriedade: cidade por cidade, e não "o Nordeste" ou "o Norte".</p>
+    <p>Trazer acessibilidade e diversidade como padrão de projeto, não como anexo.</p>
     <p>Ser curto. Ela opera com atenção escassa e pede surpresa.</p>
   </div>
   <div class="card dont"><h4>Evitar</h4>
     <p>Abrir com credencial da agência, portfólio ou prêmio.</p>
     <p>Vender "ativação", "estande" ou "experiência imersiva" sem dizer o que isso gera.</p>
-    <p>Repetir o formato de casa pelo 11º ano sem renovação. Ela critica exatamente isso.</p>
+    <p>Repetir um formato de sucesso sem renovação.</p>
     <p>Usar IA ou tecnologia como enfeite.</p>
     <p>Defender o acabamento quando a pergunta é eficiência.</p>
   </div>
 </div>
 
-<h3>Perguntas que ela provavelmente vai fazer <span class="tag i">Inferência</span></h3>
+<h3>Perguntas que provavelmente vão aparecer <span class="tag i">Inferência</span></h3>
 <ul class="clean">
-  <li>Quanto custou cada cadastro qualificado, e quantos viraram cliente ativo?</li>
-  <li>O que as pessoas falaram de nós nas praças? O que a escuta mostrou?</li>
-  <li>O que dá para testar menor antes de escalar?</li>
-  <li>Qual é o risco disso?</li>
-  <li>Onde isso vira conteúdo depois do evento?</li>
-  <li>Como o franqueado da praça ganha com isso?</li>
-  <li>O que tem de novo em relação aos últimos anos?</li>
+  <li>Renata: onde isso entra na jornada? Qual é o risco? O que dá para testar menor antes de escalar? O que tem de novo?</li>
+  <li>Renata: quanto custou cada resultado, e quanto virou cliente ativo?</li>
+  <li>Juliana: como o franqueado ganha com isso? O que muda na operação da loja e no treinamento da rede?</li>
+  <li>Roberta: faz sentido para quem está lá? O cadastro entra sem fricção? Qual é o entregável claro do patrocínio?</li>
+  <li>As três: onde isso vira conteúdo depois? O que a escuta mostrou?</li>
 </ul>
 </section>
 
 <section id="lacunas">
-<h2><small>12 · A confirmar</small>Lacunas</h2>
+<h2><small>13 · A confirmar</small>Lacunas</h2>
 <ul class="clean">
-  <li><b>Roberta Pepe:</b> trajetória, tempo de cargo e a quem responde. Perguntar à Simone.</li>
-  <li><b>Jacqueline Tobaru:</b> se decide o Carnaval 2027.</li>
-  <li><b>Cadastros:</b> se os 20 mil de Caruaru 2025 e os 4.821 leads de 2026 medem a mesma coisa.</li>
-  <li><b>Juliana Razini:</b> qual título usar (Franquias, ou Treinamento e Eficiência de Franquias).</li>
-  <li>Título exato dela hoje (VP de Consumer ou VP de Marketing) e se Marcela De Masi responde a ela.</li>
-  <li>Se a Renata vai decidir o São João 2027 ou se continua com Franquias e o regional.</li>
-  <li>O estudo Kantar do São João e os números internos de cadastros e vendas por praça.</li>
-  <li>Quem produziu a Casa Boti de Caruaru e qual o papel da DGBB no material de 2026.</li>
-  <li>Agências de live marketing do grupo em outros eventos.</li>
-  <li>As colunas dela no Folha C-Level não foram localizadas.</li>
+  <li><b>Renata Gomide:</b> título exato hoje (VP de Consumer ou VP de Marketing) e se Marcela De Masi responde a ela.</li>
+  <li><b>Renata Gomide:</b> ano de chegada à Eudora (2015 nas falas dela, 2019 no Meio &amp; Mensagem).</li>
+  <li><b>Renata Gomide:</b> não há conselho, júri nem prêmio novo em 2026. Ela não está na lista Forbes Mulheres Mais Poderosas 2026. Sem posts de LinkedIn indexados, sem fala sobre remuneração de agência e sem as colunas da Folha C-Level.</li>
+  <li><b>Juliana Razini:</b> qual título usar (Franquias, ou Treinamento e Eficiência de Franquias). Nada público entre 2019 e 2024, nada em ABF, Expo Franchising ou convenção, LinkedIn não indexado.</li>
+  <li><b>Roberta Pepe:</b> trajetória anterior só em agregador (TikTok, Reckitt, Nivea), tempo de cargo e a quem responde. Perfil /in/robertazp não confirmado. Sem palestra nem prêmio.</li>
+  <li><b>Jacqueline Tobaru:</b> se decide os próximos projetos regionais, a começar pelo Carnaval.</li>
+  <li>Quem, entre as três, responde por Parintins e pelo Carnaval.</li>
+  <li>Os estudos Kantar citados pelo grupo (preferência no Nordeste e no Norte) não são públicos.</li>
+  <li>Agências de live marketing do grupo nos eventos regionais.</li>
 </ul>
 <p class="src">Este dossiê usa só informação profissional pública. Nada sobre vida pessoal foi levantado.</p>
 </section>
@@ -660,10 +803,28 @@ footer a{color:var(--muted)}
   <li><a href="https://emtempo.com.br/480058/cultura/o-boticario-verao-amazonico-manaus-2026/">Em Tempo · Verão Amazônico 2026</a></li>
   <li><a href="https://livemarketing.com.br/o-boticario-no-festival-de-danca-de-joinville-tem-experiencia-inspirada-nos-bastidores">Live Marketing News · Joinville (jul/2026)</a></li>
   <li><a href="https://portalg.com.br/boticario-carnaval-2026-experiencias-beleza/">Portal G · Carnaval 2026 com Jacqueline Tobaru</a></li>
-  <li><a href="https://livemarketing.com.br/o-boticario-celebra-10-anos-no-sao-joao-de-caruaru-2026-com-casa-boti">Live Marketing News · Casa Boti Caruaru 2026</a></li>
-  <li><a href="https://portalg.com.br/o-boticario-sao-joao-2026-9-milhoes/">Portal G · São João 2026, 9 milhões</a></li>
-  <li><a href="https://www.portaldacapital.com/2025/06/03/o-boticario-presenteia-campina-grande-com-casa-do-boti-no-maior-sao-joao-do-mundo/">Portal da Capital · Campina Grande 2025</a></li>
   <li><a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-e-vitoria-rodrigues-transformam-historias-de-mulheres-do-nordeste-em-cordeis/">Marcas pelo Mundo · Cordéis</a></li>
+  <li><a href="https://creativosbr.com.br/renata-gomide-cmo-do-grupo-boticario-estreia-como-palestrante-no-sxsw-2025/">CreativosBR · SXSW 2025</a></li>
+  <li><a href="https://www.retailmedianews.com.br/noticias/mma-impact-brasil-2025-promove-conversas-entre-ceos-cmos-e-cfos/">Retail Media News · MMA Impact 2025</a></li>
+  <li><a href="https://www.meioemensagem.com.br/maximidia/cmos-de-ambev-itau-e-grupo-boticario-debaterao-desafios">Meio &amp; Mensagem · Maximídia 2026</a></li>
+  <li><a href="https://abramark.com.br/abramark/entrevistas/vozes-no-marketing-de-fevereiro-com-renata-gomide-vice-presidente-de-marketing-do-grupo-boticario/">Abramark · Vozes no Marketing (fev/2026)</a></li>
+  <li><a href="https://www.meioemensagem.com.br/womentowatch/renata-gomide-o-papel-das-marcas-em-datas-como-dia-das-maes">Meio &amp; Mensagem · datas comemorativas (mai/2024)</a></li>
+  <li><a href="https://www.meioemensagem.com.br/womentowatch/marcas-mulheres-50">Meio &amp; Mensagem · marcas e mulheres 50+ (dez/2024)</a></li>
+  <li><a href="https://www.grupoboticario.com.br/midia/grupo-boticario-lideranca-mercado-beleza-2025/">Grupo Boticário · resultados 2025</a></li>
+  <li><a href="https://mercadoeconsumo.com.br/03/03/2026/destaque-do-dia/exclusivo-com-quase-4-mil-unidades-o-boticario-lidera-ranking-global-de-lojas-de-beleza/">Mercado&amp;Consumo · ranking global de lojas (mar/2026)</a></li>
+  <li><a href="https://www.infomoney.com.br/business/do-faturamento-zero-na-pandemia-a-projecao-de-r-50-bi-a-saga-do-grupo-boticario/">InfoMoney · meta de R$ 50 bi</a></li>
+  <li><a href="https://abf.com.br/o-boticario-e-eleito-franqueador-do-ano-no-premio-abf-destaque-franchising-2026-2/">ABF · Franqueador do Ano 2026</a></li>
+  <li><a href="https://hipersuper.pt/2026/09/14/40-anos-depois-portugal-ainda-e-o-maior-mercado-do-boticario-fora-do-brasil">Hipersuper · 40 anos em Portugal</a></li>
+  <li><a href="https://www.promoview.com.br/o-boticario-no-carnaval-2026-integra-cultura-experiencia-e-fidelizacao/">Promoview · Carnaval 2026</a></li>
+  <li><a href="https://www.promoview.com.br/mercado/marcas/patrocinios/o-boticario-e-marca-de-beleza-oficial-do-festival-de-parintins-2024/">Promoview · Parintins 2024</a></li>
+  <li><a href="https://www.portalrondonia.com/2025/07/09/o-boticario-lanca-ativacoes-com-a-tematica-do-verao-em-5-estados-do-norte/">Portal Rondônia · Boti Verão no Norte</a></li>
+  <li><a href="https://lagosul.com.br/o-boticario-celebra-10-anos-de-sao-joao-com-campanha-sobre-pertencimento-cultura-e-conexao-emocional/">Lagosul · Juliana Razini (jun/2026)</a></li>
+  <li><a href="https://www.jornaldocomercio.com/especiais/nucleo-i/2026/09/1263185-o-boticario-celebra-a-cultura-gaucha-com-filme-shows-e-experiencias-imersivas-no-cais-embarcadero.html">Jornal do Comércio RS · cultura gaúcha (set/2026)</a></li>
+  <li><a href="https://ajufest.com.br/pelo-10o-ano-consecutivo-boticario-patrocina-cultura-popular-do-sao-joao-em-13-pracas-pelo-brasil/">Ajufest · 13 praças</a></li>
+  <li><a href="https://marcaspelomundo.com.br/anunciantes/jade-picon-e-dandara-mariana-estrelam-novo-comercial-de-eudora-siage/">Marcas pelo Mundo · Eudora Siàge (2024)</a></li>
+  <li><a href="https://atribunaregional.com.br/o-boticario-promove-experiencia-olfativa-no-joao-rock">A Tribuna Regional · João Rock</a></li>
+  <li><a href="https://oprimeiroportal.com/pelo-4o-ano-o-boticario-consolida-presenca-no-verao-amazonico-com-boti-club-de-verao-e-acoes-de-sustentabilidade-em-manaus/">O Primeiro Portal · Verão Amazônico</a></li>
+  <li><a href="https://www.enfoquems.com.br/o-boticario-leva-ativacao-imersiva-e-fomenta-a-cultura-no-festival-de-inverno-de-bonito/">Enfoque MS · Festival de Inverno de Bonito</a></li>
   <li>YouTube (falas dela): <a href="https://www.youtube.com/watch?v=B7sN5eXb-PM">JCDecaux (jul/2026)</a>, <a href="https://www.youtube.com/watch?v=8xh-oQnwVRA">McKinsey / Brasil Journal (jul/2026)</a>, <a href="https://www.youtube.com/watch?v=ahwDGhjqb_g">10+10 (mar/2026)</a>, <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0">Estadão (out/2025)</a>, <a href="https://www.youtube.com/watch?v=nutuVgJzHJQ">Estadão Blue Studio (nov/2025)</a>, <a href="https://www.youtube.com/watch?v=qor6F6d1Htg">Desmarketize (dez/2023)</a>, <a href="https://www.youtube.com/watch?v=GVrfj5PNXJk">UOL (ago/2023)</a>, <a href="https://www.youtube.com/watch?v=ZUDoWtXbGik">Mundotri (mai/2022)</a></li>
 </ol>
 <p class="eyebrow" style="margin-top:28px">Créditos das imagens</p>
@@ -672,10 +833,10 @@ footer a{color:var(--muted)}
   <li>Botiverso (creators): <a href="https://adnews.com.br/post/o-boticario-lanca-botiverso-nova-plataforma-de-aceleracao-de-creators-focada-no-tiktok">AdNews / O Boticário (divulgação)</a></li>
   <li>Cordéis com Vitória Rodrigues (Liz Sublime): <a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-e-vitoria-rodrigues-transformam-historias-de-mulheres-do-nordeste-em-cordeis/">Marcas pelo Mundo / O Boticário (divulgação)</a></li>
   <li>Casa 214 / camarote Madonna na casa de Narcisa: <a href="https://diariodorio.com/ai-que-loucura-apartamento-de-narcisa-sera-camarote-de-marca-famosa-para-show-de-madonna/">Diário do Rio (reprodução)</a></li>
-  <li>Dia dos Pais &#x27;5 dias?&#x27;: <a href="https://www.youtube.com/watch?v=QdEOwf7L1ck">O Boticário / AlmapBBDO (YouTube oficial)</a></li>
+  <li>Dia dos Pais &#x27;Instinto Paterno&#x27;: <a href="https://www.youtube.com/watch?v=QdEOwf7L1ck">O Boticário / AlmapBBDO (YouTube oficial)</a></li>
   <li>Egeo Melancia (cocriação TikTok): <a href="https://forbes.com.br/forbes-tech/2024/05/o-boticario-transforma-trend-do-tiktok-em-fragrancia-de-edicao-limitada/">Forbes Brasil / O Boticário (divulgação)</a></li>
-  <li>Ovo de Melancia / unboxing Guinness: <a href="https://adnews.com.br/post/o-boticario-faz-maior-unboxing-simultaneo-e-entra-para-o-guinness">AdNews / O Boticário (divulgação)</a></li>
-  <li>Ovo de Melancia / unboxing Guinness: <a href="https://www.meioemensagem.com.br/comunicacao/o-boticario-entra-para-o-guinness-para-apresentar-produtos-de-melancia">Meio &amp; Mensagem / O Boticário (divulgação)</a></li>
+  <li>Linhas Melancia / unboxing Guinness: <a href="https://adnews.com.br/post/o-boticario-faz-maior-unboxing-simultaneo-e-entra-para-o-guinness">AdNews / O Boticário (divulgação)</a></li>
+  <li>Linhas Melancia / unboxing Guinness: <a href="https://www.meioemensagem.com.br/comunicacao/o-boticario-entra-para-o-guinness-para-apresentar-produtos-de-melancia">Meio &amp; Mensagem / O Boticário (divulgação)</a></li>
   <li>Dia das Mães &#x27;Tormenta&#x27;: <a href="https://b9.com.br/167562/o-boticario-tormenta-maternidade-adolescencia-dia-maes">B9 / AlmapBBDO / O Boticário (divulgação)</a></li>
   <li>Eudora &#x27;Chega lá e Eudora&#x27;: <a href="https://www.youtube.com/watch?v=zxT8cGTkVeI">Eudora (YouTube oficial)</a></li>
   <li>Natal 2025 (esteiras de aeroporto): <a href="https://www.b9.com.br/176277/boticario-esteiras-bagagem-aeroporto-presente/">B9 / O Boticário (divulgação)</a></li>
@@ -689,7 +850,7 @@ footer a{color:var(--muted)}
   <li>Carolina Carrasco (Dir. Branding e Comunicação, O Boticário e QDB): <a href="https://www.meioemensagem.com.br/gente/grupo-boticario-anuncia-diretora-de-branding-e-comunicacao">Meio &amp; Mensagem / divulgação Grupo Boticário (nov/2024)</a></li>
   <li>Fernando Modé (CEO Grupo Boticário): <a href="https://forbes.com.br/forbes-tech/2021/08/quem-inova-fernando-mode-ceo-do-grupo-boticario-fala-sobre-transformacao-digital-e-organizacional/">Forbes Tech / divulgação (ago/2021)</a></li>
   <li>Giovana Orlandeli (Dir. Branding e Comunicação): <a href="https://forbes.com.br/carreira/2025/12/como-ela-foi-do-transporte-escolar-a-lider-de-marketing-no-grupo-boticario/">Forbes Brasil (dez/2025)</a></li>
-  <li>Jacqueline Tobaru (Dir. Marketing Franquias): <a href="https://www.mmaglobal.com/speakers/jacqueline-tobaru">MMA Global</a></li>
+  <li>Jacqueline Tobaru (Diretora de Marketing Regional): <a href="https://www.mmaglobal.com/speakers/jacqueline-tobaru">MMA Global</a></li>
   <li>Marcela De Masi (Dir. Exec. Branding e Comunicação): <a href="https://fastcompanybrasil.com/5-perguntas/5-perguntas-para-marcela-de-masi-do-grupo-boticario/">Fast Company Brasil (2024)</a></li>
   <li>Renata Gomide: <a href="https://forbes.com.br/escolhas-do-editor/2025/07/como-vp-de-marketing-do-grupo-boticario-redefiniu-a-alta-performance/">Forbes Brasil (jul/2025)</a></li>
   <li>Renata Gomide: <a href="https://mmaglobal.com/speakers/renata-gomide-de-carvalho">MMA Global</a></li>
@@ -700,16 +861,21 @@ footer a{color:var(--muted)}
   <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=nutuVgJzHJQ">YouTube / Estadão Blue Studio</a></li>
   <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=qor6F6d1Htg">YouTube / Desmarketize-se</a></li>
   <li>Renata Gomide: <a href="https://www.youtube.com/watch?v=4_6cEEG3eI0">YouTube</a></li>
-  <li>São João: Casa do Boti Campina Grande 2025: <a href="https://portalg.com.br/oboticario-lanca-casa-do-boti-no-sao-joao-de-caruaru/">Portal G / O Boticário (divulgação)</a></li>
-  <li>São João: Casa do Boti Campina Grande 2025: <a href="https://www.portaldacapital.com/2025/06/03/o-boticario-presenteia-campina-grande-com-casa-do-boti-no-maior-sao-joao-do-mundo/">Portal da Capital / O Boticário (divulgação)</a></li>
-  <li>Key visual &#x27;O São João é a nossa casa&#x27;: <a href="https://www.pontopb.com.br/noticia/paraiba-260016241/o-boticario-celebra-10-anos-no-sao-joao-e-leva-experiencias-para-campina-grande-em-2026.html">Ponto PB / O Boticário (divulgação)</a></li>
   <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
-  <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
-  <li>São João: Casa Boti Caruaru 2026: <a href="https://www.promoview.com.br/sao-joao-do-boticario-10-anos-caruaru">Promoview / O Boticário (divulgação)</a></li>
-  <li>Key visual &#x27;O São João é a nossa casa&#x27;: <a href="https://politicaporelas.tv.br/2026/06/09/o-boticario-celebra-10-anos-de-sao-joao-com-campanha-sobre-pertencimento-cultura-e-conexao-emocional/">Política por Elas / O Boticário (divulgação)</a></li>
+  <li>Natal 2023 &#x27;Abduzidos&#x27;: <a href="https://www.b9.com.br/165855/natal-boticario-conexao-genuina-campanha-2023/">AlmapBBDO / O Boticário (divulgação, via B9)</a></li>
+  <li>Natal 2024 &#x27;Casa de Vidro&#x27;: <a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-emociona-com-campanha-de-natal-que-celebra-o-cuidado-familiar/">AlmapBBDO / O Boticário (divulgação, via Marcas pelo Mundo)</a></li>
+  <li>Namorados 2025: <a href="https://acontecendoaqui.com.br/propaganda/o-boticario-aposta-em-amor-sem-rotulos-e-humor-leve-para-campanha-do-dia-do-amor/">AlmapBBDO / O Boticário (divulgação, via Acontecendo Aqui)</a></li>
+  <li>Malbec Icon: <a href="https://marcaspelomundo.com.br/anunciantes/o-boticario-cria-experiencia-com-carro-de-luxo-para-o-lancamento-de-malbec-icon/">AlmapBBDO / O Boticário (divulgação, via Marcas pelo Mundo)</a></li>
+  <li>Loja-conceito flutuante no Pará (render): <a href="https://adnews.com.br/post/o-boticario-inaugura-loja-conceito-em-barco-no-para">O Boticário (divulgação, via Adnews)</a></li>
+  <li>BotiRecicla Store (render): <a href="https://www.meioemensagem.com.br/marketing/o-boticario-abre-loja-onde-clientes-trocam-embalagens-vazias-por-brindes">O Boticário / Guto Requena (divulgação, via Meio &amp; Mensagem)</a></li>
+  <li>Prêmio ABF 2026: <a href="https://abf.com.br/o-boticario-e-eleito-franqueador-do-ano-no-premio-abf-destaque-franchising-2026-2/">ABF (divulgação)</a></li>
+  <li>Portugal 40 anos: <a href="https://hipersuper.pt/2026/09/14/40-anos-depois-portugal-ainda-e-o-maior-mercado-do-boticario-fora-do-brasil">O Boticário Portugal (divulgação, via Hipersuper)</a></li>
+  <li>Carnaval 2026: <a href="https://www.promoview.com.br/o-boticario-no-carnaval-2026-integra-cultura-experiencia-e-fidelizacao/">O Boticário (divulgação, via Promoview)</a></li>
+  <li>Renata Gomide, Maximídia 2026: <a href="https://www.meioemensagem.com.br/maximidia/cmos-de-ambev-itau-e-grupo-boticario-debaterao-desafios">Arthur Nobre / Divulgação, via Meio &amp; Mensagem</a></li>
+  <li>Roberta Pepe: <a href="https://www.youtube.com/watch?v=wqCn2_5E5DA">89 A Rádio Rock, entrevista no João Rock (ago/2026)</a></li>
   <li>Juliana Razini: <a href="https://propmark.com.br/anunciantes/marcas-entram-no-ritual-de-consumo-do-sao-joao/">Propmark / divulgação (jun/2026)</a></li>
 </ol>
-<p class="src">Imagens de divulgação e de imprensa reunidas para uso interno da dot. Não usar em peça pública sem licença.</p>
+<p class="src">Imagens de divulgação e de imprensa, com crédito à fonte. Não reutilizar em peça sem licença.</p>
 </footer>
 </main>
 </div>

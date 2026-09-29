@@ -229,6 +229,50 @@ ol.check li::before{content:"";width:18px;height:18px;border:2px solid var(--acc
 .chips-dados span{font-family:var(--display);font-weight:500;font-size:15px;background:var(--accent-soft);color:var(--ink);padding:8px 14px;border-radius:99px}
 ol.roteiro{columns:2 260px;column-gap:32px;padding-left:22px;margin:14px 0 20px;max-width:760px}
 ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
+
+.lp-svg{width:100%;max-width:760px;height:auto;display:block;margin:10px auto 0}
+.lp-mini{width:72px;height:66px;flex:none}
+.lp-vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.lp-vs>div{display:flex;gap:14px;align-items:center;border-radius:10px;padding:14px 16px;background:var(--surface);min-width:0}
+.lp-vs b{display:block;font-size:17px;margin-bottom:2px}
+.lp-vs span{font-size:14.5px;color:var(--muted);line-height:1.45}
+.lp-quote{font-size:clamp(20px,2.4vw,26px);font-weight:700;line-height:1.25;margin:18px 0 4px;max-width:34ch}
+.lp-quote cite{display:block;font-family:var(--mono);font-size:12px;font-weight:400;font-style:normal;color:var(--muted);margin-top:6px}
+.lp-tab{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:10px}
+.lp-tab table{border-collapse:collapse;width:100%;min-width:720px;font-size:14.5px;line-height:1.45}
+.lp-tab th{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;background:var(--surface);padding:10px 12px}
+.lp-tab td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+.lp-tab td:first-child{font-weight:700;white-space:nowrap}
+.lp-n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--green, var(--accent));color:var(--bg);font-family:var(--mono);font-size:12px;margin-right:8px}
+.lp-map{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:14px}
+.lp-map div{border-radius:8px;background:var(--surface);padding:10px;min-width:0;font-size:13.5px;line-height:1.4}
+.lp-map b{display:block;font-size:15px}
+.lp-map small{display:block;font-family:var(--mono);font-size:11px;color:var(--green, var(--accent));margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
+.lp-classes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.lp-cl{border-radius:12px;padding:16px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.lp-cl.A{background:var(--gold-soft, var(--inf-soft))} .lp-cl.B{background:var(--green-soft, var(--fact-soft))} .lp-cl.C{background:var(--blue-soft, var(--accent-soft))}
+.lp-cl h4{margin:0;font-size:20px;font-weight:800}
+.lp-cl .tg{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lp-cl dl{margin:0;display:grid;gap:8px}
+.lp-cl dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lp-cl dd{margin:0;font-size:14.5px;line-height:1.45}
+.lp-cl .av{display:flex;gap:4px;flex-wrap:wrap}
+.lp-cl .av img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.lp-cl .lp-svg{margin:0 auto;max-width:300px}
+.lp-dir{font-weight:700;border-top:1px solid var(--line);padding-top:8px;font-size:15px}
+.lp-nota{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:10px}
+@media (max-width:900px){.lp-vs,.lp-classes{grid-template-columns:minmax(0,1fr)}.lp-map{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.aa-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.aa{border-radius:10px;border:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.aa .rj{display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--red, var(--warn))}
+.aa .rj svg{width:16px;height:16px;flex:none}
+.aa b{font-size:16.5px;line-height:1.35}
+.aa .se{margin-top:auto;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.aa .se strong{color:var(--ink);font-weight:600}
+.aa-regra{margin-top:12px;display:flex;gap:10px;align-items:center;background:var(--ink);color:var(--bg);border-radius:8px;padding:12px 16px;font-weight:600}
+@media (max-width:900px){.aa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.aa-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -237,10 +281,12 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
   <p>Índice</p>
   <ol>
     <li><a href="#tese">Onde queremos chegar</a></li>
+    <li><a href="#looping">A jornada em looping</a></li>
     <li><a href="#etapas">As 8 etapas</a></li>
     <li><a href="#dados">Dados que nos destacam</a></li>
     <li><a href="#roteiro">Roteiro da apresentação</a></li>
-    <li><a href="#banca">Banca Boticário</a></li>
+    <li><a href="#banca">Revisão interna</a></li>
+    <li><a href="#autoanalise">Autoanálise</a></li>
     <li><a href="#checklist">Checklist final</a></li>
     <li><a href="index.html">Voltar ao dossiê</a></li>
   </ol>
@@ -249,7 +295,7 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
 <main>
 <header class="top solo">
   <div>
-  <p class="eyebrow">dot.promo · Grupo Boticário · Carnaval 2027 · 29/09/2026</p>
+  <p class="eyebrow">dot.promo · Grupo Boticário · 29/09/2026</p>
   <h1>Método de Apresentação Boticário</h1>
   <p class="role">O caminho para construir e defender propostas que Renata, Juliana e Roberta aprovam.</p>
   <div class="legend">
@@ -266,10 +312,23 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
   <ul class="forcas">
     <li><b>Território:</b> estamos no São João que fez do Boticário a marca de beleza preferida da festa.</li>
     <li><b>Reconhecimento:</b> Melhor Agência de Live Marketing do Nordeste, Prêmio Live 2024.</li>
-    <li><b>Entrega:</b> criação, iluminação e shows elogiados pelo cliente. Caruaru 2026 teve 18 mil experimentações.</li>
+    <li><b>Entrega:</b> criação, iluminação e shows elogiados pelo cliente. Caruaru 2026 teve milhares de experimentações.</li>
   </ul>
   <p class="meta"><b>Objetivo:</b> ser a parceira que transforma território em crescimento medido para a marca e para a loja da praça, e levar isso ao Carnaval, a outras regiões e aos grandes momentos do calendário.</p>
 </div>
+</section>
+
+<section id="looping"><span class="kick">Como ela pensa a jornada</span>
+<h2 class="lp-h">A jornada em looping</h2>
+<blockquote class="lp-quote">"A gente sempre fala que é um looping. Não existe funil."<cite>Renata Gomide · palestra JCDecaux · jul/2026</cite></blockquote>
+<div class="lp-vs">
+  <div><svg viewBox="0 0 120 110" class="lp-mini" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 12h100l-38 42v36l-24 12V54z" fill="none" stroke="var(--muted)" stroke-width="4" stroke-linejoin="round"/><path d="M14 100L106 10" stroke="var(--red, #b3261e)" stroke-width="5" stroke-linecap="round"/></svg><div><b>Funil</b><span>Entra em cima, afunila e termina na compra. Cada pessoa passa uma vez.</span></div></div>
+  <div><svg viewBox="0 0 120 110" class="lp-mini" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="55" rx="44" ry="34" fill="none" stroke="var(--green, var(--accent))" stroke-width="5"/><path d="M96 26l8 12-14 2" fill="none" stroke="var(--green, var(--accent))" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 84l-8-12 14-2" fill="none" stroke="var(--green, var(--accent))" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Looping</b><span>Entra por qualquer ponto. A compra leva ao uso, o uso à conversa, a conversa traz a próxima pessoa e o próximo produto.</span></div></div>
+</div>
+<svg viewBox="0 0 640 430" role="img" aria-label="Ciclo: Descobrir , Reforçar , Comprar , Usar , Compartilhar , Escutar, e de volta ao início" class="lp-svg" xmlns="http://www.w3.org/2000/svg"><ellipse cx="320.0" cy="219.0" rx="235" ry="150" fill="none" stroke="var(--green, var(--accent))" stroke-width="4" stroke-opacity=".35"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(437.5 89.1) rotate(20.2)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(555.0 219.0) rotate(90.0)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(437.5 348.9) rotate(159.8)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(202.5 348.9) rotate(-159.8)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(85.0 219.0) rotate(-90.0)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 -9 L9 0 L-9 9" transform="translate(202.5 89.1) rotate(-20.2)" fill="none" stroke="var(--green, var(--accent))" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="320.0" cy="69.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="320.0" y="74.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">1</text><text x="320.0" y="21.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Descobrir</text><text x="320.0" y="38.0" text-anchor="middle" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">conhece o produto</text><circle cx="523.5" cy="144.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="523.5" y="149.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">2</text><text x="561.0" y="130.2" text-anchor="start" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Reforçar</text><text x="561.0" y="147.2" text-anchor="start" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">marca na cabeça 24/7</text><circle cx="523.5" cy="294.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="523.5" y="299.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">3</text><text x="561.0" y="307.8" text-anchor="start" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Comprar</text><text x="561.0" y="324.8" text-anchor="start" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">impulso ou loja</text><circle cx="320.0" cy="369.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="320.0" y="374.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">4</text><text x="320.0" y="417.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Usar</text><text x="320.0" y="434.0" text-anchor="middle" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">ocasiões de vida</text><circle cx="116.5" cy="294.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="116.5" y="299.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">5</text><text x="79.0" y="307.8" text-anchor="end" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Compartilhar</text><text x="79.0" y="324.8" text-anchor="end" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">posta, indica, lembra</text><circle cx="116.5" cy="144.0" r="26" fill="var(--green, var(--accent))" stroke="var(--green, var(--accent))" stroke-width="2"/><text x="116.5" y="149.0" text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="IBM Plex Mono, monospace">6</text><text x="79.0" y="130.2" text-anchor="end" font-size="15" font-weight="700" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Escutar</text><text x="79.0" y="147.2" text-anchor="end" font-size="12.5" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">a conversa vira produto</text><text x="320.0" y="213.0" text-anchor="middle" font-size="22" font-weight="800" fill="var(--ink)" font-family="Bricolage Grotesque, system-ui, sans-serif">Marca na cabeça</text><text x="320.0" y="237.0" text-anchor="middle" font-size="13" fill="var(--muted)" font-family="Bricolage Grotesque, system-ui, sans-serif">cada meio com um papel e uma métrica</text></svg>
+<p class="lp-nota">As seis etapas são a leitura da dot. a partir das falas dela: "como descobre, como converte, o que consome, como consome"; "a marca na cabeça 24 por 7"; "ocasiões de vida"; escuta que vira produto.</p>
+<h4 style="margin:22px 0 0;font-size:18px">Como identificar em que ponto a pessoa está</h4>
+<div class="lp-tab"><table><thead><tr><th>Etapa</th><th>Sinal da pessoa</th><th>Como medir</th><th>Exemplo do Boticário</th></tr></thead><tbody><tr><td><span class="lp-n">1</span>Descobrir</td><td>Primeira vez que vê ou sente o produto</td><td>Alcance, awareness, recall</td><td>Presentes nas esteiras do aeroporto no Natal 2025</td></tr><tr><td><span class="lp-n">2</span>Reforçar</td><td>Segue, salva, volta a ver, comenta</td><td>Frequência, consideração, engajamento</td><td>TV, out-of-home e creators se complementando</td></tr><tr><td><span class="lp-n">3</span>Comprar</td><td>Clica, vai à loja, usa voucher, resgata cupom</td><td>Conversão, fluxo em loja, cupom resgatado</td><td>Egeo Melancia: esgotou no e-commerce em 57 horas, com previsão de 14 dias</td></tr><tr><td><span class="lp-n">4</span>Usar</td><td>Usa nas ocasiões de vida: se arrumar, dia, noite, festa</td><td>Experimentação, recompra, base ativa</td><td>Serviço de make, perfume de dia, make à noite</td></tr><tr><td><span class="lp-n">5</span>Compartilhar</td><td>Posta, marca a marca, indica, dá de presente</td><td>UGC, menções, share of voice</td><td>Tormenta: a campanha mais compartilhada da história da marca</td></tr><tr><td><span class="lp-n">6</span>Escutar</td><td>Fala da marca, pede produto, cria tendência</td><td>Social listening, cadastros, base do programa de fidelidade</td><td>Comunidade do TikTok cocriou o Egeo Melancia</td></tr></tbody></table></div>
 </section>
 
 <section id="etapas">
@@ -282,11 +341,11 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
   <span class="n">1</span>
   <div>
     <h3>Definir o objetivo de negócio</h3>
-    <p class="q">Pergunta a responder: o que o Carnaval 2027 precisa fazer pela marca e pelas lojas?</p>
+    <p class="q">Pergunta a responder: o que o projeto precisa fazer pela marca e pelas lojas?</p>
     <ul>
       <li>Escrever o objetivo em uma frase, com número.</li>
-      <li>Confirmar com a Simone quem decide (inclusive Jacqueline Tobaru).</li>
-      <li>Usar os três combinados de julho como guia: dados, agilidade, detalhe.</li>
+      <li>Falar com quem decide: Renata, Juliana, Roberta e o marketing regional.</li>
+      <li>Usar dados, agilidade e detalhe como guia.</li>
     </ul>
     <p class="ent"><b>Entrega:</b> 1 página com objetivo, praças, verba e decisoras. <span class="who r">Renata</span> <span class="who j">Juliana</span></p>
   </div>
@@ -299,7 +358,7 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
     <p class="q">Pergunta a responder: que resultados a dot. já entregou e o que evolui em 2027?</p>
     <ul>
       <li>Números por praça do São João e do Carnaval 2026.</li>
-      <li>Cadastros com série histórica. Confirmar se os 20 mil de 2025 e os 4.821 de 2026 medem a mesma coisa.</li>
+      <li>Cadastros com série histórica, na mesma métrica ano a ano.</li>
       <li>O que continua e o que melhora, em uma lista curta.</li>
     </ul>
     <p class="ent"><b>Entrega:</b> 2 slides de resultados. <span class="who j">Juliana</span> <span class="who p">Roberta</span></p>
@@ -314,7 +373,7 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
     <ul>
       <li>Escuta social por praça: perfume, calor, se arrumar, ser vista.</li>
       <li>Conversa rápida com 3 a 5 franqueados.</li>
-      <li>Mapa do que outras marcas fazem e do espaço livre (pesquisa Carnaval de Camarote).</li>
+      <li>Mapa do que outras marcas fazem e do espaço livre.</li>
     </ul>
     <p class="ent"><b>Entrega:</b> 1 página com os achados e os prints. <span class="who r">Renata</span> <span class="who j">Juliana</span></p>
   </div>
@@ -330,7 +389,7 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
       <li>Ideia em uma frase, ligada a perfumaria e a presente.</li>
       <li>Passar nos 5 filtros: tensão real, cabe numa frase, gera conversa, leva gente à loja, dura mais de um ano.</li>
     </ul>
-    <p class="ent"><b>Entrega:</b> 1 ideia recomendada e 1 alternativa, já avaliadas pela banca. <span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p>
+    <p class="ent"><b>Entrega:</b> 1 ideia recomendada e 1 alternativa, já passadas pela revisão interna. <span class="who r">Renata</span> <span class="who j">Juliana</span> <span class="who p">Roberta</span></p>
   </div>
 </article>
 
@@ -436,10 +495,16 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
 </section>
 
 <section id="banca">
-<h2><small>Ferramenta</small>Banca Boticário</h2>
-<p>Antes do cliente, a proposta passa pelo squad que simula as três decisoras. Cada uma dá nota de 0 a 10 e aponta a objeção que faria. Só segue com as três em 7 ou mais. Para usar, peça ao Claude: <b>"leva para a banca Boticário"</b>.</p>
-<p class="src">É simulação baseada no que elas disseram em público. Serve para achar furos antes, nunca para falar em nome delas.</p>
+<h2><small>Ferramenta</small>Revisão interna em três olhares</h2>
+<p>Antes do cliente, a proposta passa por uma revisão interna em três olhares: marca e negócio, rede e território, festa e execução. Cada olhar aponta a objeção que faria. Só segue quando as três objeções estão respondidas.</p>
+<p class="src">É uma leitura interna baseada no que elas disseram em público. Serve para achar furos antes, nunca para falar em nome delas.</p>
 </section>
+
+<section id="autoanalise"><span class="kick">Antes da revisão interna</span><h2 class="aa-h">Autoanálise antes de levar qualquer ideia</h2>
+<p style="color:var(--muted);max-width:62ch;margin-top:4px">Os oito pontos que a Renata rejeita, transformados em perguntas. O time responde cada uma sobre a própria ideia antes da revisão interna.</p>
+<div class="aa-grid"><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>Copiar o concorrente</span><b>Isso nasceu do nosso público ou de algo que outra marca já fez?</b><span class="se">Se a resposta for ruim: <strong>Volte à escuta</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>Investir sem entender o valor</span><b>Sabemos o que tem valor para o público nesse lugar e nessa hora?</b><span class="se">Se a resposta for ruim: <strong>Volte à rotina das personas</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>A marca falando de si</span><b>É um assunto que as pessoas já querem conversar?</b><span class="se">Se a resposta for ruim: <strong>Volte ao insight</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>A mesma coisa no Brasil todo</span><b>A ideia muda de cara em cada praça?</b><span class="se">Se a resposta for ruim: <strong>Volte ao sotaque local</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>Tecnologia por moda</span><b>A tecnologia resolve algo ou só enfeita?</b><span class="se">Se a resposta for ruim: <strong>Corte ou troque por serviço</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>Reforçar padrão de beleza</span><b>Alguém pode se sentir fora do padrão com isso?</b><span class="se">Se a resposta for ruim: <strong>Refaça a imagem e o casting</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>Áreas em silos</span><b>Loja, franqueado, mídia e creators entram juntos?</b><span class="se">Se a resposta for ruim: <strong>Volte à jornada completa</strong></span></div><div class="aa"><span class="rj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>Repetir o ano passado</span><b>O que tem de novo em relação a 2026?</b><span class="se">Se a resposta for ruim: <strong>Volte à ideia</strong></span></div></div>
+<div class="aa-regra">Uma resposta ruim já basta para a ideia voltar uma etapa.</div>
+<p class="lp-nota">Fonte: falas públicas de Renata Gomide (Desmarketize 2023, UOL 2023, Exame 2022, McKinsey e JCDecaux 2026), reunidas no dossiê das decisoras.</p></section>
 
 <section id="checklist">
 <h2><small>Antes de enviar</small>Checklist final</h2>
@@ -453,7 +518,7 @@ ol.roteiro li{break-inside:avoid;margin-bottom:6px;font-size:16px}
   <li>Capacidade por hora, acessibilidade e plano de chuva.</li>
   <li>Custo por resultado e três cenários.</li>
   <li>Responsável com nome por praça.</li>
-  <li>Aprovada pela banca com as três em 7 ou mais.</li>
+  <li>Passou pela revisão interna em três olhares.</li>
 </ol>
 </section>
 </main>
